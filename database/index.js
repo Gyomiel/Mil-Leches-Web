@@ -9,13 +9,23 @@ const connection = new Sequelize("Mil-Leches_DB", "reboot", "reboot", {
 const checkDB = async () => {
   try {
     await connection.authenticate();
-    console.log("Connected successfully to database.");
+    console.log("Successfully connected to database.");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const syncModels = async () => {
+  try {
+    await connection.sync();
+    console.log("Models have been created.");
   } catch (error) {
     console.log(error);
   }
 };
 
 module.exports = {
-    checkDB,
-    connection
-}
+  checkDB,
+  connection,
+  syncModels,
+};
