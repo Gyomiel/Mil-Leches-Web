@@ -1,4 +1,5 @@
 const Booking = require("../models/bookings.model");
+const UserBooking = require("../models/user_bookings.model");
 const User = require("../models/users.model");
 
 const getAllBookings = async (request, response) => {
@@ -60,24 +61,37 @@ const deleteBooking = async (request, response) => {
   }
 };
 
+//Función para la tabla intermedia
 const addUserToBooking = async (request, response) => {
   try {
-    const bookingId = request.params.id;
-    const booking = await Booking.findByPk(bookingId);
+    const booking = await Booking.create(request.body);
 
     if (!booking) {
       return response.status(404).json({ error: "Booking not found" });
     }
 
-    const user = await User.findOne({
+    const owner = await User.findOne({
       where: {
-        id: request.params.userId,
+        id: request.params.ownerId,
       },
     });
-    await booking.addUser(user);
-    return response.status(200).json(booking);
+
+    const petsitter = await User.findOne({
+      where: {
+        id: request.params.petsitterId,
+      },
+    });
+    const userBooking = await UserBooking.create({
+      ownerId: owner.id,
+      petsitterId: petsitter.id,
+      bookingId: booking.id,
+    });
+
+    return response.status(200).json(userBooking);
   } catch (error) {
-    return response.status(500).send(`Couldn't add user to booking.`);
+    return response
+      .status(500)
+      .send(`Couldn't add user to booking. ${error.message}`);
   }
 };
 

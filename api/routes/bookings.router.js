@@ -13,6 +13,6 @@ router.get("/:id", getOneBooking);
 router.post("/", createBooking);
 router.put("/:id", updateBooking);
 router.delete("/:id", deleteBooking);
-router.post("/selection/:id/:userId", addUserToBooking);
+router.post("/selection/:ownerId/:petsitterId", addUserToBooking);
 
 module.exports = router;

@@ -12,10 +12,20 @@ const initializeRelationships = () => {
     Pet.belongsTo(User);
     User.belongsToMany(Service, { through: "users_services" });
     Service.belongsToMany(User, { through: "users_services" });
-    User.belongsToMany(Booking, { through: "users_bookings" });
-    Booking.belongsToMany(User, { through: "users_bookings" });
-    Thread.hasOne(Booking);
-    Booking.belongsTo(Thread);
+    User.belongsToMany(Booking, {
+      through: UserBooking,
+      foreignKey: "ownerId",
+      foreignKey: "petsitterId",
+      foreignKey: "bookingId",
+    });
+    Booking.belongsToMany(User, {
+      through: UserBooking,
+      foreignKey: "ownerId",
+      foreignKey: "petsitterId",
+      foreignKey: "bookingId",
+    });
+    Booking.hasOne(Thread);
+    Thread.belongsTo(Booking);
     Thread.hasMany(Comment);
     Comment.belongsTo(Thread);
     Booking.hasMany(Service);

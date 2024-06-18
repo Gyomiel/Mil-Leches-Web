@@ -17,7 +17,7 @@ const checkDB = async () => {
 
 const syncModels = async () => {
   try {
-    await connection.sync();
+    await connection.sync({ alter: true });
     console.log("Models have been created.");
   } catch (error) {
     console.log(error);
