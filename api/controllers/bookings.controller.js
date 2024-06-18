@@ -33,14 +33,12 @@ const createBooking = async (request, response) => {
 
 const updateBooking = async (request, response) => {
   try {
-    const booking = await Booking.update(request.body, {
-      where: {
-        id: request.params.id,
-      },
-    });
+    const booking = await Booking.findByPk(request.params.id);
+    await booking.update(request.body);
+    await booking.save();
     return response.status(200).json(booking);
   } catch (error) {
-    return response.status(501).send("Booking updated.");
+    return response.status(501).send(`Couldn't update booking.`);
   }
 };
 

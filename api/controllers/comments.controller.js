@@ -33,14 +33,12 @@ const createComment = async (request, response) => {
 
 const updateComment = async (request, response) => {
   try {
-    const comment = await Comment.update(request.body, {
-      where: {
-        id: request.params.id,
-      },
-    });
+    const comment = await Comment.findByPk(request.params.id);
+    await comment.update(request.body);
+    await comment.save();
     return response.status(200).json(comment);
   } catch (error) {
-    return response.status(501).send("Booking updated.");
+    return response.status(501).send(`Couldn't update comment.`);
   }
 };
 
