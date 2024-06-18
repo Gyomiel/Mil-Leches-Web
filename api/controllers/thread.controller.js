@@ -1,4 +1,4 @@
-const Thread = require("../models/bookings.model");
+const Thread = require("../models/thread.model");
 
 const getAllThreads = async (request, response) => {
   try {

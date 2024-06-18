@@ -11,7 +11,7 @@ const getAllServices = async (request, response) => {
 
 const getOneService = async (request, response) => {
   try {
-    const service = await Booking.findOne({
+    const service = await Service.findOne({
       where: {
         id: request.params.id,
       },
