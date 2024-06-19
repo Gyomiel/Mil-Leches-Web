@@ -9,6 +9,9 @@ const User = connection.define(
     },
     email: {
       type: DataTypes.STRING,
+      validate: {
+        is: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+      },
     },
     password: {
       type: DataTypes.STRING,
@@ -25,6 +28,18 @@ const User = connection.define(
     },
     pet: {
       type: DataTypes.STRING,
+    },
+    location: {
+      type: DataTypes.ENUM(
+        "Gran Canaria",
+        "Tenerife",
+        "Fuerteventura",
+        "Lanzarote",
+        "La Graciosa",
+        "La Palma",
+        "La Gomera",
+        "El Hierro"
+      ),
     },
     createdAt: {
       type: DataTypes.DATE,

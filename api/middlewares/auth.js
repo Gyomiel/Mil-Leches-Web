@@ -28,4 +28,12 @@ const checkAuth = (request, response, next) => {
   );
 };
 
-module.exports = { checkAuth };
+const checkAdmin = (request, response, next) => {
+  if (response.locals.user.role !== "admin") {
+    return response.status(403).json("Access restricted.");
+  } else {
+    next();
+  }
+};
+
+module.exports = { checkAuth, checkAdmin };

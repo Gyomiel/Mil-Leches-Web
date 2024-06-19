@@ -6,9 +6,9 @@ const {
   updateUser,
   deleteUser,
 } = require("../controllers/users.controller");
-const { checkAuth } = require("../middlewares/auth");
+const { checkAuth, checkAdmin } = require("../middlewares/auth");
 
-router.get("/", checkAuth, getAllUsers);
+router.get("/", checkAuth, checkAdmin, getAllUsers);
 router.get("/:id", checkAuth, getOneUser);
 router.post("/", checkAuth, createUser);
 router.put("/:id", checkAuth, updateUser);
