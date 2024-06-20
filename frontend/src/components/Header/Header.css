@@ -1,66 +1,67 @@
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    align-items: center;
-    margin-left: 0.8rem;
-    margin-right: 0.8rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 22px;
-    font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 22px;
+  font-weight: 600;
 }
 
 #headerLogo {
-    transform: scale(0.87);
-    display: inline-block;
+  transform: scale(0.87);
+  display: inline-block;
 }
 
 .divider {
-    width: 1400px;
+  width: 1400px;
 }
 
 #links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .subtn {
-    background-color: var(--primaryTeal);
-    color: white;
-    height: 42px;
-    width: 120px;
-    font-size: 20px;
-    font-weight: 700;
-    border: none;
-    border-radius: 50px;
-    align-self: center;
+  background-color: var(--primaryTeal);
+  color: white;
+  height: 42px;
+  width: 120px;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  align-self: center;
 }
 
 .libtn {
-    color: var(--primaryTeal);
-    font-size: 20px;
-    border: none;
-    align-self: center;
-    font-weight: 700;
+  color: var(--primaryTeal);
+  background-color: white;
+  font-size: 20px;
+  border: none;
+  align-self: center;
+  font-weight: 700;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .hideButton {
-    display: none;
+  display: none;
 }
 
 .showButton {
-    display: block;
+  display: block;
 }
