@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+.container {
+  height: 50vw;
+  width: 70vw;
+  background-color: #5bc0be;
+  border-radius: 38px;
+}
+.profilePic {
+  height: 20vw;
+}
+
+.name {
+  font-size: xx-large;
+  font-weight: bolder;
+  color: white;
+}
