@@ -1,8 +1,8 @@
-
+import "./InputTextArea.css";
 
 function InputTextArea() {
   return (
-    <textarea required>InputTextArea</textarea>
+    <textarea className="textArea" required></textarea>
   )
 }
 

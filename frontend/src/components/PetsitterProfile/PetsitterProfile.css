@@ -3,6 +3,7 @@ body {
   padding: 0;
 }
 
+/*Pet sitter profile profile to edit*/
 .container {
   display: grid;
   grid-template-areas:
@@ -22,12 +23,15 @@ body {
   justify-content: space-between;
   width: 450px;
   height: 600px;
+  margin-right: 20px;
+  margin-top: -10px;
 }
 
 .editIcon {
   height: 23px;
   width: 23px;
   padding-left: 15px;
+  display: inline-block;
 }
 .profileIcon {
 
@@ -54,22 +58,222 @@ body {
   border-radius: 38px;
   margin-top: 55px;
   margin-left: 80px;
+  
 }
 
 .name {
-  position:absolute;
+  display:inline-block;
   font-weight: bolder;
   color: white;
   font-size: 40px;
-  display: flex;
-  top: 36%;
+  
 }
 
 .fillData {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   margin-left: 60px;
-  margin-top: 15px;
-
+  margin-top: -30px;
+  align-content: flex-start;
+ 
 }
+ .box1, .box2, .box3 {
+  height: 20px;
+  font-size: 22px;
+ }
+
+ .nameTitle {
+  margin-top: -50px;
+  margin-left: 60px;
+ }
+
+ .boxRight {
+  grid-area: textArea;
+ }
+ .tittleprofile {
+  font-size: 45px;
+  text-align: left;
+  color: white;
+ }
+ 
+ .textArea {
+  display: inline-block;
+ }
+ .aboutme {
+  font-size: 22px;
+  margin-top: -20px;
+ }
+
+ .area1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+ }
+  .housesitting {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 17px;
+    
+    
+  }
+   .texthouseavg{
+    margin-top: 30px;
+  
+   }
+  .iconHouse{
+    display: inline;
+    width: 50px;
+
+  }
+  .housetitle{
+    display: inline;
+    margin-left:13px;
+    font-size: 20px;
+   
+    margin-right: 20px;
+    
+    
+  }
+  .Avgh {
+    margin-top: 0px;
+    margin-left: 14px;
+    color: white;
+  }
+
+  .checkbox {
+    fill: var(--Shade-01, #FFF);
+  stroke-width: 1px;
+  stroke: #FFF;
+  width: 18px;
+  }
+
+   .checkbox1 {
+    fill: var(--Shade-01, #FFF);
+  stroke-width: 1px;
+  stroke: #FFF;
+  width: 18px;
+  margin-top:35px;
+  margin-left:-15px;
+   }
+
+  .boarding {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 17px;
+    margin-top: 30px;
+    margin-left: 60px;
+    
+  }
+    .Avgb {
+    margin-top: 0px;
+    margin-left: 14px;
+    color: white;
+    padding-right: 20px;
+  }
+   .boardingtitle{
+    display: inline;
+    margin-left:13px;
+    font-size: 20px;
+   
+    margin-right: 20px;
+   }
+
+   .iconBoarding{
+    display: inline;
+    width: 40px;
+    margin-top: -30px;
+   }
+   
+   .hairdresser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 17px;
+    
+  }
+    .Avgh {
+    margin-top: 0px;
+    margin-left: 14px;
+    color: white;
+    padding-right: 70px;
+  }
+   .hairdressertitle{
+    display: inline;
+    margin-left:13px;
+    font-size: 20px;
+   
+    margin-right: 20px;
+   }
+   .iconHairdresser{
+    display: inline;
+    width: 45px;
+    margin-top: -30px;
+   }
+   .walking {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 17px;
+    margin-left: 55px;
+    
+  }
+    .Avgw {
+    margin-top: 0px;
+    margin-left: 14px;
+    color: white;
+    margin-right: 30px;
+  }
+   .walkingtitle{
+    display: inline;
+    margin-left:13px;
+    font-size: 20px;
+   
+    margin-right: 20px;
+   }
+   .iconWalking{
+    display: inline;
+    width: 45px;
+    margin-top: -30px;
+   }
+   
+   .services {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 35px;
+   }
+
+   /*Tips area*/
+   
+   .tips {
+    position:relative;
+     z-index:-999;
+    width: 950px;
+    height: 250px;
+    border-radius: 48px;
+  background: linear-gradient(0deg, #E7E7E7 0%, #E7E7E7 100%), #B5DBFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-left: 105px;
+  margin-top: -30px;
+}
+.iconBulb {
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-right: 10px;
+  display: inline-block;
+}
+.tipstitle{
+  display: inline-block;
+  font-size: 24px;
+}
+
+ul {
+  font-size: 21px;
+  font-weight: light;
+  margin-top: -15px;
+  margin-left:50px;
+  line-height: 33px;
+}
+
