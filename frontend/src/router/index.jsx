@@ -6,6 +6,8 @@ import Services from "../pages/Services/Services";
 import Help from "../pages/Help/Help";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
+import OwnerProfile from "../pages/OwnerProfile/OwnerProfile";
+
 
 const router = createBrowserRouter([
   {
@@ -35,9 +37,14 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />
+      },
+      {
+        path: '/OwnerProfile',
+        element: <OwnerProfile />
       }
+    
     ],
-  },
+  }
 ]);
 
 export default router;
