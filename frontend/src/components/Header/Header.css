@@ -56,3 +56,11 @@ a {
 button:hover {
     cursor: pointer;
 }
+
+.hideButton {
+    display: none;
+}
+
+.showButton {
+    display: block;
+}
