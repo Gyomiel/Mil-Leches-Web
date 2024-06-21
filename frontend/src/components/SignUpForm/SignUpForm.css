@@ -83,10 +83,14 @@ h4 {
     font-size: 16px;
 }
 
-.userWholeInput {
-
-}
-
-.userWholeInputImg {
- 
+.signUpButton {
+  background-color: var(--primaryTeal);
+  color: white;
+  height: 42px;
+  width: 120px;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  align-self: center;
 }

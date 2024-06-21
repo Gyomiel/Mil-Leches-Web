@@ -32,7 +32,8 @@ const SignUpForm = () => {
 
   const handleSignUp = async () => {
     const data = { name: name, email: email, password: password, role: role };
-    await signUp(data);
+    const {token} = await signUp(data);
+    localStorage.setItem("token", token)
     navigate("/");
   };
 
@@ -104,7 +105,7 @@ const SignUpForm = () => {
             .
           </p>
         </div>
-        <button onClick={handleSignUp}>Sign up</button>
+        <button className="signUpButton" onClick={handleSignUp}>Sign up</button>
         <h4>
           Already have an account?{" "}
           <a className="login" href="">
