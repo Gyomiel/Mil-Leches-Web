@@ -6,9 +6,9 @@ import Services from "../pages/Services/Services";
 import Help from "../pages/Help/Help";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
-import OwnerProfile from "../pages/OwnerProfile/OwnerProfile";
-
+import Owner from "../components/Owner/Owner"
 import PetsitterProfile from "../components/PetsitterProfile/PetsitterProfile";
+
 
 const router = createBrowserRouter([
   {
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/OwnerProfile',
-        element: <OwnerProfile />
+        element: <Owner/>
       },
     
       {
