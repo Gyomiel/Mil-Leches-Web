@@ -7,6 +7,7 @@ import Help from "../pages/Help/Help";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
 import PetsitterProfile from "../components/PetsitterProfile/PetsitterProfile";
+import ProfilePetsitter from "../pages/ProfilePetsitter/ProfilePetsitter";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/ProfilePetsitter",
-        element: <PetsitterProfile />,
+        element: <ProfilePetsitter />,
       },
     ],
   },
