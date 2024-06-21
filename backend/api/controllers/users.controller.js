@@ -59,10 +59,25 @@ const deleteUser = async (request, response) => {
   }
 };
 
+const getProfile = async (request, response) => {
+  try {
+    console.log(response.locals);
+    const user = await User.findOne({
+      where: {
+        id: response.locals.user.id,
+      },
+    });
+    return response.status(200).json(user);
+  } catch (error) {
+    return response.status(501).send("User not found.");
+  }
+};
+
 module.exports = {
   getAllUsers,
   getOneUser,
   createUser,
   updateUser,
   deleteUser,
+  getProfile,
 };

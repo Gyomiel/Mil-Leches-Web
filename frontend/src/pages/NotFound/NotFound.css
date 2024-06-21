@@ -1,0 +1,10 @@
+.mainContainerError{
+   
+    width: 1790px;
+    height: 900px;
+    margin-left: 60px;
+    margin-top:60px;
+    border-radius: 48px;
+background: #E7E7E7;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
+}
