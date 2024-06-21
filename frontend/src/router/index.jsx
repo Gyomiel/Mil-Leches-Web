@@ -6,8 +6,10 @@ import Services from "../pages/Services/Services";
 import Help from "../pages/Help/Help";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
+import Owner from "../components/Owner/Owner"
 import PetsitterProfile from "../components/PetsitterProfile/PetsitterProfile";
 import ProfilePetsitter from "../pages/ProfilePetsitter/ProfilePetsitter";
+
 
 const router = createBrowserRouter([
   {
@@ -35,15 +37,20 @@ const router = createBrowserRouter([
         element: <SignUp />,
       },
       {
-        path: "/login",
-        element: <Login />,
+        path: '/login',
+        element: <Login />
       },
+      {
+        path: '/OwnerProfile',
+        element: <Owner/>
+      },
+    
       {
         path: "/ProfilePetsitter",
         element: <ProfilePetsitter />,
       },
     ],
-  },
+  }
 ]);
 
 export default router;

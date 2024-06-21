@@ -1,0 +1,17 @@
+.Pets{
+    position: absolute;
+    border: 1px solid black;
+    height: 750px;
+    width: 550px;
+    background-color: #5BC0BE;
+}
+
+.dogB{
+    border-radius: 12%;
+    position:relative;
+    margin-top: 10px;
+    margin-left: 10px;
+    
+    width : 200px;
+   
+}
