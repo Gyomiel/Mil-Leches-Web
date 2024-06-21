@@ -2,7 +2,7 @@ import "./InputText.css"
 const InputText = () => {
   return (
     <>
-      <input type="text" />
+      <input className="inputTypeText" type="text" />
     </>
   );
 };
