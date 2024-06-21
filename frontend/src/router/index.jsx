@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login";
 import OwnerProfile from "../pages/OwnerProfile/OwnerProfile";
 
 import PetsitterProfile from "../components/PetsitterProfile/PetsitterProfile";
+import ProfilePetsitter from "../pages/ProfilePetsitter/ProfilePetsitter";
 
 const router = createBrowserRouter([
   {
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
     
       {
         path: "/ProfilePetsitter",
-        element: <PetsitterProfile />,
+        element: <ProfilePetsitter />,
       },
     ],
   }
