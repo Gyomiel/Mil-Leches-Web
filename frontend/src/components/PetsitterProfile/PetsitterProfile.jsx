@@ -9,6 +9,7 @@ import iconHairdresser from "../../assets/Icons/HairdresserIconBlue.svg";
 import iconWalking from "../../assets/Icons/PawIconBlue.svg";
 import iconBulb from "../../assets/Icons/iconBulb.svg";
 
+
 //CSS
 import "./PetsitterProfile.css";
 
@@ -19,13 +20,13 @@ import InputTextArea from "../InputTextArea/InputTextArea";
 
 function PetsitterProfile() {
   return (
-    <body>
+    <div className="mainContainer">
       <div className="container">
         <div className="izqBox">
           <img className="profilePic" src={petsitterImg}></img>
           <section className="editProfile">
-            <img className="profileIcon" src={iconProfile}></img>{" "}
             <h6 className="uploadPic">Upload picture</h6>
+            <img className="profileIcon" src={iconProfile}></img>{" "}
           </section>
           <div className="nameTitle">
             <h1 className="name">Marcus</h1>
@@ -52,6 +53,7 @@ function PetsitterProfile() {
         <section className="boxRight">
           <div className="area1">
             <h1 className="tittleprofile">My profile</h1>
+            <button className="save">Save changes</button>
             <h2 className="aboutme">About me</h2>
             <div>
               <InputTextArea className="textArea" />
@@ -115,7 +117,7 @@ function PetsitterProfile() {
           <li>Keep your calendar and profile up to date</li>
         </ul>
       </section>
-    </body>
+    </div>
   );
 }
 
