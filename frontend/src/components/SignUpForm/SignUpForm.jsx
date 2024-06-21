@@ -1,23 +1,116 @@
-import './SignUpForm.css';
-import signUpPic from '../../assets/signUpPic.png'
+import "./SignUpForm.css";
+import signUpPic from "../../assets/signUpPic.png";
+import userSignUp from "../../assets/userSignUp.png";
+import emailSignUp from "../../assets/emailSignUp.png";
+import lockSignUp from "../../assets/lockSignUp.png";
+import { signUp } from "../../services/auth";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignUpForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
+  const [terms, setTerms] = useState(false);
+  const navigate = useNavigate();
+  const handleName = (e) => {
+    setName(e.target.value);
+  };
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  const handleRole = (e) => {
+    setRole(e.target.value);
+  };
+  const handleTerms = () => {
+    setTerms(!terms);
+  };
+
+  const handleSignUp = async () => {
+    const data = { name: name, email: email, password: password, role: role };
+    await signUp(data);
+    navigate("/");
+  };
+
   return (
-    <div id='centerForm'>
-      <form id='signUpForm'>
+    <div id="centerForm">
+      <form id="signUpForm" onSubmit={(e) => e.preventDefault()}>
         <h2>Create your free account now!</h2>
-        <img className='signUpPic' src={signUpPic} />
-        <input className='nameInput' type="text" placeholder='Name'/>
-        <input className='emailInput' type="text" placeholder='Email'/>
-        <input className='passInput' type="password" placeholder='Password' />
-        <div className='pleaseStop'>        
-        <p className='letMeLive'><input type="radio" />
-        <label htmlFor="">I am a pet owner</label></p>
-        <p className='letMeLive2'><input type="radio" />
-        <label htmlFor="">I am a pet sitter</label></p></div>
-        <p className='leaveMeAlone'><input type="checkbox" />
-        <p className='formP'>I have read and agreed to the <a className='tspp' href=''>Terms of Service</a> and <a className='tspp' href=''>Privacy Policy</a>.</p></p>
-        <h4>Already have an account? <a className='login' href="">Log in!</a></h4>
+        <img className="signUpPic" src={signUpPic} />
+        <div className="userWholeInput">
+          <img src={userSignUp} className="userWholeInputImg" />
+          <input
+            id="nameInput"
+            type="text"
+            placeholder="Name"
+            onChange={handleName}
+          />
+        </div>
+        <div className="emailWholeInput">
+          <img src={emailSignUp} />
+          <input
+            id="emailInput"
+            type="text"
+            placeholder="Email"
+            onChange={handleEmail}
+          />
+        </div>
+        <div className="passwordWholeInput">
+          <img src={lockSignUp} />
+          <input
+            id="passInput"
+            type="password"
+            placeholder="Password"
+            onChange={handlePassword}
+          />
+        </div>
+        <div className="pleaseStop">
+          <div className="letMeLive">
+            <input
+              id="owner"
+              type="radio"
+              value="owner"
+              name="role"
+              onClick={handleRole}
+            />
+            <label htmlFor="owner">I am a pet owner</label>
+          </div>
+          <div className="letMeLive2">
+            <input
+              id="petsitter"
+              type="radio"
+              value="petsitter"
+              name="role"
+              onClick={handleRole}
+            />
+            <label htmlFor="petsitter">I am a pet sitter</label>
+          </div>
+        </div>
+        <div className="leaveMeAlone">
+          <input name="terms" type="checkbox" onClick={handleTerms} />
+          <p className="formP">
+            I have read and agreed to the{" "}
+            <a className="tspp" href="">
+              Terms of Service
+            </a>{" "}
+            and{" "}
+            <a className="tspp" href="">
+              Privacy Policy
+            </a>
+            .
+          </p>
+        </div>
+        <button onClick={handleSignUp}>Sign up</button>
+        <h4>
+          Already have an account?{" "}
+          <a className="login" href="">
+            Log in!
+          </a>
+        </h4>
       </form>
     </div>
   );
