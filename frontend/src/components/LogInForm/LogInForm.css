@@ -1,8 +1,8 @@
 #centerForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #logInForm {
@@ -23,25 +23,25 @@
 }
 
 .signUpPic {
-    width: 225px;
-    margin-bottom: 0.7rem;
+  width: 225px;
+  margin-bottom: 0.7rem;
 }
 
 .letMeLive {
-    background-color: transparent;
-    display: inline-block;
-    font-size: 16px;
+  background-color: transparent;
+  display: inline-block;
+  font-size: 16px;
 }
 
 .letMeLive2 {
-    background-color: transparent;
-    display: inline-block;
-    font-size: 16px;
+  background-color: transparent;
+  display: inline-block;
+  font-size: 16px;
 }
 
 .leaveMeAlone {
-    background-color: transparent;
-    display: inline-block;
+  background-color: transparent;
+  display: inline-block;
 }
 
 .formP {
@@ -62,16 +62,12 @@
 }
 
 .loginh2 {
-    color: var(--primaryTeal);
-}
-
-.loginh4 {
-
+  color: var(--primaryTeal);
 }
 
 h2 {
-    font-size: 32px;
-    margin-bottom: 2.1rem;
+  font-size: 32px;
+  margin-bottom: 2.1rem;
 }
 
 h4 {
@@ -79,28 +75,62 @@ h4 {
   font-weight: 400;
 }
 
-.nameInput, .emailInput, .passInput {
-    border-radius: 8px;
-    border: 1px solid #FFF;
-    background: #FFF;
-    width: 300px;
-    height: 25px;
-    padding: 8px 16px;
-    align-items: center;
-    margin-top: 1.5rem;
-    font-size: 16px;
+.nameInput,
+.emailInput,
+.passInput {
+  border-radius: 8px;
+  border: 1px solid #fff;
+  background: #fff;
+  width: 300px;
+  height: 25px;
+  padding: 8px 16px;
+  align-items: center;
+  margin-top: 1.5rem;
+  font-size: 16px;
+}
+
+.userWholeInput,
+.passwordWholeInput {
+  display: inline-flex;
+  justify-content: center;
+  align-items: last baseline;
+  gap: 5px;
 }
 
 .userWholeInputImg {
-  
+  display: inline-block;
+  padding-top: 5px;
 }
 
 .trouble {
-    background-color: transparent;
-    font-size: 16px;
-    margin-bottom: -0.5rem;
+  background-color: transparent;
+  font-size: 14px;
+  margin-bottom: -0.5rem;
+  margin-left: 15.6rem;
+  margin-top: -0.1rem;
 }
 
-.logInCat {
-    width: 25%;
+.troubleLink {
+  color: grey;
+}
+
+.logInDog {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -3.3rem;
+}
+
+.logInButton {
+  background-color: var(--primaryTeal);
+  color: white;
+  height: 42px;
+  width: 120px;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  align-self: center;
 }
