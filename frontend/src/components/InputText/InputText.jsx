@@ -1,9 +1,10 @@
-
-
-function Input() {
+import "./InputText.css"
+const InputText = () => {
   return (
-    <input type="text">Input</input>
-  )
-}
+    <>
+      <input type="text" />
+    </>
+  );
+};
 
-export default Input
+export default InputText;
