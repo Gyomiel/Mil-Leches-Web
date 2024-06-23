@@ -8,7 +8,7 @@ const checkAuth = (request, response, next) => {
 
   jwt.verify(
     request.headers.authorization,
-    process.env.SECRET,
+    "didiBorjaMarta",
     async (error, payload) => {
       if (error) {
         console.log(error.message);
@@ -30,6 +30,7 @@ const checkAuth = (request, response, next) => {
 
 const checkAdmin = (request, response, next) => {
   if (response.locals.user.role !== "admin") {
+    console.log("a");
     return response.status(403).json("Access restricted.");
   } else {
     next();

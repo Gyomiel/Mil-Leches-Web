@@ -246,7 +246,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-top:-20px;
+    margin-top:-50px;
     padding-left: 35px;
    }
 
@@ -301,4 +301,7 @@ margin-left:370px;
 }
 .aboutme{
   padding-top: 30px;
+}
+.servicestext{
+  font-size: 24px;
 }

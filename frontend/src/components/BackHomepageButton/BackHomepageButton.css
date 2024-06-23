@@ -1,0 +1,17 @@
+.buttonHomepage {
+    border-radius: 8px;
+background: #5BC0BE;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+border: 0;
+display: flex;
+width: 417px;
+height: 101px;
+padding: 0px 16px;
+justify-content: center;
+align-items: center;
+gap: 8px;
+color: white;
+font-size: 40px;
+font-weight: bolder;
+
+}
