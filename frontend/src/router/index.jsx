@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login";
 import Owner from "../components/Owner/Owner"
 import PetsitterProfile from "../components/PetsitterProfile/PetsitterProfile";
 import ProfilePetsitter from "../pages/ProfilePetsitter/ProfilePetsitter";
+import OwnerProfile from "../pages/OwnerProfile/OwnerProfile";
 
 
 const router = createBrowserRouter([
@@ -37,20 +38,24 @@ const router = createBrowserRouter([
         element: <SignUp />,
       },
       {
-        path: '/login',
-        element: <Login />
+        path: "/login",
+        element: <Login />,
       },
       {
-        path: '/OwnerProfile',
-        element: <Owner/>
+        path: "/OwnerProfile",
+        element: <Owner />,
       },
-    
+
       {
         path: "/ProfilePetsitter",
         element: <ProfilePetsitter />,
       },
+      {
+        path: "/ProfileOwner",
+        element: <OwnerProfile />,
+      },
     ],
-  }
+  },
 ]);
 
 export default router;

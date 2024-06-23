@@ -8,3 +8,9 @@
   align-items: center;
   gap: 16px;
 }
+
+.ownerName {
+  font-size: 40px;
+  color: white;
+  font-weight: bolder;
+}

@@ -2,8 +2,8 @@
 import iconHelp from "../../assets/Icons/helpIcon.svg";
 import iconMessages from "../../assets/Icons/messagesIcon.svg";
 import calendar from "../../assets/various/Calendar.png";
-import iconPlus from "../../assets/Icons/plusIcon.svg"
-import reviews from "../../assets/various/comments.svg"
+import iconPlus from "../../assets/Icons/plusIcon.svg";
+import reviews from "../../assets/various/comments.svg";
 //components
 import PetsitterProfile from "../../components/PetsitterProfile/PetsitterProfile";
 //CSS
