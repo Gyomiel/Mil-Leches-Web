@@ -13,4 +13,17 @@ const getProfile = async () => {
   }
 };
 
-export { getProfile };
+const updateProfile = async (body) => {
+  try {
+    const token = localStorage.getItem("token");
+
+    const response = await api.post("user/profile", body, {
+      headers: { authorization: token },
+    });
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+export { getProfile, updateProfile };
