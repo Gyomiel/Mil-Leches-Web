@@ -30,7 +30,6 @@ const checkAuth = (request, response, next) => {
 
 const checkAdmin = (request, response, next) => {
   if (response.locals.user.role !== "admin") {
-    console.log("a");
     return response.status(403).json("Access restricted.");
   } else {
     next();

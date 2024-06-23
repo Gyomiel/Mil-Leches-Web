@@ -61,7 +61,6 @@ const deleteUser = async (request, response) => {
 
 const getProfile = async (request, response) => {
   try {
-    console.log(response.locals);
     const user = await User.findOne({
       where: {
         id: response.locals.user.id,
@@ -73,6 +72,21 @@ const getProfile = async (request, response) => {
   }
 };
 
+const updateProfile = async (request, response) => {
+  try {
+    const user = await User.findOne({
+      where: {
+        id: response.locals.user.id,
+      },
+    });
+    await user.update(request.body);
+    await user.save();
+    return response.status(200).json(user);
+  } catch (error) {
+    return response.status(501).send(`Couldn't update user.`);
+  }
+};
+
 module.exports = {
   getAllUsers,
   getOneUser,
@@ -80,4 +94,5 @@ module.exports = {
   updateUser,
   deleteUser,
   getProfile,
+  updateProfile,
 };

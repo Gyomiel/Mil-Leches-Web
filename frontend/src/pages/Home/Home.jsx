@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <div className="mainHome">
         <div className="leftHome">
           <h2 className="titleHome">A vacation for your furry friends</h2>
@@ -37,7 +37,6 @@ const Home = () => {
           <img className="iconHouseHome" src={iconHouseGreen}></img>
           <h3 className="textHouseHome">House-sitting</h3>
         </div>
-
         <div className="boardingHome">
           <img className="iconBoardingHome" src={iconBoardingGreen}></img>
           <h3 className="textBoardingHome">Boarding</h3>
@@ -51,7 +50,7 @@ const Home = () => {
           <h3 className="textHairdresserHome">House-sitting</h3>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
