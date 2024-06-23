@@ -4,7 +4,7 @@ import userSignUp from "../../assets/userSignUp.png";
 import emailSignUp from "../../assets/emailSignUp.png";
 import lockSignUp from "../../assets/lockSignUp.png";
 import { signUp } from "../../services/auth";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SignUpForm = () => {
@@ -13,7 +13,12 @@ const SignUpForm = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
   const [terms, setTerms] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    checkForm();
+  }, [name, email, password, role, terms]);
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -31,10 +36,29 @@ const SignUpForm = () => {
   };
 
   const handleSignUp = async () => {
-    const data = { name: name, email: email, password: password, role: role };
-    const {token} = await signUp(data);
-    localStorage.setItem("token", token)
-    navigate("/");
+    if (isCompleted) {
+      const data = { name: name, email: email, password: password, role: role };
+      const { token } = await signUp(data);
+      localStorage.setItem("token", token);
+      localStorage.setItem("role", data.role);
+      data.role === "owner"
+        ? navigate("/ProfileOwner")
+        : navigate("/ProfilePetsitter");
+    }
+  };
+
+  const checkForm = () => {
+    if (
+      name.length === 0 ||
+      email.length === 0 ||
+      password.length === 0 ||
+      role.length === 0 ||
+      terms !== true
+    ) {
+      setIsCompleted(false);
+    } else {
+      setIsCompleted(true);
+    }
   };
 
   return (
@@ -105,7 +129,12 @@ const SignUpForm = () => {
             .
           </p>
         </div>
-        <button className="signUpButton" onClick={handleSignUp}>Sign up</button>
+        <button
+          className={isCompleted ? "signUpButton" : "disabledButton"}
+          onClick={handleSignUp}
+        >
+          Sign up
+        </button>
         <h4>
           Already have an account?{" "}
           <a className="login" href="">

@@ -20,60 +20,70 @@ import InputTextArea from "../InputTextArea/InputTextArea";
 //THINGYS
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getProfile } from "../../services/user";
+import { getProfile, updateProfile } from "../../services/user";
 
 function PetsitterProfile() {
-  const [picture, setPicture] = useState("")
+  const [picture, setPicture] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [location, setLocation] = useState("")
-  const [about, setAbout] = useState("")
-  const [housesitting, setHousesitting] = useState(false)
+  const [location, setLocation] = useState("");
+  const [about, setAbout] = useState("");
+  const [housesitting, setHousesitting] = useState(false);
   const [hairdresser, setHairdresser] = useState(false);
   const [boarding, setBoarding] = useState(false);
   const [walking, setWalking] = useState(false);
-  const navigate = useNavigate()
-  
-  useEffect (()=>{
-    const Profile = async()=>{
-      const data = await getProfile()
-      console.log(data)
-    }
-    Profile()
-  },[])
+  const [editName, setEditName] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const Profile = async () => {
+      const { data } = await getProfile();
+      setName(data.name);
+      setEmail(data.email);
+    };
+    Profile();
+  }, []);
 
   const handlePicture = (e) => {
     setPicture(e.target.value);
   };
   const handleName = (e) => {
-     setName(e.target.value);
-   };
+    setName(e.target.value);
+  };
   const handleEmail = (e) => {
-     setEmail(e.target.value);
-   };
-   const handlePassword= (e) => {
-     setPassword(e.target.value);
-   };
-   const handleLocation = (e) => {
-     setLocation(e.target.value);
-   };
-   const handleAbout = (e) => {
-     setAbout(e.target.value);
-   };
-   const handleHousesitting = (e) => {
-     setHousesitting(e.target.value);
-   };
-   const handleHairdresser = (e) => {
-     setHairdresser(e.target.value);
-   };
-   const handleBoarding = (e) => {
-     setBoarding(e.target.value);
-   };
-   const handleWalking = (e) => {
-     setWalking(e.target.value);
-   };
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  const handleLocation = (e) => {
+    setLocation(e.target.value);
+  };
+  const handleAbout = (e) => {
+    setAbout(e.target.value);
+  };
+  const handleHousesitting = (e) => {
+    setHousesitting(e.target.value);
+  };
+  const handleHairdresser = (e) => {
+    setHairdresser(e.target.value);
+  };
+  const handleBoarding = (e) => {
+    setBoarding(e.target.value);
+  };
+  const handleWalking = (e) => {
+    setWalking(e.target.value);
+  };
+  const handleEditName = () => {
+    setEditName(!editName);
+  };
 
+  const handleChanges = async () => {
+    const data = { name: name, email: email, password: password };
+    await updateProfile(data);
+    console.log("a");
+  };
   return (
     <div className="mainContainer">
       <div className="container">
@@ -84,13 +94,21 @@ function PetsitterProfile() {
             <img className="profileIcon" src={iconProfile}></img>{" "}
           </section>
           <div className="nameTitle">
-            <h1 className="name">Marcus</h1>
-            <img className="editIcon" src={iconEdit}></img>
+            {editName ? (
+              <InputText patata={name} onFunc={handleName} />
+            ) : (
+              <h1 className="name">{name}</h1>
+            )}
+            <img
+              className="editIcon"
+              src={iconEdit}
+              onClick={handleEditName}
+            ></img>
           </div>
           <section className="fillData">
             <div className="emailBox">
               <h3 className="box1">Email</h3>
-              <InputText placeholder="name@domain.com" />
+              <InputText patata={email} />
               <img className="editIcon" src={iconEdit}></img>
             </div>
             <div className="password">
@@ -108,7 +126,9 @@ function PetsitterProfile() {
         <section className="boxRight">
           <div className="area1">
             <h1 className="tittleprofile">My profile</h1>
-            <button className="save">Save changes</button>
+            <button className="save" onClick={handleChanges}>
+              Save changes
+            </button>
             <h2 className="aboutme">About me</h2>
             <div>
               <InputTextArea className="textArea" />
