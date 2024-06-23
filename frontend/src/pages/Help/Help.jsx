@@ -1,6 +1,10 @@
+import HelpLayout from "../../components/Help/HelpLayout"
+
 const Help = () => {
   return (
-    <div></div>
+    <div>
+      <HelpLayout />
+    </div>
   )
 }
 

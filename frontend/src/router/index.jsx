@@ -7,15 +7,17 @@ import Help from "../pages/Help/Help";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
 import Owner from "../components/Owner/Owner"
-import PetsitterProfile from "../components/PetsitterProfile/PetsitterProfile";
 import ProfilePetsitter from "../pages/ProfilePetsitter/ProfilePetsitter";
 import OwnerProfile from "../pages/OwnerProfile/OwnerProfile";
+import NotFound from "../pages/NotFound/NotFound";
+
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",
