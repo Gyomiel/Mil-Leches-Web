@@ -5,7 +5,7 @@ import emailSignUp from "../../assets/emailSignUp.png";
 import lockSignUp from "../../assets/lockSignUp.png";
 import { signUp } from "../../services/auth";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUpForm = () => {
   const [name, setName] = useState("");
@@ -137,9 +137,9 @@ const SignUpForm = () => {
         </button>
         <h4>
           Already have an account?{" "}
-          <a className="login" href="">
+          <Link to='/login'><a className="login" href="">
             Log in!
-          </a>
+          </a></Link>
         </h4>
       </form>
     </div>

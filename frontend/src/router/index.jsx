@@ -9,10 +9,10 @@ import Login from "../pages/Login/Login";
 import ProfilePetsitter from "../pages/ProfilePetsitter/ProfilePetsitter";
 import OwnerProfile from "../pages/OwnerProfile/OwnerProfile";
 import NotFound from "../pages/NotFound/NotFound";
-const role = localStorage.getItem("role");
-const token = localStorage.getItem("token");
 
 const ownerRoute = () => {
+  const role = localStorage.getItem("role");
+const token = localStorage.getItem("token");
   if (!token || role !== "owner") {
     return redirect("/");
   } else {
@@ -21,6 +21,8 @@ const ownerRoute = () => {
 };
 
 const petSitterRoute = () => {
+  const role = localStorage.getItem("role");
+const token = localStorage.getItem("token");
   if (!token || role !== "petsitter") {
     return redirect("/");
   } else {

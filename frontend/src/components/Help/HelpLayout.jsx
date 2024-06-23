@@ -7,7 +7,7 @@ const HelpLayout = () => {
   return (
     <div>
       <section id='services-box'>
-        <h1 className='servHeader'>FIND YOUR PERFECT PET SITTER ON <span>MIL LECHES</span></h1>
+        <h1 className='servHeader'>Find your perfect pet sitter on <span className='mlSpan'>Mil Leches</span></h1>
           <div className='servicesCards'>
             <div className='findSitter'>
               <img src={searchHelp} />
