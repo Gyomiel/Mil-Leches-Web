@@ -108,3 +108,7 @@ h4 {
   border-radius: 50px;
   align-self: center;
 }
+
+.disabledButton:hover {
+  cursor: not-allowed;
+}
