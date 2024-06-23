@@ -6,15 +6,19 @@ body {
 /*Pet sitter profile profile to edit*/
 .container {
   display: grid;
-  grid-template-areas:
-    "profile textArea";
-    
+  grid-template-areas: "profile textArea";
+
   height: 700px;
   width: 1050px;
   margin-top: 40px;
   margin-left: 60px;
   border-radius: 48px;
-  background: linear-gradient(0deg, rgba(91, 192, 190, 0.82) 0%, rgba(91, 192, 190, 0.82) 100%), #B5DBFF;
+  background: linear-gradient(
+      0deg,
+      rgba(91, 192, 190, 0.82) 0%,
+      rgba(91, 192, 190, 0.82) 100%
+    ),
+    #b5dbff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .izqBox {
@@ -34,24 +38,21 @@ body {
   display: inline-block;
 }
 .profileIcon {
-
   height: 20.1px;
   width: 23.1px;
-  
 }
 .uploadPic {
-  margin-top:-1px;
+  margin-top: -1px;
   font-size: 18px;
   font-weight: 600;
 }
 .editProfile {
-  width:150px;
+  width: 150px;
   display: flex;
   flex-direction: row;
   margin-left: 230px;
   margin-top: 5px;
   justify-content: space-evenly;
-  
 }
 .profilePic {
   height: 220px;
@@ -59,18 +60,15 @@ body {
   border-radius: 38px;
   margin-top: 55px;
   margin-left: 80px;
-  
 }
 
 .name {
-  display:inline-block;
+  display: inline-block;
   font-weight: bolder;
   color: white;
   font-size: 40px;
   margin-top: 20px;
   padding-bottom: 10px;
-
-  
 }
 
 .fillData {
@@ -79,186 +77,179 @@ body {
   margin-left: 60px;
   margin-top: -50px;
   align-content: flex-start;
- 
 }
- .box1, .box2, .box3 {
+.box1,
+.box2,
+.box3 {
   height: 20px;
   font-size: 22px;
- }
+}
 
- .nameTitle {
+.nameTitle {
   margin-top: -50px;
   margin-left: 60px;
- }
+  margin-bottom: 200px;
+}
 
- .boxRight {
+.boxRight {
   grid-area: textArea;
- }
- .tittleprofile {
+}
+.tittleprofile {
   font-size: 45px;
   text-align: left;
   color: white;
- }
- 
- .textArea {
+}
+
+.textArea {
   display: inline-block;
- }
- .aboutme {
+}
+.aboutme {
   font-size: 22px;
   margin-top: -20px;
- }
+}
 
- .area1 {
+.area1 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
- }
-  .housesitting {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 17px;
-    
-    
-  }
-   .texthouseavg{
-    margin-top: 30px;
-  
-   }
-  .iconHouse{
-    display: inline;
-    width: 50px;
+}
+.housesitting {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 17px;
+}
+.texthouseavg {
+  margin-top: 30px;
+}
+.iconHouse {
+  display: inline;
+  width: 50px;
+}
+.housetitle {
+  display: inline;
+  margin-left: 13px;
+  font-size: 20px;
 
-  }
-  .housetitle{
-    display: inline;
-    margin-left:13px;
-    font-size: 20px;
-   
-    margin-right: 20px;
-    
-    
-  }
-  .Avgh {
-    margin-top: 0px;
-    margin-left: 14px;
-    color: white;
-  }
+  margin-right: 20px;
+}
+.Avgh {
+  margin-top: 0px;
+  margin-left: 14px;
+  color: white;
+}
 
-  .checkbox {
-    fill: var(--Shade-01, #FFF);
+.checkbox {
+  fill: var(--Shade-01, #fff);
   stroke-width: 1px;
-  stroke: #FFF;
+  stroke: #fff;
   width: 18px;
-  }
+}
 
-   .checkbox1 {
-    fill: var(--Shade-01, #FFF);
+.checkbox1 {
+  fill: var(--Shade-01, #fff);
   stroke-width: 1px;
-  stroke: #FFF;
+  stroke: #fff;
   width: 18px;
-  margin-top:35px;
-  margin-left:-15px;
-   }
+  margin-top: 35px;
+  margin-left: -15px;
+}
 
-  .boarding {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 17px;
-    margin-top: 30px;
-    margin-left: 60px;
-    
-  }
-    .Avgb {
-    margin-top: 0px;
-    margin-left: 14px;
-    color: white;
-    padding-right: 20px;
-  }
-   .boardingtitle{
-    display: inline;
-    margin-left:13px;
-    font-size: 20px;
-   
-    margin-right: 20px;
-   }
+.boarding {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 17px;
+  margin-top: 30px;
+  margin-left: 60px;
+}
+.Avgb {
+  margin-top: 0px;
+  margin-left: 14px;
+  color: white;
+  padding-right: 20px;
+}
+.boardingtitle {
+  display: inline;
+  margin-left: 13px;
+  font-size: 20px;
 
-   .iconBoarding{
-    display: inline;
-    width: 40px;
-    margin-top: -30px;
-   }
-   
-   .hairdresser {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 17px;
-    
-  }
-    .Avgh {
-    margin-top: 0px;
-    margin-left: 14px;
-    color: white;
-    padding-right: 70px;
-  }
-   .hairdressertitle{
-    display: inline;
-    margin-left:13px;
-    font-size: 20px;
-   
-    margin-right: 20px;
-   }
-   .iconHairdresser{
-    display: inline;
-    width: 45px;
-    margin-top: -30px;
-   }
-   .walking {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 17px;
-    margin-left: 55px;
-    
-  }
-    .Avgw {
-    margin-top: 0px;
-    margin-left: 14px;
-    color: white;
-    margin-right: 30px;
-  }
-   .walkingtitle{
-    display: inline;
-    margin-left:13px;
-    font-size: 20px;
-   
-    margin-right: 20px;
-   }
-   .iconWalking{
-    display: inline;
-    width: 45px;
-    margin-top: -30px;
-   }
-   
-   .services {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top:-50px;
-    padding-left: 35px;
-   }
+  margin-right: 20px;
+}
 
-   /*Tips area*/
-   
-   .tips {
-    position:relative;
-     z-index:-999;
-    width: 950px;
-    height: 250px;
-    border-radius: 48px;
-  background: linear-gradient(0deg, #E7E7E7 0%, #E7E7E7 100%), #B5DBFF;
+.iconBoarding {
+  display: inline;
+  width: 40px;
+  margin-top: -30px;
+}
+
+.hairdresser {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 17px;
+}
+.Avgh {
+  margin-top: 0px;
+  margin-left: 14px;
+  color: white;
+  padding-right: 70px;
+}
+.hairdressertitle {
+  display: inline;
+  margin-left: 13px;
+  font-size: 20px;
+
+  margin-right: 20px;
+}
+.iconHairdresser {
+  display: inline;
+  width: 45px;
+  margin-top: -30px;
+}
+.walking {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 17px;
+  margin-left: 55px;
+}
+.Avgw {
+  margin-top: 0px;
+  margin-left: 14px;
+  color: white;
+  margin-right: 30px;
+}
+.walkingtitle {
+  display: inline;
+  margin-left: 13px;
+  font-size: 20px;
+
+  margin-right: 20px;
+}
+.iconWalking {
+  display: inline;
+  width: 45px;
+  margin-top: -30px;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: -50px;
+  padding-left: 35px;
+}
+
+/*Tips area*/
+
+.tips {
+  position: relative;
+  z-index: -999;
+  width: 950px;
+  height: 250px;
+  border-radius: 48px;
+  background: linear-gradient(0deg, #e7e7e7 0%, #e7e7e7 100%), #b5dbff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-left: 105px;
   margin-top: -30px;
@@ -269,7 +260,7 @@ body {
   padding-right: 10px;
   display: inline-block;
 }
-.tipstitle{
+.tipstitle {
   display: inline-block;
   font-size: 24px;
 }
@@ -278,30 +269,30 @@ ul {
   font-size: 21px;
   font-weight: light;
   margin-top: -15px;
-  margin-left:50px;
+  margin-left: 50px;
   line-height: 33px;
 }
 
-.save{
-display: inline-block;
+.save {
+  display: inline-block;
   border-radius: 8px;
-background: #608EE9;
-color: white;
+  background: #608ee9;
+  color: white;
   border: 0px;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-width: 150px;
-height: 40px;
-font-weight: bold;
-font-size: 18px;
-margin-top: -60px;
-margin-left:370px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 150px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: -60px;
+  margin-left: 370px;
 }
-.tittleprofile{
+.tittleprofile {
   display: inline-block;
 }
-.aboutme{
+.aboutme {
   padding-top: 30px;
 }
-.servicestext{
+.servicestext {
   font-size: 24px;
 }
