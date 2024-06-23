@@ -8,7 +8,9 @@ import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
 import Owner from "../components/Owner/Owner"
 import ProfilePetsitter from "../pages/ProfilePetsitter/ProfilePetsitter";
+import OwnerProfile from "../pages/OwnerProfile/OwnerProfile";
 import NotFound from "../pages/NotFound/NotFound";
+
 
 
 const router = createBrowserRouter([
@@ -38,20 +40,24 @@ const router = createBrowserRouter([
         element: <SignUp />,
       },
       {
-        path: '/login',
-        element: <Login />
+        path: "/login",
+        element: <Login />,
       },
       {
-        path: '/OwnerProfile',
-        element: <Owner/>
+        path: "/OwnerProfile",
+        element: <Owner />,
       },
-    
+
       {
         path: "/ProfilePetsitter",
         element: <ProfilePetsitter />,
       },
+      {
+        path: "/ProfileOwner",
+        element: <OwnerProfile />,
+      },
     ],
-  }
+  },
 ]);
 
 export default router;

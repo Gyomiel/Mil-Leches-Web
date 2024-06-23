@@ -1,9 +1,7 @@
-
+import "./InputPassword.css";
 
 function InputPassword() {
-  return (
-    <input type="password" />
-  )
+  return <input className="inputTypePass" type="password" />;
 }
 
-export default InputPassword
+export default InputPassword;

@@ -22,6 +22,7 @@ const LogInForm = () => {
       password: password,
     };
     const { token } = await logIn(data);
+    console.log(token);
     localStorage.setItem("token", token);
     navigate("/");
   };

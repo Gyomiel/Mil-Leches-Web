@@ -9,7 +9,6 @@ import iconHairdresser from "../../assets/Icons/HairdresserIconBlue.svg";
 import iconWalking from "../../assets/Icons/PawIconBlue.svg";
 import iconBulb from "../../assets/Icons/iconBulb.svg";
 
-
 //CSS
 import "./PetsitterProfile.css";
 
@@ -18,7 +17,63 @@ import InputText from "../InputText/InputText";
 import InputPassword from "../InputPassword/InputPassword";
 import InputTextArea from "../InputTextArea/InputTextArea";
 
+//THINGYS
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { getProfile } from "../../services/user";
+
 function PetsitterProfile() {
+  const [picture, setPicture] = useState("")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [location, setLocation] = useState("")
+  const [about, setAbout] = useState("")
+  const [housesitting, setHousesitting] = useState(false)
+  const [hairdresser, setHairdresser] = useState(false);
+  const [boarding, setBoarding] = useState(false);
+  const [walking, setWalking] = useState(false);
+  const navigate = useNavigate()
+  
+  useEffect (()=>{
+    const Profile = async()=>{
+      const data = await getProfile()
+      console.log(data)
+    }
+    Profile()
+  },[])
+
+  const handlePicture = (e) => {
+    setPicture(e.target.value);
+  };
+  const handleName = (e) => {
+     setName(e.target.value);
+   };
+  const handleEmail = (e) => {
+     setEmail(e.target.value);
+   };
+   const handlePassword= (e) => {
+     setPassword(e.target.value);
+   };
+   const handleLocation = (e) => {
+     setLocation(e.target.value);
+   };
+   const handleAbout = (e) => {
+     setAbout(e.target.value);
+   };
+   const handleHousesitting = (e) => {
+     setHousesitting(e.target.value);
+   };
+   const handleHairdresser = (e) => {
+     setHairdresser(e.target.value);
+   };
+   const handleBoarding = (e) => {
+     setBoarding(e.target.value);
+   };
+   const handleWalking = (e) => {
+     setWalking(e.target.value);
+   };
+
   return (
     <div className="mainContainer">
       <div className="container">
@@ -60,7 +115,7 @@ function PetsitterProfile() {
               <img className="editIcon" src={iconEdit}></img>
             </div>
           </div>
-          <h2>Services I offer</h2>
+          <h2 className="servicestext">Services I offer</h2>
 
           <div className="services">
             <div className="housesitting">

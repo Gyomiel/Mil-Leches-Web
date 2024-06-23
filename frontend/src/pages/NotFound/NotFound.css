@@ -1,0 +1,46 @@
+.mainContainerError {
+  width: 1790px;
+  height: 900px;
+  margin-left: 60px;
+  margin-top: 60px;
+  border-radius: 48px;
+  background: #e7e7e7;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.greyContainer {
+  display: flex;
+  flex-direction: row;
+}
+.cuatro {
+  font-size: 300px;
+  color: #608ee9;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 160px;
+}
+
+.errorMessage {
+  margin-top: -200px;
+  font-size: 50px;
+  font-weight: 500;
+  width: 1100px;
+  text-align: center;
+  margin-left: 70px;
+}
+
+.chat {
+  width: 350px;
+  margin-top: 150px;
+  margin-left: -90px;
+}
+
+.perreteNotFound {
+  width: 600px;
+  margin-top: -290px;
+}
+
+.buttonError {
+  margin-top: -200px;
+  margin-left: 400px;
+}
