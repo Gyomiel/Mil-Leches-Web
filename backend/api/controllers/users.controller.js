@@ -1,4 +1,5 @@
 const User = require("../models/users.model");
+const Services = require("../models/services.model");
 
 const getAllUsers = async (request, response) => {
   try {
@@ -87,6 +88,22 @@ const updateProfile = async (request, response) => {
   }
 };
 
+const addServiceToUser = async (request, response) => {
+  try {
+    const user = await User.findOne({
+      where: {
+        id: response.locals.user.id,
+      },
+    });
+    const service = await Services.findByPk(request.body.serviceId);
+
+    await user.addService(service);
+    return response.status(200).json(user);
+  } catch (error) {
+    return response.status(501).send(`Couldn't update user.`);
+  }
+};
+
 module.exports = {
   getAllUsers,
   getOneUser,
@@ -95,4 +112,5 @@ module.exports = {
   deleteUser,
   getProfile,
   updateProfile,
+  addServiceToUser,
 };

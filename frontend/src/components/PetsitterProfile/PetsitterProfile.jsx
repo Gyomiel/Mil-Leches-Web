@@ -18,7 +18,7 @@ import InputPassword from "../InputPassword/InputPassword";
 import InputTextArea from "../InputTextArea/InputTextArea";
 
 //THINGYS
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { getProfile, updateProfile } from "../../services/user";
 
@@ -36,6 +36,11 @@ function PetsitterProfile() {
   const [editName, setEditName] = useState(false);
   const navigate = useNavigate();
 
+  const handleChanges = useCallback(async () => {
+    const data = { name: name, email: email, password: password };
+    await updateProfile(data);
+  }, [email, name, password]);
+
   useEffect(() => {
     const Profile = async () => {
       const { data } = await getProfile();
@@ -43,7 +48,7 @@ function PetsitterProfile() {
       setEmail(data.email);
     };
     Profile();
-  }, []);
+  }, [handleChanges]);
 
   const handlePicture = (e) => {
     setPicture(e.target.value);
@@ -79,11 +84,6 @@ function PetsitterProfile() {
     setEditName(!editName);
   };
 
-  const handleChanges = async () => {
-    const data = { name: name, email: email, password: password };
-    await updateProfile(data);
-    console.log("a");
-  };
   return (
     <div className="mainContainer">
       <div className="container">
@@ -144,7 +144,12 @@ function PetsitterProfile() {
                 <h3 className="housetitle">House-sitting</h3>
                 <h5 className="Avgh">Avg. 20€ Night</h5>
               </div>
-              <input className="checkbox1" type="checkbox"></input>
+              <input
+                className="checkbox1"
+                type="checkbox"
+                value="patata"
+                onClick={handleHousesitting}
+              ></input>
             </div>
             <div className="boarding">
               <img className="iconBoarding" src={iconBoarding}></img>

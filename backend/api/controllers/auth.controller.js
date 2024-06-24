@@ -17,11 +17,7 @@ const signUp = async (request, response) => {
     }
     const salt = bcrypt.genSaltSync(parseInt("10"));
     request.body.password = bcrypt.hashSync(request.body.password, salt);
-    const user = await User.create({
-      email: request.body.email,
-      password: request.body.password,
-      name: request.body.name,
-    });
+    const user = await User.create(request.body);
     const payload = { email: request.body.email };
     const token = jwt.sign(payload, "didiBorjaMarta", { expiresIn: "1h" });
     return response.status(200).json({ token });

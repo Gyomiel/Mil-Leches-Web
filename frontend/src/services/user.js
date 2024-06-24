@@ -26,4 +26,17 @@ const updateProfile = async (body) => {
   }
 };
 
-export { getProfile, updateProfile };
+const addService = async (body) => {
+  try {
+    const token = localStorage.getItem("token");
+
+    const response = await api.post("user/user/service", body, {
+      headers: { authorization: token },
+    });
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+export { getProfile, updateProfile, addService };
