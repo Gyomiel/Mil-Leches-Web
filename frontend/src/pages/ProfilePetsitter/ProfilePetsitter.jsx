@@ -3,7 +3,8 @@ import iconHelp from "../../assets/Icons/helpIcon.svg";
 import iconMessages from "../../assets/Icons/messagesIcon.svg";
 import calendar from "../../assets/various/Calendar.png";
 import iconPlus from "../../assets/Icons/plusIcon.svg";
-import reviews from "../../assets/various/comments.svg";
+import review1 from "../../assets/various/review1.svg";
+import review2 from "../../assets/various/review2.svg";
 //components
 import PetsitterProfile from "../../components/PetsitterProfile/PetsitterProfile";
 //CSS
@@ -17,25 +18,25 @@ const ProfilePetsitter = () => {
         <div className="messagesHelp">
           <div className="msg">
             <img className="iconMessages" src={iconMessages}></img>
-            <h2 className="messages">My messages</h2>
+            <button className="messages">My messages</button>
           </div>
           <div className="sos">
             <img className="iconHelp" src={iconHelp}></img>
-            <h2 className="help">Need help?</h2>
+            <button className="help">Need help?</button>
           </div>
         </div>
         <div className="calendarAndBookings">
           <img className="calendar" src={calendar}></img>
           <div className="bookingsection">
             <div className="futureBookings">
-              <h2>My future bookings</h2>
+              <h2 className="myFutureB">My future bookings</h2>
               <button className="futureBooking1">
                 03/07/2024 - 05/07/2024
               </button>
               <img className="plus1" src={iconPlus}></img>
             </div>
             <div className="pastBookings">
-              <h2>Past bookings</h2>
+              <h2 className="myPastB">Past bookings</h2>
               <button className="pastBooking1">12/06/2024 - 13/06/2024</button>
               <br></br>
               <br></br>
@@ -45,7 +46,9 @@ const ProfilePetsitter = () => {
           </div>
         </div>
         <div className="reviews">
-          <img className="reviewsPic" src={reviews}></img>
+          <h2 className="reviewTitle">My reviews from owners</h2>
+          <img className="reviewsPic1" src={review1}></img>
+          <img className="reviewsPic2" src={review2}></img>
         </div>
       </section>
     </section>

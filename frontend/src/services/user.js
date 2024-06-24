@@ -16,7 +16,7 @@ const getProfile = async () => {
 const updateProfile = async (body) => {
   try {
     const token = localStorage.getItem("token");
-
+console.log(body)
     const response = await api.post("user/profile", body, {
       headers: { authorization: token },
     });

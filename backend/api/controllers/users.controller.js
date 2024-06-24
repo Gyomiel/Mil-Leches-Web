@@ -1,4 +1,5 @@
 const User = require("../models/users.model");
+const bcrypt = require("bcrypt");
 
 const getAllUsers = async (request, response) => {
   try {
@@ -33,6 +34,7 @@ const createUser = async (request, response) => {
 
 const updateUser = async (request, response) => {
   try {
+    console.log(response.locals.user);
     const user = await User.findByPk(request.params.id);
     await user.update(request.body);
     await user.save();
@@ -74,12 +76,23 @@ const getProfile = async (request, response) => {
 
 const updateProfile = async (request, response) => {
   try {
+    console.log(response.locals.user.id);
     const user = await User.findOne({
       where: {
         id: response.locals.user.id,
       },
     });
-    await user.update(request.body);
+    let obj = { ...request.body };
+    for (const key in obj) {
+      if (obj[key] === null || obj[key] === undefined || obj[key] === "") {
+        delete obj[key];
+      }
+    }
+    if (obj.password) {
+      const salt = bcrypt.genSaltSync(parseInt("10"));
+      obj.password = bcrypt.hashSync(obj.password, salt);
+    }
+    await user.update(obj);
     await user.save();
     return response.status(200).json(user);
   } catch (error) {

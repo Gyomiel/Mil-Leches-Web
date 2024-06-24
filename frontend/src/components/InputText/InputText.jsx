@@ -1,11 +1,11 @@
 import "./InputText.css";
-const InputText = ({ patata, onFunc }) => {
+const InputText = ({ value, onFunc }) => {
   return (
     <>
       <input
         className="inputTypeText"
         type="text"
-        placeholder={patata}
+        placeholder={value}
         onChange={onFunc}
       />
     </>
