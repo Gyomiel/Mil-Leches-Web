@@ -6,6 +6,12 @@ import iconEdit from "../../assets/Icons/EditIcon.svg";
 import iconHelp from "../../assets/Icons/helpIcon.svg";
 import iconMessages from "../../assets/Icons/messagesIcon.svg";
 import iconPlus from "../../assets/Icons/plusIcon.svg";
+import iconHouseBlue from "../../assets/Icons/HouseIconBlue.svg"
+import iconBoardingBlue from "../../assets/Icons/iconBoarding.svg"
+import iconWalkingBlue from "../../assets/Icons/PawIconBlue.svg";
+import iconHairdresserBlue from "../../assets/Icons/HairdresserIconBlue.svg";
+import islands from "../../assets/various/islasmenosGran.svg"
+import gC from "../../assets/various/GranCanaria.svg";
 
 import InputText from "../../components/InputText/InputText";
 import InputPassword from "../../components/InputPassword/InputPassword";
@@ -88,21 +94,71 @@ const OwnerProfile = () => {
               <h2 className="help">Need help?</h2>
             </div>
           </div>
-          <div className="bookingsection">
-            <div className="futureBookings">
-              <h2>My future bookings</h2>
-              <button className="futureBooking1">
-                03/07/2024 - 05/07/2024
-              </button>
-              <img className="plus1" src={iconPlus}></img>
+          <div className="findPetSitterSection">
+            <div className="findPetSitterContainer">
+              <h2 className="lookingFor">I am looking for</h2>
+              <div className="servicesO">
+                <div className="housesittingO">
+                  <img className="iconHouseO" src={iconHouseBlue}></img>
+                  <div className="texthouseavgO">
+                    <h3 className="housetitleO">House-sitting</h3>
+                    <h5 className="AvghO">Avg. 20€ Night</h5>
+                  </div>
+                  <input className="checkbox1O" type="checkbox"></input>
+                </div>
+                <div className="boardingO">
+                  <img className="iconBoardingO" src={iconBoardingBlue}></img>
+                  <div className="textboardingavgO">
+                    <h3 className="boardingtitleO">Boarding</h3>
+                    <h5 className="AvgbO">Avg. 20€ Night</h5>
+                  </div>
+                  <input className="checkboxO" type="checkbox"></input>
+                </div>
+                <div className="hairdresserO">
+                  <img
+                    className="iconHairdresserO"
+                    src={iconHairdresserBlue}
+                  ></img>
+                  <div className="texthairdresseravgO">
+                    <h3 className="hairdressertitleO">Hairdresser</h3>
+                    <h5 className="AvghO">Avg. 9€ Hour</h5>
+                  </div>
+                  <input className="checkboxO" type="checkbox"></input>
+                  <div className="walkingO">
+                    <img className="iconWalkingO" src={iconWalkingBlue}></img>
+                    <div className="textwalkingavgO">
+                      <h3 className="walkingtitleO">Walking</h3>
+                      <h5 className="AvgwO">Avg. 9€ Hour</h5>
+                    </div>
+                    <input className="checkboxO" type="checkbox"></input>
+                  </div>
+                </div>
+              </div>
+              <h2 className="selectIsland">Select your island</h2>
+              <img className="islandsO" src={islands}></img>
+              <img className="gC" src={gC}></img>
+              <h2 className="findIt">Find me a pett sitter</h2>
             </div>
-            <div className="pastBookings">
-              <h2>Past bookings</h2>
-              <button className="pastBooking1">12/06/2024 - 13/06/2024</button>
-              <br></br>
-              <br></br>
-              <button className="pastBooking2">01/04/2024 - 01/04/2024</button>
-              <img className="plus2" src={iconPlus}></img>
+            <div className="bookingsectionO">
+              <div className="futureBookingsO">
+                <h2 className="pastBookO">My future bookings</h2>
+                <button className="futureBooking1O">
+                  03/07/2024 - 05/07/2024
+                </button>
+                <img className="plus1O" src={iconPlus}></img>
+              </div>
+              <div className="pastBookingsO">
+                <h2 className="pastBookO">Past bookings</h2>
+                <button className="pastBookingO1">
+                  12/06/2024 - 13/06/2024
+                </button>
+                <br></br>
+                <br></br>
+                <button className="pastBookingO2">
+                  01/04/2024 - 01/04/2024
+                </button>
+                <img className="plus2O" src={iconPlus}></img>
+              </div>
             </div>
           </div>
         </section>
