@@ -15,16 +15,30 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-left: 60px;
+  padding-left: 90px;
   margin-top: 60px;
 }
 .iconMessages {
   width: 60px;
   display: inline;
 }
+.messages:hover {
+  font-size: 34px;
+}
+
 .messages {
   display: inline;
   padding-left: 20px;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 33px;
+  font-weight: bolder;
+  margin-left: 15px;
 }
 
 .iconHelp {
@@ -34,6 +48,21 @@
 .help {
   display: inline;
   padding-left: 20px;
+  display: inline;
+  padding-left: 20px;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 33px;
+  font-weight: bolder;
+  margin-left: 15px;
+}
+.help:hover {
+  font-size: 34px;
 }
 .sos {
   margin-left: 100px;
@@ -54,6 +83,11 @@
   font-weight: bolder;
   font-size: 20px;
 }
+.futureBooking1:hover {
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
 .pastBooking1 {
   position: relative;
   width: 280px;
@@ -70,6 +104,11 @@
   border: 0px;
   font-weight: bolder;
   font-size: 20px;
+}
+
+.pastBooking1:hover {
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .pastBooking2 {
@@ -89,19 +128,26 @@
   font-weight: bolder;
   font-size: 20px;
 }
+.pastBooking2:hover {
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
 .bookingsection {
   display: flex;
   flex-direction: column;
+  margin-left: 60px;
 }
 .calendarAndBookings {
   display: flex;
-  justify-content: space-between;
-  margin-left: 0px;
+
+  margin-left: 20px;
   margin-top: 80px;
 }
 .calendar {
   height: 300px;
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-left: 30px;
 }
 
 .plus1 {
@@ -123,12 +169,44 @@
 }
 
 .reviews {
-  margin-top: 50px;
+  margin-top: 0px;
+  margin-left: 60px;
 }
 
-.futureBookO{
+.futureBookO {
   font-size: 26px;
 }
-.pastBookO{
+.pastBookO {
   font-size: 26px;
+}
+.myFutureB {
+  font-size: 27px;
+}
+
+.myPastB {
+  font-size: 27px;
+}
+.allright {
+  display: flex;
+  flex-direction: column;
+}
+.reviewsPic1 {
+  width: 720px;
+  margin-top: -10px;
+}
+.reviewsPic2 {
+  width: 720px;
+  margin-top: -30px;
+}
+.reviewTitle {
+  font-size: 27px;
+}
+
+.reviewsPic2:hover {
+  width: 770px;
+  margin-left: -20px;
+}
+.reviewsPic1:hover {
+  width: 770px;
+  margin-left: -20px;
 }
