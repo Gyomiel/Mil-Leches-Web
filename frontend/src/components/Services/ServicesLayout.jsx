@@ -1,47 +1,41 @@
 import "./ServicesLayout.css";
-import houseService from "../../assets/houseService.png";
-import boardingService from "../../assets/boardingService.png";
-import walkingService from "../../assets/walkingService.png";
-import groomingService from "../../assets/groomingService.png";
+import iconBoardingGreen from "../../assets/Icons/iconBoardingGreen.svg";
+import iconHairdresserGreen from "../../assets/Icons/iconHairdresserGreen.svg";
+import iconWalkingGreen from "../../assets/Icons/iconWalkingGreen.svg";
+import iconHouseGreen from "../../assets/Icons/iconHouseGreen.svg";
 
 const ServicesLayout = () => {
   return (
     <div>
       <section id="services-box">
-        <h1 className="servHeader">WHAT DO OUR PET SITTERS OFFER?</h1>
+        <h1 className="servHeader">What do our pet sitters offer?</h1>
         <div className="servicesCards">
           <div className="houseSitting">
-            <img src={houseService} />
-            <h3 className="hSHeader">HOUSE SITTING</h3>
+            <img className="imgIcon1" src={iconHouseGreen} />
+            <h3 className="hSHeader">House sitting</h3>
             <p className="servDesc">
-              Our sitters care for both your pets and your home, ensuring your
-              pets receive all the love and attention they need while staying in
-              their familiar, comfortable environment.
+            Our sitters care for both your pets and home, ensuring your pets receive all the love and attention they need while staying in their familiar, comfortable environment.
             </p>
           </div>
           <div className="boardingS">
-            <img src={boardingService} />
-            <h3 className="hSHeader">BOARDING</h3>
+            <img className="imgIcon1" src={iconBoardingGreen} />
+            <h3 className="hSHeader">Boarding</h3>
             <p className="servDesc">
-              Your pets will stay overnight at the home of the sitter of your
-              choice, where they will be treated like family in a cozy and
-              inviting setting.
+            Your pets will stay overnight at the home of the sitter of your choice, where they will be treated like family in a cozy and inviting setting.
             </p>
           </div>
           <div className="dogWalking">
-            <img src={walkingService} />
-            <h3 className="hSHeader">DOG WALKING</h3>
+            <img className="imgIcon2" src={iconWalkingGreen} />
+            <h3 className="hSHeader">Dog walking</h3>
             <p className="servDesc">
-              Your dog will enjoy a walk around your neighborhood, perfect for
-              busy days and for dogs with lots of energy to burn.
+            Your dog will enjoy a walk around your neighborhood, perfect for busy days and for dogs with lots of energy to burn.
             </p>
           </div>
           <div className="grooming">
-            <img src={groomingService} />
-            <h3 className="hSHeader">GROOMING</h3>
+            <img className="imgIcon2" src={iconHairdresserGreen} />
+            <h3 className="hSHeader">Grooming</h3>
             <p className="servDesc">
-              Our pet sitters provide grooming services to pamper your pet,
-              ensuring they look and feel their best.
+            Our pet sitters provide grooming services to pamper your pet, ensuring they look and feel their best, happy, and healthy.
             </p>
           </div>
         </div>

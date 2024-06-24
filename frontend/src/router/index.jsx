@@ -11,6 +11,7 @@ import OwnerProfile from "../pages/OwnerProfile/OwnerProfile";
 import NotFound from "../pages/NotFound/NotFound";
 import ContactUs from "../pages/ContactUs/ContactUs";
 
+
 const ownerRoute = () => {
   const role = localStorage.getItem("role");
   const token = localStorage.getItem("token");
