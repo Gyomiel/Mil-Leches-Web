@@ -22,6 +22,10 @@
     gap: 1.5rem;
 }
 
+.servHeader {
+    font-size: 30px;
+}
+
 .findSitter, .getInTouch, .enjoyYourTime {
     display: flex;
     flex-direction: column;
@@ -65,4 +69,8 @@
     border-radius: 50px;
     align-self: center;
     margin-top: 1.25rem;
+}
+
+.mlSpan {
+    color: var(--secondaryBlue);
 }

@@ -22,6 +22,10 @@
   margin-bottom: 1.2rem;
 }
 
+.pleaseStop {
+  margin-top: 1.5rem;
+}
+
 .signUpPic {
   width: 225px;
   margin-bottom: 0.7rem;
@@ -49,6 +53,7 @@
   display: inline-block;
   font-size: 16px;
   color: grey;
+  margin-top: 1.5rem;
 }
 
 .tspp {
@@ -69,6 +74,7 @@ h2 {
 h4 {
   font-size: 16px;
   font-weight: 400;
+  margin-top: 1.5rem;
 }
 
 #nameInput,
@@ -95,6 +101,7 @@ h4 {
   border: none;
   border-radius: 50px;
   align-self: center;
+  margin-top: 1.5rem;
 }
 
 .disabledButton {
@@ -107,6 +114,7 @@ h4 {
   border: none;
   border-radius: 50px;
   align-self: center;
+  margin-top: 1.5rem;
 }
 
 .disabledButton:hover {

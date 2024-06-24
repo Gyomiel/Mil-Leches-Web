@@ -5,13 +5,13 @@ const AboutUsLO = () => {
   return (
     <div>
       <section id='services-box'>
-        <h1 className='servHeader'>About Mil Leches and our purpose</h1>
-        <div>
-          <p className='servDesc'>In our current fast-paced world, life can be quite demanding for pet owners. Between work obligations, social engagements, and personal time, giving our pets undivided attention is not always feasible. </p>
-          <p className='servDesc'><span>Whether you are working late, traveling, or just need a respite, Mil Leches is your solution!</span></p>
+        <div className='leftText'> 
+          <h1 className='servHeader'>About <span className='mlSpan'>Mil Leches</span> and our purpose</h1>
+          <p className='servDesc'>In our current fast-paced world, life can be quite demanding for pet owners. Between work obligations, social engagements, and personal time, giving our pets undivided attention is not always feasible. </p> 
+          <p className='servDesc'><span className='mlSpan2'>Whether you are working late, traveling, or just need a respite, <span className='mlSpan3'>Mil Leches</span> is your solution!</span></p>
           <p className='servDesc'>We offer services such as home-sitting, boarding, dog walking, and grooming, connecting you with passionate pet lovers who treat your furry companions as their own in a paradise of cuddles and belly rubs.</p>
         </div>
-        <div>
+        <div className='rightImg'>
           <img className='aboutUsIcon' src={aboutUsIcon} alt="" />
         </div>
       </section>
