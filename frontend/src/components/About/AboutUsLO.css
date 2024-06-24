@@ -1,8 +1,8 @@
-#services-box {
+#about-box {
     margin-left: 5rem;
     margin-right: 5rem;
     margin-top: 1rem;
-    width: 1200px;
+    width: 1000px;
     height: 520px;
     flex-shrink: 0;
     border-radius: 48px;
@@ -10,7 +10,18 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.servHeader {
+.leftText, .rightImg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.rightImg {
+    margin-left: 50rem;
+}
+
+.abtHeader {
     font-size: 30px;
 }
 
@@ -40,14 +51,14 @@
     width: 20%;
 }
 
-.hSHeader {
+.abtH3Header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.servDesc {
+.abtDesc {
     background-color: transparent;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -57,7 +68,7 @@
 
 #members {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-left: 5rem;
@@ -66,19 +77,32 @@
     width: 1200px;
     height: 520px;
     flex-shrink: 0;
-    border-radius: 48px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.memberCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .aboutButton {
     background-color: var(--primaryTeal);
     color: white;
     height: 42px;
-    width: 300px;
+    width: 175px;
     font-size: 20px;
     font-weight: 700;
     border: none;
     border-radius: 50px;
     align-self: center;
     margin-top: 1.25rem;
+}
+
+.abtBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
