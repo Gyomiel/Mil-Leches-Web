@@ -21,10 +21,13 @@ const LogInForm = () => {
       email: email,
       password: password,
     };
-    const { token } = await logIn(data);
-    console.log(token);
-    localStorage.setItem("token", token);
-    navigate("/");
+    const key = await logIn(data);
+    console.log(key.token);
+    localStorage.setItem("token", key.token);
+    localStorage.setItem("role", key.role)
+    key.role === "owner"
+      ? navigate("/ProfileOwner")
+      : navigate("/ProfilePetsitter");
   };
   return (
     <div id="centerForm">

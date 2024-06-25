@@ -43,7 +43,7 @@ const login = async (request, response) => {
     if (checkPass) {
       const payload = { email: request.body.email };
       const token = jwt.sign(payload, "didiBorjaMarta", { expiresIn: "1h" });
-      return response.status(200).json({ token });
+      return response.status(200).json({ token, role: user.role });
     } else {
       return response.status(401).send("Incorrect email or password.");
     }

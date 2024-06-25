@@ -1,10 +1,10 @@
 import api from "./config";
 
-const getProfile = async () => {
+const getPetProfile = async () => {
   try {
     const token = localStorage.getItem("token");
 
-    const response = await api.get("user/profile", {
+    const response = await api.get("pet/profile", {
       headers: { authorization: token },
     });
     return response;
@@ -13,11 +13,11 @@ const getProfile = async () => {
   }
 };
 
-const updateProfile = async (body) => {
+const updatePetProfile = async (body) => {
   try {
     const token = localStorage.getItem("token");
-console.log(body)
-    const response = await api.post("user/profile", body, {
+    console.log(body);
+    const response = await api.post("pet/profile", body, {
       headers: { authorization: token },
     });
     return response;
@@ -26,4 +26,4 @@ console.log(body)
   }
 };
 
-export { getProfile, updateProfile };
+export { getPetProfile, updatePetProfile };

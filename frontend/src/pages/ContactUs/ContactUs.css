@@ -76,7 +76,7 @@
   width: 460px;
   height: 150px;
   padding: 8px 16px;
-  align-items: center;
+  align-items: start;
   gap: 16px;
 }
 
@@ -93,4 +93,8 @@
   font-size: 30px;
   margin-top: 36px;
   margin-left: 175px;
+}
+.sendMessage:hover{
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }

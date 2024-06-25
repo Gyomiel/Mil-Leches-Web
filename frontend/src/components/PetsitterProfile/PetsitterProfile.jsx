@@ -37,12 +37,15 @@ function PetsitterProfile() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const Profile = async () => {
+    const profile = async () => {
       const { data } = await getProfile();
       setName(data.name);
       setEmail(data.email);
+      // setPassword(data.password);
+      setLocation(data.location);
+      setAbout(data.bio);
     };
-    Profile();
+    profile();
   }, []);
 
   const handlePicture = (e) => {
@@ -80,9 +83,15 @@ function PetsitterProfile() {
   };
 
   const handleChanges = async () => {
-    const data = { name: name, email: email, password: password };
+    const data = {
+      name: name,
+      email: email,
+      password: password,
+      location: location,
+      bio: about,
+    };
     await updateProfile(data);
-    console.log("a");
+    console.log(data.bio);
   };
   return (
     <div className="mainContainer">
@@ -95,7 +104,7 @@ function PetsitterProfile() {
           </section>
           <div className="nameTitle">
             {editName ? (
-              <InputText patata={name} onFunc={handleName} />
+              <InputText value={name} onFunc={handleName} />
             ) : (
               <h1 className="name">{name}</h1>
             )}
@@ -108,17 +117,17 @@ function PetsitterProfile() {
           <section className="fillData">
             <div className="emailBox">
               <h3 className="box1">Email</h3>
-              <InputText patata={email} />
+              <InputText value={email} onFunc={handleEmail} />
               <img className="editIcon" src={iconEdit}></img>
             </div>
             <div className="password">
               <h3 className="box2">Password</h3>
-              <InputPassword className="inputs" />
+              <InputPassword value={password} onFunc={handlePassword} />
               <img className="editIcon" src={iconEdit}></img>
             </div>
             <div className="locationBox">
               <h3 className="box3">Location</h3>
-              <InputText className="inputs" />
+              <InputText value={location} onFunc={handleLocation} />
               <img className="editIcon" src={iconEdit}></img>
             </div>
           </section>
@@ -131,7 +140,8 @@ function PetsitterProfile() {
             </button>
             <h2 className="aboutme">About me</h2>
             <div>
-              <InputTextArea className="textArea" />
+              <InputTextArea value={about} className="textArea"onFunc={handleAbout}
+              />
               <img className="editIcon" src={iconEdit}></img>
             </div>
           </div>
