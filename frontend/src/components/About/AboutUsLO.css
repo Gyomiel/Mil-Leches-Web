@@ -50,7 +50,8 @@
 
 .aboutUsIcon {
   margin-top: 2rem;
-  width: 95%;
+  margin-left: -1rem;
+  width: 100%;
 }
 
 .abtH3Header {
@@ -58,7 +59,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 28px;
+  font-size: 35px;
   margin-bottom: -2rem;
   color: var(--secondaryBlue);
 }

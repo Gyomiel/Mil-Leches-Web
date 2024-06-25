@@ -19,7 +19,7 @@ import InputPassword from "../../components/InputPassword/InputPassword";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getProfile, updateProfile } from "../../services/user";
-import { getPetProfile, updatePetProfile, createPet } from "../../services/pet";
+import { createPet } from "../../services/pet";
 
 const OwnerProfile = () => {
   const [name, setName] = useState("");
@@ -27,10 +27,10 @@ const OwnerProfile = () => {
   const [password, setPassword] = useState("");
   const [location, setLocation] = useState("");
   const [about, setAbout] = useState("");
-  const [housesitting, setHousesitting] = useState(false);
-  const [hairdresser, setHairdresser] = useState(false);
-  const [boarding, setBoarding] = useState(false);
-  const [walking, setWalking] = useState(false);
+  // const [housesitting, setHousesitting] = useState(false);
+  // const [hairdresser, setHairdresser] = useState(false);
+  // const [boarding, setBoarding] = useState(false);
+  // const [walking, setWalking] = useState(false);
   const [petName, setPetName] = useState("");
   const [petBreed, setPetBreed] = useState("");
   const [petAge, setPetAge] = useState("");
@@ -58,9 +58,6 @@ const OwnerProfile = () => {
     profile();
   }, []);
 
-  const handlePicture = (e) => {
-    setPicture(e.target.value);
-  };
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -87,9 +84,6 @@ const OwnerProfile = () => {
   };
   const handleWalking = (e) => {
     setWalking(e.target.value);
-  };
-  const handleEditName = () => {
-    setEditName(!editName);
   };
 
   const handlePetName = (e) => {
@@ -119,8 +113,7 @@ const OwnerProfile = () => {
       location: location,
       bio: about,
     };
-
-    if (petName.length === 0) {
+    if (petName.length !== 0) {
       const petData = {
         name: petName,
         breed: petBreed,
@@ -129,10 +122,11 @@ const OwnerProfile = () => {
         vet: petVet,
         behaviour: petBehaviour,
       };
+      console.log("a");
       await createPet(petData);
+    } else {
+      await updateProfile(data);
     }
-
-    await updateProfile(data);
 
     console.log(data.bio);
   };
