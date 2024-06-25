@@ -73,9 +73,14 @@
 }
 
 .petPic {
-  width: 250px;
+  width: 200px;
   margin-top: 40px;
-  margin-left: 85px;
+  margin-left: 110px;
+  margin-bottom: 40px;
+}
+.profileIconP{
+  width: 20px;
+  margin-bottom: 40px;
 }
 
 .petName {
@@ -89,7 +94,7 @@
   flex-direction: column;
   margin-top: -40px;
   margin-left: 30px;
-  line-height: 13px;
+  line-height: 10px;
 }
 .bookingsectionO {
   display: flex;

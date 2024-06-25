@@ -42,7 +42,6 @@ const OwnerProfile = () => {
   useEffect(() => {
     const profile = async () => {
       const { data } = await getProfile();
-      console.log(data);
       setName(data.name);
       setEmail(data.email);
 
@@ -120,16 +119,21 @@ const OwnerProfile = () => {
       location: location,
       bio: about,
     };
-    const petData = {
-      name: petName,
-      breed: petBreed,
-      age: petAge,
-      sickness: petSickness,
-      vet: petVet,
-      behaviour: petBehaviour,
-    };
+
+    if (petName.length === 0) {
+      const petData = {
+        name: petName,
+        breed: petBreed,
+        age: petAge,
+        sickness: petSickness,
+        vet: petVet,
+        behaviour: petBehaviour,
+      };
+      await createPet(petData);
+    }
+
     await updateProfile(data);
-    await createPet(petData);
+
     console.log(data.bio);
   };
   console.log(petName);
@@ -176,18 +180,22 @@ const OwnerProfile = () => {
         <section className="petProfileO">
           <div className="petProfPicArea">
             <img className="petPic" src={petPic}></img>
-            <img className="profileIcon" src={iconProfile}></img>
-          </div>
-          <div className="petNameBox">
-            <h1 className="box11O">Name</h1>
-            <InputText value={petName} onFunc={handlePetName} />
-            <img className="editIconPet" src={iconEdit}></img>
+            <img className="profileIconP" src={iconProfile}></img>
           </div>
           <div className="textProfileBoxPet">
             <div className="breedBox">
+              <h3 className="box11O">Name</h3>
+              <div className="petTextInputB">
+                <InputText value={petName} onFunc={handlePetName} />
+                <img className="editIcon" src={iconEdit}></img>
+              </div>
+            </div>
+            <div className="breedBox">
               <h3 className="box11O">Breed</h3>
-              <InputText value={petBreed} onFunc={handlePetBreed} />
-              <img className="editIcon" src={iconEdit}></img>
+              <div className="petTextInputB">
+                <InputText value={petBreed} onFunc={handlePetBreed} />
+                <img className="editIcon" src={iconEdit}></img>
+              </div>
             </div>
             <div className="ageBox">
               <h3 className="box11O">Age</h3>
