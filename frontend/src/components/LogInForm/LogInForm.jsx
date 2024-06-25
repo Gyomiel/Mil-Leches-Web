@@ -2,6 +2,7 @@ import "./LogInForm.css";
 import userSignUp from "../../assets/Icons/emaiIconL.svg";
 import lockSignUp from "../../assets/Icons/lockICon.svg";
 import logInDog from "../../assets/logInDog.png";
+import googleButton from "../../assets/Icons/googlebutton1.svg"
 import { logIn } from "../../services/auth";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -68,7 +69,7 @@ const LogInForm = () => {
         <div className="pleaseStopLi">
           <p className="letMeLive2Li">
             <input type="checkbox" />
-            <label htmlFor="">Remember me</label>
+            <label className="remember">Remember me</label>
           </p>
         </div>
         <div>
@@ -85,6 +86,14 @@ const LogInForm = () => {
             </a>
           </Link>
         </h4>
+        <div>
+        <h6 className="or">or</h6>
+        </div>
+        <div>
+          <a href ="www.google.com">
+        <img className= "google"src={googleButton}></img>
+        </a>
+        </div>
       </form>
     </div>
   );

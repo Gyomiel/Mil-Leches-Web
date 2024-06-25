@@ -38,8 +38,8 @@
   background-color: transparent;
   display: inline-block;
   font-size: 20px;
-  margin-left:-200px;
-  margin-top:50px;
+  margin-left:-220px;
+  margin-top:20px;
 }
 
 .leaveMeAlone {
@@ -68,7 +68,7 @@
   color: var(--primaryTeal);
   font-size: 47px;
   font-weight: bolder;
-  margin-top: 15px;
+  margin-top: -10px;
 }
 
 h2 {
@@ -87,7 +87,7 @@ h4 {
   border-radius: 8px;
   border: 1px solid #fff;
   background: #fff;
-  width: 300px;
+  width: 350px;
   height: 25px;
   padding: 8px 16px;
   align-items: center;
@@ -103,6 +103,11 @@ h4 {
   justify-content: center;
   gap: 15px;
   margin-left: -10px;
+  
+  
+}
+.userWholeInput{
+  margin-top:-10px
 }
 
 .userWholeInputImgLi {
@@ -123,7 +128,7 @@ h4 {
   background-color: transparent;
   font-size: 14px;
   margin-bottom: -0.5rem;
-  margin-left: 14.6rem;
+  margin-left: 18rem;
   margin-top: -0.1rem;
 }
 
@@ -131,6 +136,7 @@ h4 {
   margin-top:20px;
   color: grey;
   font-size: 17px;
+ 
 }
 
 .logInDog {
@@ -152,9 +158,32 @@ h4 {
   border: none;
   border-radius: 50px;
   align-self: center;
-  margin-top:50px;
+  margin-top:30px;
+  margin-bottom: 20px;
 }
+.logInButton:hover {
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
 .loginh4{
-  margin-top: 60px;
+  margin-top: 20px;
   font-size: 20px;
+}
+.google {
+  width: 450px;
+  margin-top: -25px;
+  margin-left:20px
+}
+  .google:hover {
+    width: 420px;
+}
+
+  
+.or {
+  font-size: 20px;
+  color: grey;
+  margin-top:-10px;
+  font-weight: 500;
+  
 }
