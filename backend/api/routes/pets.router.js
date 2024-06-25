@@ -12,7 +12,7 @@ const { checkAuth } = require("../middlewares/auth");
 
 router.get("/", getAllPets);
 router.get("/:id", getOnePet);
-router.post("/", createPet);
+router.post("/", checkAuth, createPet);
 router.get("/profile", checkAuth, getPetProfile);
 router.post("/profile", checkAuth, updatePetProfile);
 router.put("/:id", updatePet);

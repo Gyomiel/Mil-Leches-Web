@@ -4,7 +4,20 @@ const getPetProfile = async () => {
   try {
     const token = localStorage.getItem("token");
 
-    const response = await api.get("pet/profile", {
+    const response = await api.get("pets/profile", {
+      headers: { authorization: token },
+    });
+
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+const createPet = async (body) => {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await api.post("pets", body, {
       headers: { authorization: token },
     });
     return response;
@@ -16,8 +29,8 @@ const getPetProfile = async () => {
 const updatePetProfile = async (body) => {
   try {
     const token = localStorage.getItem("token");
-    console.log(body);
-    const response = await api.post("pet/profile", body, {
+
+    const response = await api.post("pets/profile", body, {
       headers: { authorization: token },
     });
     return response;
@@ -26,4 +39,4 @@ const updatePetProfile = async (body) => {
   }
 };
 
-export { getPetProfile, updatePetProfile };
+export { getPetProfile, updatePetProfile, createPet };

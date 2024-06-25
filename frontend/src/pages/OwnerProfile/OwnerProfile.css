@@ -73,9 +73,14 @@
 }
 
 .petPic {
-  width: 250px;
+  width: 200px;
   margin-top: 40px;
-  margin-left: 85px;
+  margin-left: 110px;
+  margin-bottom: 40px;
+}
+.profileIconP{
+  width: 20px;
+  margin-bottom: 40px;
 }
 
 .petName {
@@ -89,7 +94,7 @@
   flex-direction: column;
   margin-top: -40px;
   margin-left: 30px;
-  line-height: 13px;
+  line-height: 10px;
 }
 .bookingsectionO {
   display: flex;
@@ -177,7 +182,7 @@
   border: 0px;
   font-weight: bolder;
   font-size: 20px;
-  margin-top: -10px;
+  margin-top: 20px;
 }
 .pastBookingO2:hover{
   box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
@@ -391,8 +396,9 @@
   display: flex;
 }
 .editIconPet {
-  margin-left: 15px;
+  margin-left: 13px;
   margin-top:-10px;
+  width: 25px;
 }
 .ownerNameBox {
   display: flex;
@@ -400,6 +406,7 @@
 .editIconName {
   margin-left: 15px;
   margin-top:-10px;
+  width: 25px;
 }
 .box11O {
   font-size:25px

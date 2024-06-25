@@ -6,11 +6,11 @@ import iconEdit from "../../assets/Icons/EditIcon.svg";
 import iconHelp from "../../assets/Icons/helpIcon.svg";
 import iconMessages from "../../assets/Icons/messagesIcon.svg";
 import iconPlus from "../../assets/Icons/plusIcon.svg";
-import iconHouseBlue from "../../assets/Icons/HouseIconBlue.svg"
-import iconBoardingBlue from "../../assets/Icons/iconBoarding.svg"
+import iconHouseBlue from "../../assets/Icons/HouseIconBlue.svg";
+import iconBoardingBlue from "../../assets/Icons/iconBoarding.svg";
 import iconWalkingBlue from "../../assets/Icons/PawIconBlue.svg";
 import iconHairdresserBlue from "../../assets/Icons/HairdresserIconBlue.svg";
-import islands from "../../assets/various/islasmenosGran.svg"
+import islands from "../../assets/various/islasmenosGran.svg";
 import gC from "../../assets/various/GranCanaria.svg";
 
 import InputText from "../../components/InputText/InputText";
@@ -19,7 +19,7 @@ import InputPassword from "../../components/InputPassword/InputPassword";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getProfile, updateProfile } from "../../services/user";
-import {getPetProfile, updatePetProfile} from "../../services/pet"
+import { getPetProfile, updatePetProfile, createPet } from "../../services/pet";
 
 const OwnerProfile = () => {
   const [name, setName] = useState("");
@@ -34,7 +34,7 @@ const OwnerProfile = () => {
   const [petName, setPetName] = useState("");
   const [petBreed, setPetBreed] = useState("");
   const [petAge, setPetAge] = useState("");
-  const [petSickness, setPetSickness] = useState(false);
+  const [petSickness, setPetSickness] = useState("");
   const [petVet, setPetVet] = useState("");
   const [petBehaviour, setPetBehaviour] = useState("");
   const navigate = useNavigate();
@@ -44,21 +44,18 @@ const OwnerProfile = () => {
       const { data } = await getProfile();
       setName(data.name);
       setEmail(data.email);
-      // setPassword(data.password);
+
       setLocation(data.location);
       setAbout(data.bio);
+      setPetName(data.pets[0].name);
+      setPetBreed(data.pets[0].breed);
+      setPetAge(data.pets[0].age);
+      setPetSickness(data.pets[0].sickness);
+      setPetVet(data.pets[0].vet);
+      setPetBehaviour(data.pets[0].behaviour);
     };
-      const petProfile = async () => {
-      const { petData } = await getPetProfile();
-      setPetName(petData.petName);
-      setPetBreed (petData.petBreed)
-      setPetAge(petData.petAge)
-      setPetSickness (petData.petSickness)
-      setPetVet(petData.petVet)
-      setPetBehaviour(petData.petBehaviour)
-      }
+
     profile();
-    petProfile()
   }, []);
 
   const handlePicture = (e) => {
@@ -94,7 +91,7 @@ const OwnerProfile = () => {
   const handleEditName = () => {
     setEditName(!editName);
   };
-  
+
   const handlePetName = (e) => {
     setPetName(e.target.value);
   };
@@ -108,35 +105,38 @@ const OwnerProfile = () => {
     setPetVet(e.target.value);
   };
 
-   const handlePetSickness = (e) => {
-     setPetSickness(e.target.value);
-   };
+  const handlePetSickness = (e) => {
+    setPetSickness(e.target.value);
+  };
   const handlePetBehaviour = (e) => {
     setPetBehaviour(e.target.value);
   };
-  
-  
-
   const handleChanges = async () => {
     const data = {
       name: name,
       email: email,
       password: password,
       location: location,
-      bio: about,  
+      bio: about,
     };
-    const petData = {
-      name: petName,
-      breed: petBreed,
-      age: petAge,
-      sickness: petSickness,
-      vet: petVet,
-      behaviour: petBehaviour
+
+    if (petName.length === 0) {
+      const petData = {
+        name: petName,
+        breed: petBreed,
+        age: petAge,
+        sickness: petSickness,
+        vet: petVet,
+        behaviour: petBehaviour,
+      };
+      await createPet(petData);
     }
+
     await updateProfile(data);
-    await updatePetProfile(petData)
+
     console.log(data.bio);
   };
+  console.log(petName);
   return (
     <>
       <div className="wholeContainerOwner">
@@ -180,17 +180,22 @@ const OwnerProfile = () => {
         <section className="petProfileO">
           <div className="petProfPicArea">
             <img className="petPic" src={petPic}></img>
-            <img className="profileIcon" src={iconProfile}></img>
-          </div>
-          <div className="petNameBox">
-            <h1 className="petName">Max</h1>
-            <img className="editIconPet" src={iconEdit}></img>
+            <img className="profileIconP" src={iconProfile}></img>
           </div>
           <div className="textProfileBoxPet">
             <div className="breedBox">
+              <h3 className="box11O">Name</h3>
+              <div className="petTextInputB">
+                <InputText value={petName} onFunc={handlePetName} />
+                <img className="editIcon" src={iconEdit}></img>
+              </div>
+            </div>
+            <div className="breedBox">
               <h3 className="box11O">Breed</h3>
-              <InputText value={petBreed} onFunc={handlePetBreed} />
-              <img className="editIcon" src={iconEdit}></img>
+              <div className="petTextInputB">
+                <InputText value={petBreed} onFunc={handlePetBreed} />
+                <img className="editIcon" src={iconEdit}></img>
+              </div>
             </div>
             <div className="ageBox">
               <h3 className="box11O">Age</h3>
@@ -273,7 +278,7 @@ const OwnerProfile = () => {
               <h2 className="selectIsland">Select your island</h2>
               <img className="islandsO" src={islands}></img>
               <img className="gC" src={gC}></img>
-              <h2 className="findIt">Find me a pett sitter</h2>
+              <h2 className="findIt">Find me a pet sitter</h2>
             </div>
             <div className="bookingsectionO">
               <div className="futureBookingsO">
