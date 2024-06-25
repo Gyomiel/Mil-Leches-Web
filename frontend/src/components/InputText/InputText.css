@@ -1,10 +1,17 @@
-input {
-    border-radius: 8px;
-    border: 1px solid #FFF;
-    background: #FFF;
-    width: 300px;
-    height: 25px;
-    padding: 8px 16px;
-    align-items: center;
-    gap: 16px; 
+.inputTypeText {
+  border-radius: 8px;
+  border: 1px solid #fff;
+  background: #fff;
+  width: 300px;
+  height: 25px;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 16px;
+  font-size: 20px;
+}
+
+.ownerName {
+  font-size: 40px;
+  color: white;
+  font-weight: bolder;
 }

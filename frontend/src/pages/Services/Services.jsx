@@ -1,7 +1,11 @@
+import ServicesLayout from "../../components/Services/ServicesLayout";
+
 const Services = () => {
   return (
-    <div></div>
+    <div>
+      <ServicesLayout />
+    </div>
   )
 }
 
-export default Services
+export default Services;

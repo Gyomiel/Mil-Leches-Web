@@ -8,6 +8,8 @@
 
 html {
   background-color: white;
+  width: 1920px;
+  height: 1080px;
 }
 * {
   font-family: "Urbanist", sans-serif;
@@ -19,7 +21,7 @@ body {
 }
 
 * {
-font-family: "Urbanist", sans-serif;
+  font-family: "Urbanist", sans-serif;
 }
 
 body {

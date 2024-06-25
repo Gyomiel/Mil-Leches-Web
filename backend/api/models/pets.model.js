@@ -17,7 +17,7 @@ const Pet = connection.define(
       type: DataTypes.INTEGER,
     },
     sickness: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING,
     },
     vet: {
       type: DataTypes.STRING,

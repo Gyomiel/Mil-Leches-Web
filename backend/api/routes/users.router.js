@@ -5,11 +5,15 @@ const {
   createUser,
   updateUser,
   deleteUser,
+  getProfile,
+  updateProfile,
 } = require("../controllers/users.controller");
 const { checkAuth, checkAdmin } = require("../middlewares/auth");
 
 router.get("/", checkAuth, checkAdmin, getAllUsers);
-router.get("/:id", checkAuth, getOneUser);
+router.get("/profile", checkAuth, getProfile);
+router.post("/profile", checkAuth, updateProfile);
+router.get("/:id", checkAuth, checkAdmin, getOneUser);
 router.post("/", checkAuth, createUser);
 router.put("/:id", checkAuth, updateUser);
 router.delete("/:id", checkAuth, deleteUser);

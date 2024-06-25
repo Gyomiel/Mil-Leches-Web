@@ -9,7 +9,6 @@ import iconHairdresser from "../../assets/Icons/HairdresserIconBlue.svg";
 import iconWalking from "../../assets/Icons/PawIconBlue.svg";
 import iconBulb from "../../assets/Icons/iconBulb.svg";
 
-
 //CSS
 import "./PetsitterProfile.css";
 
@@ -18,7 +17,82 @@ import InputText from "../InputText/InputText";
 import InputPassword from "../InputPassword/InputPassword";
 import InputTextArea from "../InputTextArea/InputTextArea";
 
+//THINGYS
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { getProfile, updateProfile } from "../../services/user";
+
 function PetsitterProfile() {
+  const [picture, setPicture] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [location, setLocation] = useState("");
+  const [about, setAbout] = useState("");
+  const [housesitting, setHousesitting] = useState(false);
+  const [hairdresser, setHairdresser] = useState(false);
+  const [boarding, setBoarding] = useState(false);
+  const [walking, setWalking] = useState(false);
+  const [editName, setEditName] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const profile = async () => {
+      const { data } = await getProfile();
+      setName(data.name);
+      setEmail(data.email);
+      // setPassword(data.password);
+      setLocation(data.location);
+      setAbout(data.bio);
+    };
+    profile();
+  }, []);
+
+  const handlePicture = (e) => {
+    setPicture(e.target.value);
+  };
+  const handleName = (e) => {
+    setName(e.target.value);
+  };
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  const handleLocation = (e) => {
+    setLocation(e.target.value);
+  };
+  const handleAbout = (e) => {
+    setAbout(e.target.value);
+  };
+  const handleHousesitting = (e) => {
+    setHousesitting(e.target.value);
+  };
+  const handleHairdresser = (e) => {
+    setHairdresser(e.target.value);
+  };
+  const handleBoarding = (e) => {
+    setBoarding(e.target.value);
+  };
+  const handleWalking = (e) => {
+    setWalking(e.target.value);
+  };
+  const handleEditName = () => {
+    setEditName(!editName);
+  };
+
+  const handleChanges = async () => {
+    const data = {
+      name: name,
+      email: email,
+      password: password,
+      location: location,
+      bio: about,
+    };
+    await updateProfile(data);
+    console.log(data.bio);
+  };
   return (
     <div className="mainContainer">
       <div className="container">
@@ -29,23 +103,31 @@ function PetsitterProfile() {
             <img className="profileIcon" src={iconProfile}></img>{" "}
           </section>
           <div className="nameTitle">
-            <h1 className="name">Marcus</h1>
-            <img className="editIcon" src={iconEdit}></img>
+            {editName ? (
+              <InputText value={name} onFunc={handleName} />
+            ) : (
+              <h1 className="name">{name}</h1>
+            )}
+            <img
+              className="editIcon"
+              src={iconEdit}
+              onClick={handleEditName}
+            ></img>
           </div>
           <section className="fillData">
             <div className="emailBox">
               <h3 className="box1">Email</h3>
-              <InputText placeholder="name@domain.com" />
+              <InputText value={email} onFunc={handleEmail} />
               <img className="editIcon" src={iconEdit}></img>
             </div>
             <div className="password">
               <h3 className="box2">Password</h3>
-              <InputPassword className="inputs" />
+              <InputPassword value={password} onFunc={handlePassword} />
               <img className="editIcon" src={iconEdit}></img>
             </div>
             <div className="locationBox">
               <h3 className="box3">Location</h3>
-              <InputText className="inputs" />
+              <InputText value={location} onFunc={handleLocation} />
               <img className="editIcon" src={iconEdit}></img>
             </div>
           </section>
@@ -53,14 +135,17 @@ function PetsitterProfile() {
         <section className="boxRight">
           <div className="area1">
             <h1 className="tittleprofile">My profile</h1>
-            <button className="save">Save changes</button>
+            <button className="save" onClick={handleChanges}>
+              Save changes
+            </button>
             <h2 className="aboutme">About me</h2>
             <div>
-              <InputTextArea className="textArea" />
+              <InputTextArea value={about} className="textArea"onFunc={handleAbout}
+              />
               <img className="editIcon" src={iconEdit}></img>
             </div>
           </div>
-          <h2>Services I offer</h2>
+          <h2 className="servicestext">Services I offer</h2>
 
           <div className="services">
             <div className="housesitting">

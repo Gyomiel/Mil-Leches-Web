@@ -1,8 +1,13 @@
-import "./InputText.css"
-const InputText = () => {
+import "./InputText.css";
+const InputText = ({ value, onFunc }) => {
   return (
     <>
-      <input type="text" />
+      <input
+        className="inputTypeText"
+        type="text"
+        placeholder={value}
+        onChange={onFunc}
+      />
     </>
   );
 };

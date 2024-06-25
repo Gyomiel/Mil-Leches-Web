@@ -8,7 +8,7 @@ const checkAuth = (request, response, next) => {
 
   jwt.verify(
     request.headers.authorization,
-    process.env.SECRET,
+    "didiBorjaMarta",
     async (error, payload) => {
       if (error) {
         console.log(error.message);

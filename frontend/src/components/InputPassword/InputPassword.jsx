@@ -1,9 +1,14 @@
+import "./InputPassword.css";
 
-
-function InputPassword() {
+function InputPassword({ value, onFunc }) {
   return (
-    <input type="password" />
-  )
+    <input
+      className="inputTypePass"
+      type="password"
+      placeholder={value}
+      onChange={onFunc}
+    />
+  );
 }
 
-export default InputPassword
+export default InputPassword;
