@@ -1,7 +1,7 @@
 .mainContainerContactUs {
   width: 1790px;
   height: 920px;
-  margin-left: 55px;
+  margin-left: 60px;
   margin-top: 60px;
   border-radius: 48px;
   background: #e7e7e7;
@@ -12,13 +12,17 @@
 }
 
 .containerRightContactUs {
-  margin-top: 80px;
-  width: 600px;
-  height: 780px;
+  margin-top: 125px;
+  width: 500px;
+  height: 680px;
   background-color: #fff;
   border-radius: 48px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin-left: 30px;
+}
+.leftAreaContactUs {
+  margin-left:60px;
+  margin-top:0px
 }
 
 .mrEars {
@@ -36,8 +40,8 @@
   display: flex;
 }
 .chatIcon {
-  width: 80px;
-  height: 70px;
+  width: 70px;
+  height: 60px;
   margin-left: 40px;
   margin-top: 30px;
 }
@@ -45,16 +49,17 @@
 .textAreaContactUs {
   display: flex;
   flex-direction: column;
-  margin-top: -30px;
+  margin-top: -10px;
   margin-left: 55px;
+  line-height: 25px;
 }
 .contactUsTitle {
   margin-left: 60px;
-  font-size: 60px;
+  font-size: 50px;
 }
 
 .contactUsTitlesSmall {
-  font-size: 30px;
+  font-size: 25px;
   color: #828282;
 }
 
@@ -62,27 +67,29 @@
   border-radius: 8px;
   border: 1px solid #000000;
   background: #fff;
-  width: 460px;
+  width: 360px;
   height: 30px;
   padding: 8px 16px;
   align-items: center;
   gap: 16px;
+  font-size:20px;
 }
 
 .input3 {
   border-radius: 8px;
   border: 1px solid #000000;
   background: #fff;
-  width: 460px;
+  width: 360px;
   height: 150px;
   padding: 8px 16px;
   align-items: start;
   gap: 16px;
+  font-size:20px;
 }
 
 .sendMessage {
   position: relative;
-  width: 250px;
+  width: 220px;
   height: 55px;
   border-radius: 48px;
   background: linear-gradient(0deg, #608ee9 0%, #608ee9 100%), #b5dbff;
@@ -90,9 +97,10 @@
   color: white;
   border: 0px;
   font-weight: bolder;
-  font-size: 30px;
-  margin-top: 36px;
-  margin-left: 175px;
+  font-size: 25px;
+  margin-top: 26px;
+  margin-left: 140px;
+  
 }
 .sendMessage:hover{
   box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,

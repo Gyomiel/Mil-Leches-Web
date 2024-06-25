@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: -2rem
 }
 
 #logInForm {
@@ -10,13 +11,13 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background-color: #f1eeee;
   display: flex;
-  max-width: 560px;
+  width: 500px;
+  height: 550px;
   flex-direction: column;
   align-items: center;
   font-size: 14px;
   color: #020202;
   font-weight: 400;
-  line-height: 100%;
   padding: 55px 55px;
   margin-top: 2.2rem;
   margin-bottom: 1.2rem;
@@ -33,10 +34,12 @@
   font-size: 16px;
 }
 
-.letMeLive2 {
+.letMeLive2Li {
   background-color: transparent;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
+  margin-left:-200px;
+  margin-top:50px;
 }
 
 .leaveMeAlone {
@@ -58,11 +61,14 @@
 
 .login {
   color: var(--primaryTeal);
-  font-weight: 700;
+  
 }
 
 .loginh2 {
   color: var(--primaryTeal);
+  font-size: 47px;
+  font-weight: bolder;
+  margin-top: 15px;
 }
 
 h2 {
@@ -86,36 +92,49 @@ h4 {
   padding: 8px 16px;
   align-items: center;
   margin-top: 1.5rem;
-  font-size: 16px;
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 
 .userWholeInput,
 .passwordWholeInput {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: last baseline;
-  gap: 5px;
+  gap: 15px;
+  margin-left: -10px;
 }
 
-.userWholeInputImg {
+.userWholeInputImgLi {
   display: inline-block;
-  padding-top: 5px;
+  margin-top: 29px;
+  width: 35px;
+  margin-right:8px;
+  margin-left:4px;
+}
+
+.lockLi{
+  width: 60px;
+  margin-left: -14px;
+  margin-top: 16px
 }
 
 .trouble {
   background-color: transparent;
   font-size: 14px;
   margin-bottom: -0.5rem;
-  margin-left: 15.6rem;
+  margin-left: 14.6rem;
   margin-top: -0.1rem;
 }
 
 .troubleLink {
+  margin-top:20px;
   color: grey;
+  font-size: 17px;
 }
 
 .logInDog {
-  width: 20%;
+  width: 23%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -126,11 +145,16 @@ h4 {
 .logInButton {
   background-color: var(--primaryTeal);
   color: white;
-  height: 42px;
-  width: 120px;
-  font-size: 20px;
+  height: 50px;
+  width: 140px;
+  font-size: 25px;
   font-weight: 700;
   border: none;
   border-radius: 50px;
   align-self: center;
+  margin-top:50px;
+}
+.loginh4{
+  margin-top: 60px;
+  font-size: 20px;
 }

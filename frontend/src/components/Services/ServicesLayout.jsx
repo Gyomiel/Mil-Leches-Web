@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 const ServicesLayout = () => {
   return (
     <div>
-      <section id="services-box">
-        <h1 className="servHeader">What do our pet sitters offer?</h1>
+      <section id="services-boxSe">
+        <h4 className="servHeaderO">What do our pet sitters offer?</h4>
         <div className="servicesCards">
           <div className="houseSitting">
             <img className="imgIcon1" src={iconHouseGreen} />
@@ -17,11 +17,11 @@ const ServicesLayout = () => {
             <p className="servDesc">
               Our sitters care for both your pets and home, ensuring your pets
               receive all the love and attention they need while staying in
-              their familiar, comfortable environment.
+              environment.
             </p>
           </div>
           <div className="boardingS">
-            <img className="imgIcon1" src={iconBoardingGreen} />
+            <img className="imgIcon2" src={iconBoardingGreen} />
             <h3 className="hSHeader">Boarding</h3>
             <p className="servDesc">
               Your pets will stay overnight at the home of the sitter of your
@@ -30,7 +30,7 @@ const ServicesLayout = () => {
             </p>
           </div>
           <div className="dogWalking">
-            <img className="imgIcon2" src={iconWalkingGreen} />
+            <img className="imgIcon3" src={iconWalkingGreen} />
             <h3 className="hSHeader">Dog walking</h3>
             <p className="servDesc">
               Your dog will enjoy a walk around your neighborhood, perfect for
@@ -38,7 +38,7 @@ const ServicesLayout = () => {
             </p>
           </div>
           <div className="grooming">
-            <img className="imgIcon2" src={iconHairdresserGreen} />
+            <img className="imgIcon4" src={iconHairdresserGreen} />
             <h3 className="hSHeader">Grooming</h3>
             <p className="servDesc">
               Our pet sitters provide grooming services to pamper your pet,
@@ -47,7 +47,7 @@ const ServicesLayout = () => {
           </div>
         </div>
         <Link to="/signup">
-          <button className="appointButton">Book an appointment now!</button>
+          <button className="createFreeO">Create your free account</button>
         </Link>
       </section>
     </div>

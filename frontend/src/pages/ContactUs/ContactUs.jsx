@@ -4,7 +4,7 @@ import chatIcon from "../../assets/chatHelp.png"
 const ContactUs = () => {
   return (
     <div className="mainContainerContactUs">
-      <div leftAreaContactUs>
+      <div className="leftAreaContactUs">
         <h1 className="allEars">WE ARE ALL EARS!</h1>
         <img className="mrEars" src={mrEars}></img>
       </div>
