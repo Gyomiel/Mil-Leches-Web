@@ -16,7 +16,127 @@ import gC from "../../assets/various/GranCanaria.svg";
 import InputText from "../../components/InputText/InputText";
 import InputPassword from "../../components/InputPassword/InputPassword";
 
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { getProfile, updateProfile } from "../../services/user";
+import {getPetProfile, updatePetProfile} from "../../services/pet"
+
 const OwnerProfile = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [location, setLocation] = useState("");
+  const [about, setAbout] = useState("");
+  const [housesitting, setHousesitting] = useState(false);
+  const [hairdresser, setHairdresser] = useState(false);
+  const [boarding, setBoarding] = useState(false);
+  const [walking, setWalking] = useState(false);
+  const [petName, setPetName] = useState("");
+  const [petBreed, setPetBreed] = useState("");
+  const [petAge, setPetAge] = useState("");
+  const [petSickness, setPetSickness] = useState(false);
+  const [petVet, setPetVet] = useState("");
+  const [petBehaviour, setPetBehaviour] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const profile = async () => {
+      const { data } = await getProfile();
+      setName(data.name);
+      setEmail(data.email);
+      // setPassword(data.password);
+      setLocation(data.location);
+      setAbout(data.bio);
+    };
+      const petProfile = async () => {
+      const { petData } = await getPetProfile();
+      setPetName(petData.petName);
+      setPetBreed (petData.petBreed)
+      setPetAge(petData.petAge)
+      setPetSickness (petData.petSickness)
+      setPetVet(petData.petVet)
+      setPetBehaviour(petData.petBehaviour)
+      }
+    profile();
+    petProfile()
+  }, []);
+
+  const handlePicture = (e) => {
+    setPicture(e.target.value);
+  };
+  const handleName = (e) => {
+    setName(e.target.value);
+  };
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  const handleLocation = (e) => {
+    setLocation(e.target.value);
+  };
+  const handleAbout = (e) => {
+    setAbout(e.target.value);
+  };
+  const handleHousesitting = (e) => {
+    setHousesitting(e.target.value);
+  };
+  const handleHairdresser = (e) => {
+    setHairdresser(e.target.value);
+  };
+  const handleBoarding = (e) => {
+    setBoarding(e.target.value);
+  };
+  const handleWalking = (e) => {
+    setWalking(e.target.value);
+  };
+  const handleEditName = () => {
+    setEditName(!editName);
+  };
+  
+  const handlePetName = (e) => {
+    setPetName(e.target.value);
+  };
+  const handlePetBreed = (e) => {
+    setPetBreed(e.target.value);
+  };
+  const handlePetAge = (e) => {
+    setPetAge(e.target.value);
+  };
+  const handlePetVet = (e) => {
+    setPetVet(e.target.value);
+  };
+
+   const handlePetSickness = (e) => {
+     setPetSickness(e.target.value);
+   };
+  const handlePetBehaviour = (e) => {
+    setPetBehaviour(e.target.value);
+  };
+  
+  
+
+  const handleChanges = async () => {
+    const data = {
+      name: name,
+      email: email,
+      password: password,
+      location: location,
+      bio: about,  
+    };
+    const petData = {
+      name: petName,
+      breed: petBreed,
+      age: petAge,
+      sickness: petSickness,
+      vet: petVet,
+      behaviour: petBehaviour
+    }
+    await updateProfile(data);
+    await updatePetProfile(petData)
+    console.log(data.bio);
+  };
   return (
     <>
       <div className="wholeContainerOwner">
@@ -25,26 +145,34 @@ const OwnerProfile = () => {
             <img className="ownerPic" src={ownerPic}></img>
             <img className="profileIcon" src={iconProfile}></img>
           </div>
-          <h1 className="ownerName">Sarah</h1>
+          <div className="ownerNameBox">
+            <h1 className="ownerName">{name}</h1>
+            <img className="editIconName" src={iconEdit}></img>
+          </div>
           <div className="textProfileBox">
             <div className="emailBoxO">
-              <h3 className="box1O">Email</h3>
-              <InputText placeholder="name@domain.com" />
+              <h3 className="box11O">Email</h3>
+              <InputText value={email} onFunc={handleEmail} />
               <img className="editIcon" src={iconEdit}></img>
             </div>
             <div className="passwordBox10">
-              <h3 className="box2O">Password</h3>
-              <InputPassword className="inputs" />
+              <h3 className="box11O">Password</h3>
+              <InputPassword value={password} onFunc={handlePassword} />
               <img className="editIcon" src={iconEdit}></img>
             </div>
             <div className="locationBoxO">
-              <h3 className="box3O">Location</h3>
-              <InputText className="inputs" />
+              <h3 className="box11O">Location</h3>
+              <InputText value={location} onFunc={handleLocation} />
               <img className="editIcon" src={iconEdit}></img>
             </div>
             <div className="textAreaO">
-              <h3 className="aboutmeO">About me</h3>
-              <textarea className="textAreaObox" required></textarea>
+              <h3 className="box11O">About me</h3>
+              <textarea
+                className="textAreaObox"
+                value={about}
+                onChange={handleAbout}
+                required
+              ></textarea>
               <img className="editIcon" src={iconEdit}></img>
             </div>
           </div>
@@ -54,32 +182,40 @@ const OwnerProfile = () => {
             <img className="petPic" src={petPic}></img>
             <img className="profileIcon" src={iconProfile}></img>
           </div>
-          <h1 className="petName">Max</h1>
+          <div className="petNameBox">
+            <h1 className="petName">Max</h1>
+            <img className="editIconPet" src={iconEdit}></img>
+          </div>
           <div className="textProfileBoxPet">
             <div className="breedBox">
-              <h3 className="breedText">Breed</h3>
-              <InputText placeholder="name@domain.com" />
+              <h3 className="box11O">Breed</h3>
+              <InputText value={petBreed} onFunc={handlePetBreed} />
               <img className="editIcon" src={iconEdit}></img>
             </div>
             <div className="ageBox">
-              <h3 className="ageText">Age</h3>
-              <InputText placeholder="name@domain.com" />
+              <h3 className="box11O">Age</h3>
+              <InputText value={petAge} onFunc={handlePetAge} />
               <img className="editIcon" src={iconEdit}></img>
             </div>
             <div className="afflictionsBox">
-              <h3 className="afflictionsText">Afflictions</h3>
-              <InputText placeholder="name@domain.com" />
+              <h3 className="box11O">Afflictions</h3>
+              <InputText value={petSickness} onFunc={handlePetSickness} />
               <img className="editIcon" src={iconEdit}></img>
             </div>
             <div className="vetBox">
-              <h3 className="vetText">Trusted Vet</h3>
-              <InputText placeholder="name@domain.com" />
+              <h3 className="box11O">Trusted Vet</h3>
+              <InputText value={petVet} onFunc={handlePetVet} />
               <img className="editIcon" src={iconEdit}></img>
             </div>
             <div className="characterBox">
-              <h3 className="characterText">Character</h3>
-              <InputText placeholder="name@domain.com" />
+              <h3 className="box11O">Character</h3>
+              <InputText value={petBehaviour} onFunc={handlePetBehaviour} />
               <img className="editIcon" src={iconEdit}></img>
+            </div>
+            <div className="buttonS">
+              <button className="saveO" onClick={handleChanges}>
+                Save changes
+              </button>
             </div>
           </div>
         </section>
@@ -130,7 +266,7 @@ const OwnerProfile = () => {
                       <h3 className="walkingtitleO">Walking</h3>
                       <h5 className="AvgwO">Avg. 9€ Hour</h5>
                     </div>
-                    <input className="checkboxO" type="checkbox"></input>
+                    <input className="checkboxOW" type="checkbox"></input>
                   </div>
                 </div>
               </div>

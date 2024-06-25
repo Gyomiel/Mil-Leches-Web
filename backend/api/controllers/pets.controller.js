@@ -58,6 +58,34 @@ const deletePet = async (request, response) => {
       .send(`The pet with ID ${request.params.id} couldn't be deleted.`);
   }
 };
+const getPetProfile = async (request, response) => {
+  try {
+    const user = await Pet.findOne({
+      where: {
+        id: response.locals.user.id,
+      },
+    });
+    return response.status(200).json(user);
+  } catch (error) {
+    return response.status(501).send("Pet not found.");
+  }
+};
+
+const updatePetProfile = async (request, response) => {
+  try {
+    console.log(response.locals.user.id);
+    const user = await Pet.findOne({
+      where: {
+        id: response.locals.pet.id,
+      },
+    });
+    await Pet.update(data);
+    await Pet.save(data);
+    return response.status(200).json(Pet);
+  } catch (error) {
+    return response.status(501).send(`Couldn't update Pet.`);
+  }
+};
 
 module.exports = {
   getAllPets,
@@ -65,4 +93,6 @@ module.exports = {
   createPet,
   updatePet,
   deletePet,
+  getPetProfile,
+  updatePetProfile
 };
