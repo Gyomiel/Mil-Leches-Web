@@ -2,7 +2,7 @@ footer {
   background-color: var(--secondaryBlue);
 }
 
-p {
+.footerP {
   display: flex;
   flex-direction: column;
   justify-content: center;
