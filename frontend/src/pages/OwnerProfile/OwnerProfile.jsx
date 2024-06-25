@@ -18,8 +18,15 @@ import InputPassword from "../../components/InputPassword/InputPassword";
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getProfile, updateProfile } from "../../services/user";
-import { createPet } from "../../services/pet";
+
+import {
+  getProfile,
+  updateProfile,
+  getPetsitterServices,
+} from "../../services/user";
+import { getPetProfile, updatePetProfile, createPet } from "../../services/pet";
+import DateInput from "../../components/DateInput/DateInput";
+
 
 const OwnerProfile = () => {
   const [name, setName] = useState("");
@@ -37,6 +44,9 @@ const OwnerProfile = () => {
   const [petSickness, setPetSickness] = useState("");
   const [petVet, setPetVet] = useState("");
   const [petBehaviour, setPetBehaviour] = useState("");
+  const [dates, setDates] = useState();
+  const [island, setIsland] = useState("");
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -44,19 +54,28 @@ const OwnerProfile = () => {
       const { data } = await getProfile();
       setName(data.name);
       setEmail(data.email);
-
       setLocation(data.location);
       setAbout(data.bio);
-      setPetName(data.pets[0].name);
-      setPetBreed(data.pets[0].breed);
-      setPetAge(data.pets[0].age);
-      setPetSickness(data.pets[0].sickness);
-      setPetVet(data.pets[0].vet);
-      setPetBehaviour(data.pets[0].behaviour);
+      setPetName(data.pets[0]?.name);
+      setPetBreed(data.pets[0]?.breed);
+      setPetAge(data.pets[0]?.age);
+      setPetSickness(data.pets[0]?.sickness);
+      setPetVet(data.pets[0]?.vet);
+      setPetBehaviour(data.pets[0]?.behaviour);
     };
 
     profile();
   }, []);
+
+
+  const handlePetsitters = async () => {
+    const { data } = await getPetsitterServices();
+    console.log(data);
+  };
+
+  const handlePicture = (e) => {
+    setPicture(e.target.value);
+  };
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -73,17 +92,17 @@ const OwnerProfile = () => {
   const handleAbout = (e) => {
     setAbout(e.target.value);
   };
-  const handleHousesitting = (e) => {
-    setHousesitting(e.target.value);
+  const handleHousesitting = () => {
+    setHousesitting(!housesitting);
   };
-  const handleHairdresser = (e) => {
-    setHairdresser(e.target.value);
+  const handleHairdresser = () => {
+    setHairdresser(!hairdresser);
   };
-  const handleBoarding = (e) => {
-    setBoarding(e.target.value);
+  const handleBoarding = () => {
+    setBoarding(!boarding);
   };
-  const handleWalking = (e) => {
-    setWalking(e.target.value);
+  const handleWalking = () => {
+    setWalking(!walking);
   };
 
   const handlePetName = (e) => {
@@ -104,6 +123,13 @@ const OwnerProfile = () => {
   };
   const handlePetBehaviour = (e) => {
     setPetBehaviour(e.target.value);
+  };
+  const handleIsland = () => {
+    setIsland("Gran Canaria");
+  };
+
+  const handleDates = (dates) => {
+    setDates(dates);
   };
   const handleChanges = async () => {
     const data = {
@@ -128,10 +154,9 @@ const OwnerProfile = () => {
     } else {
       
     }
+    await updateProfile(data);
 
-    console.log(data.bio);
   };
-  console.log(petName);
   return (
     <>
       <div className="wholeContainerOwner">
@@ -237,10 +262,14 @@ const OwnerProfile = () => {
                 <div className="housesittingO">
                   <img className="iconHouseO" src={iconHouseBlue}></img>
                   <div className="texthouseavgO">
-                    <h3 className="housetitleO">House-sitting</h3>
+                    <h3 className="housetitleO">House sitting</h3>
                     <h5 className="AvghO">Avg. 20€ Night</h5>
                   </div>
-                  <input className="checkbox1O" type="checkbox"></input>
+                  <input
+                    className="checkbox1O"
+                    type="checkbox"
+                    onClick={handleHousesitting}
+                  ></input>
                 </div>
                 <div className="boardingO">
                   <img className="iconBoardingO" src={iconBoardingBlue}></img>
@@ -248,7 +277,11 @@ const OwnerProfile = () => {
                     <h3 className="boardingtitleO">Boarding</h3>
                     <h5 className="AvgbO">Avg. 20€ Night</h5>
                   </div>
-                  <input className="checkboxO" type="checkbox"></input>
+                  <input
+                    className="checkboxO"
+                    type="checkbox"
+                    onClick={handleBoarding}
+                  ></input>
                 </div>
                 <div className="hairdresserO">
                   <img
@@ -256,24 +289,35 @@ const OwnerProfile = () => {
                     src={iconHairdresserBlue}
                   ></img>
                   <div className="texthairdresseravgO">
-                    <h3 className="hairdressertitleO">Hairdresser</h3>
+                    <h3 className="hairdressertitleO">Grooming</h3>
                     <h5 className="AvghO">Avg. 9€ Hour</h5>
                   </div>
-                  <input className="checkboxO" type="checkbox"></input>
+                  <input
+                    className="checkboxO"
+                    type="checkbox"
+                    onClick={handleHairdresser}
+                  ></input>
                   <div className="walkingO">
                     <img className="iconWalkingO" src={iconWalkingBlue}></img>
                     <div className="textwalkingavgO">
                       <h3 className="walkingtitleO">Walking</h3>
                       <h5 className="AvgwO">Avg. 9€ Hour</h5>
                     </div>
-                    <input className="checkboxOW" type="checkbox"></input>
+                    <input
+                      className="checkboxOW"
+                      type="checkbox"
+                      onClick={handleWalking}
+                    ></input>
                   </div>
                 </div>
               </div>
               <h2 className="selectIsland">Select your island</h2>
               <img className="islandsO" src={islands}></img>
-              <img className="gC" src={gC}></img>
-              <h2 className="findIt">Find me a pet sitter</h2>
+              <img className="gC" src={gC} onClick={handleIsland}></img>
+              <DateInput dateFunc={handleDates}></DateInput>
+              <button className="findIt" onClick={handlePetsitters}>
+                Find me a pet sitter
+              </button>
             </div>
             <div className="bookingsectionO">
               <div className="futureBookingsO">
