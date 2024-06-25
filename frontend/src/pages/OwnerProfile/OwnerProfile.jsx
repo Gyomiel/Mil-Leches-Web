@@ -124,8 +124,9 @@ const OwnerProfile = () => {
       };
       console.log("a");
       await createPet(petData);
-    } else {
       await updateProfile(data);
+    } else {
+      
     }
 
     console.log(data.bio);

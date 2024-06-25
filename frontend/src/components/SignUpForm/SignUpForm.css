@@ -11,7 +11,7 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background-color: #f1eeee;
   display: flex;
-  width: 500px;
+  width: 520px;
   flex-direction: column;
   align-items: center;
   font-size: 14px;
@@ -26,7 +26,7 @@
 .pleaseStop {
   margin-top: 3rem;
   display: flex;
-  justify-content: center;
+  margin-left:0px
 }
 
 .signUpPic {
@@ -140,7 +140,7 @@ h4 {
   margin-top: 10px;
 }
 .userWholeInputImg {
-  margin-top: 1px;
+  margin-top: 9px;
   margin-right: 7px;
 }
 .userNameInputAreaL {

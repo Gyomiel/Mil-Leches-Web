@@ -84,6 +84,7 @@
   height: 460px;
   flex-shrink: 0;
   gap: 4rem;
+  margin-bottom: 1.5rem;
 }
 
 .memberHeader {
@@ -116,14 +117,15 @@
 .aboutButton {
   background-color: var(--primaryTeal);
   color: white;
-  height: 42px;
-  width: 175px;
-  font-size: 20px;
+  height: 80px;
+  width: 205px;
+  font-size: 30px;
   font-weight: 700;
   border: none;
-  border-radius: 50px;
+  border-radius: 40px;
   align-self: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
+  margin-left: 1.2rem;
 
 }
 
