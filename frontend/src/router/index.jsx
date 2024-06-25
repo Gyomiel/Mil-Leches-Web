@@ -15,6 +15,8 @@ import ContactUs from "../pages/ContactUs/ContactUs";
 const ownerRoute = () => {
   const role = localStorage.getItem("role");
   const token = localStorage.getItem("token");
+  console.log(token)
+  console.log(role)
   if (!token || role !== "owner") {
     return redirect("/");
   } else {
