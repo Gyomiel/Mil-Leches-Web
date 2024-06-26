@@ -12,7 +12,7 @@ body {
   width: 1050px;
   margin-top: 40px;
   margin-left: 60px;
-  border-radius: 48px;
+  border-radius: 28px;
   background: linear-gradient(
       0deg,
       rgba(91, 192, 190, 0.82) 0%,
@@ -295,9 +295,11 @@ ul {
 
 .tittleprofile {
   display: inline-block;
+  margin-top: 50px;
 }
 .aboutme {
-  padding-top: 30px;
+  padding-top: 20px;
+  margin-bottom: 20px;
 }
 .servicestext {
   font-size: 24px;
