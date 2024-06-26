@@ -1,6 +1,6 @@
 //Imported images
 
-import petsitterImg from "../../assets/PeopleImages/PetsitterProfilePic.png";
+import React from "react";
 import iconProfile from "../../assets/Icons/UploadPicIcon.svg";
 import iconHouse from "../../assets/Icons/HouseIconBlue.svg";
 import iconEdit from "../../assets/Icons/EditIcon.svg";
@@ -27,6 +27,21 @@ import {
 } from "../../services/user";
 
 function PetsitterProfile() {
+    const uploadedImage = React.useRef(null);
+    const imageUploader = React.useRef(null);
+
+    const handleImageUpload = (e) => {
+      const [file] = e.target.files;
+      if (file) {
+        const reader = new FileReader();
+        const { current } = uploadedImage;
+        current.file = file;
+        reader.onload = (e) => {
+          current.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    };
   const [picture, setPicture] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -107,10 +122,42 @@ function PetsitterProfile() {
     <div className="mainContainer">
       <div className="container">
         <div className="izqBox">
-          <img className="profilePic" src={petsitterImg}></img>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageUpload}
+              ref={imageUploader}
+              style={{
+                display: "none",
+              }}
+            />
+            <div
+              style={{
+                className: "uploadPic",
+                height: "220px",
+                width: "340px",
+                margin: 60,
+              }}
+              onClick={() => imageUploader.current.click()}
+            >
+              <img ref={uploadedImage} style={{}} />
+            </div>
+          </div>
           <section className="editProfile">
             <h6 className="uploadPic">Upload picture</h6>
-            <img className="profileIcon" src={iconProfile}></img>{" "}
+            <img
+              className="profileIcon"
+              src={iconProfile}
+              onClick={() => imageUploader.current.click()}
+            ></img>{" "}
           </section>
           <div className="nameTitle">
             {editName ? (

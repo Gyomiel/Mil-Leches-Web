@@ -11,9 +11,10 @@ const DateInput = ({ dateFunc }) => {
     dateFunc(dates);
   };
   return (
+    
     <div className="dateDiv">
       <div className="startDiv">
-        <label form="start" className="DateTool">
+        <label form="start" className="DateToolStart">
           Start date:
           <input
             className="dateDesign"
@@ -27,7 +28,7 @@ const DateInput = ({ dateFunc }) => {
         </label>
       </div>
       <div className="finishDiv">
-        <label form="finish" className="DateTool">
+        <label form="finish" className="DateToolFinish">
           Finish date:
           <input
             className="dateDesign"

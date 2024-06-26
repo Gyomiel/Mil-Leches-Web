@@ -12,6 +12,7 @@ import iconWalkingBlue from "../../assets/Icons/PawIconBlue.svg";
 import iconHairdresserBlue from "../../assets/Icons/HairdresserIconBlue.svg";
 import islands from "../../assets/various/islasmenosGran.svg";
 import gC from "../../assets/various/GranCanaria.svg";
+import logOutIcon from "../../assets/Icons/logOutIcon.svg";
 
 import InputText from "../../components/InputText/InputText";
 import InputPassword from "../../components/InputPassword/InputPassword";
@@ -26,6 +27,7 @@ import {
 } from "../../services/user";
 import { getPetProfile, updatePetProfile, createPet } from "../../services/pet";
 import DateInput from "../../components/DateInput/DateInput";
+import ResultsPetSitters from "../../components/ResultsPetSitters/ResultsPetSitters";
 
 const OwnerProfile = () => {
   const [name, setName] = useState("");
@@ -45,7 +47,7 @@ const OwnerProfile = () => {
   const [petBehaviour, setPetBehaviour] = useState("");
   const [dates, setDates] = useState();
   const [island, setIsland] = useState("");
-
+  const [blockResults, setBlockResults] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -66,18 +68,6 @@ const OwnerProfile = () => {
     profile();
   }, []);
 
-  const handlePetsitters = async () => {
-    const services = {
-      atHome: housesitting,
-      walking: walking,
-      visits: boarding,
-      hairdresser: hairdresser,
-    };
-    const { data } = await getPetsitterServices(services);
-    console.log(data);
-  };
-
-  /*   const handlePicture = (e) => {
     setPicture(e.target.value);
   };
  */
@@ -131,6 +121,9 @@ const OwnerProfile = () => {
   const handleIsland = () => {
     setIsland("Gran Canaria");
   };
+  const handleBlockResults = () => {
+    setBlockResults(!blockResults);
+  };
 
   const handleDates = (dates) => {
     setDates(dates);
@@ -143,22 +136,36 @@ const OwnerProfile = () => {
       location: location,
       bio: about,
     };
+    
+    if (petName.length !== 0) {
+      const petData = {
+        name: petName,
+        breed: petBreed,
+        age: petAge,
+        sickness: petSickness,
+        vet: petVet,
+        behaviour: petBehaviour,
+      };
+      await createPet(petData);
+      await updateProfile(data);
+    } else {
+      return;
+    }
 
-    const petData = {
-      name: petName,
-      breed: petBreed,
-      age: petAge,
-      sickness: petSickness,
-      vet: petVet,
-      behaviour: petBehaviour,
-    };
-    await createPet(petData);
     await updateProfile(data);
+  };
+  const handlePetsitters = async () => {
+    const { data } = await getPetsitterServices();
+    setBlockResults(!blockResults);
   };
   return (
     <>
       <div className="wholeContainerOwner">
-        <section className="ownerProfileLeft">
+        <ResultsPetSitters display={blockResults ? "flex" : "none"} />
+        <section
+          style={{ display: blockResults ? "none" : "flex" }}
+          className="ownerProfileLeft"
+        >
           <div className="ownerProfPicArea">
             <img className="ownerPic" src={ownerPic}></img>
             <img className="profileIcon" src={iconProfile}></img>
@@ -195,7 +202,10 @@ const OwnerProfile = () => {
             </div>
           </div>
         </section>
-        <section className="petProfileO">
+        <section
+          className="petProfileO"
+          style={{ display: blockResults ? "none" : "flex" }}
+        >
           <div className="petProfPicArea">
             <img className="petPic" src={petPic}></img>
             <img className="profileIconP" src={iconProfile}></img>
@@ -243,14 +253,28 @@ const OwnerProfile = () => {
           </div>
         </section>
         <section className="rightSectionOwner">
-          <div className="messagesHelp">
-            <div className="msg">
-              <img className="iconMessages" src={iconMessages}></img>
-              <h2 className="messages">My messages</h2>
-            </div>
-            <div className="sos">
-              <img className="iconHelp" src={iconHelp}></img>
-              <h2 className="help">Need help?</h2>
+          <div className="menuBarPO">
+            <div className="messagesHelpO">
+              <div className="msg">
+                <img className="iconMessages" src={iconMessages}></img>
+                <button className="messages">My messages</button>
+              </div>
+              <div className="sos">
+                <div className="sosIcon">
+                  <img className="iconHelp" src={iconHelp}></img>
+                </div>
+                <div className="sosText">
+                  <button className="help">Need help?</button>
+                </div>
+              </div>
+              <div className="logOutDiv">
+                <div className="logOutIcondiv">
+                  <img className="logOutIcon" src={logOutIcon}></img>
+                </div>
+                <div className="logOutTextDiv">
+                  <button className="logOutButton">Log out</button>
+                </div>
+              </div>
             </div>
           </div>
           <div className="findPetSitterSection">
@@ -309,10 +333,19 @@ const OwnerProfile = () => {
                   </div>
                 </div>
               </div>
+              <div className="selectDateIslandText">
               <h2 className="selectIsland">Select your island</h2>
-              <img className="islandsO" src={islands}></img>
-              <img className="gC" src={gC} onClick={handleIsland}></img>
-              <DateInput dateFunc={handleDates}></DateInput>
+              <h2 className="selectDateText">Select your dates</h2>
+              </div>
+              <div className="islandsAndDates">
+                <div className="islandsOW">
+                  <img className="islandsO" src={islands}></img>
+                  <img className="gC" src={gC} onClick={handleIsland}></img>
+                </div>
+                <div className="dates">
+                  <DateInput dateFunc={handleDates}></DateInput>
+                </div>
+              </div>
               <button className="findIt" onClick={handlePetsitters}>
                 Find me a pet sitter
               </button>

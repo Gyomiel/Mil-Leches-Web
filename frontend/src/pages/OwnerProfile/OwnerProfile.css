@@ -193,14 +193,14 @@
 }
 
 .findPetSitterContainer {
-  width: 700px;
+  width: 760px;
   height: 550px;
   border-radius: 48px;
   border: 1px solid #bebebe;
   background: #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-top: 40px;
-  margin-left: 105px;
+  margin-left: 78px;
 }
 .housesittingO {
   display: flex;
@@ -312,9 +312,11 @@
   align-items: center;
   font-size: 12px;
   margin-left: 48px;
+  
 }
 .AvgwO {
   margin-top: 0px;
+  font-size: 14px;
   margin-left: 14px;
   color: grey;
   margin-right: 30px;
@@ -323,6 +325,7 @@
   display: inline;
   margin-left: 13px;
   font-size: 25px;
+  margin-top:-10px;
 
   margin-right: 20px;
 }
@@ -337,7 +340,7 @@
   flex-wrap: wrap;
   align-items: center;
   margin-top: -20px;
-  padding-left: 105px;
+  padding-left: 125px;
 }
 
 .lookingFor {
@@ -348,17 +351,29 @@
 
 .selectIsland {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   color: #666565;
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-left:140px;
+}
+
+.selectDateText{
+   display: flex;
+  justify-content: left;
+  color: #666565;
+  font-size: 20px;
+  margin-top: 40px;
+  margin-left:195px;
 }
 
 .islandsO {
   margin-left: 140px;
-  margin-top: -60px;
+  margin-top: -70px;
 }
-
+.selectDateIslandText{
+  display: flex;
+}
 .gC {
   margin-left: -180px;
 }
@@ -370,12 +385,12 @@
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1.5rem;
-  background-color: var(--primaryTeal);
+  margin-top: 2.3rem;
+  background-color: rgb(163, 163, 163);
   color: white;
-  height: 42px;
-  width: 220px;
-  font-size: 20px;
+  height: 44px;
+  width: 260px;
+  font-size: 25px;
   font-weight: 700;
   border: none;
   border-radius: 50px;
@@ -425,4 +440,41 @@
 }
 .box11O {
   font-size: 25px;
+}
+
+.displayIt {
+  display: block;
+}
+.displayNone {
+  display: none;
+}
+.menuBarPO {
+  
+  width: 750px;
+  height: 70px;
+  background-color: rgba(229, 229, 231, 0.747);
+  border-radius: 19px;
+  margin-top: 40px;
+  margin-left:80px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.messagesHelpO {
+  width: 700px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-left: 16px;
+  padding-top: 11px;
+  margin-top: 0px;
+}
+.islandsAndDates{
+  display:flex
+}
+.islandsOW{
+  margin-left: -110px;
+  margin-top:20px;
+}
+.dates{
+  margin-left: 160px;
+  margin-top:-10px;
 }
