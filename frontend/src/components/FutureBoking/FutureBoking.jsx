@@ -44,7 +44,7 @@ function FutureBoking() {
         <button className="futureBooking1">
             <ReservationList reservations={futureReservations}/>
         </button>
-    <img className="plus1" src={iconPlus}></img>
+   
     </div>
   )
 }
