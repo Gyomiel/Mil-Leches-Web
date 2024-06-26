@@ -28,6 +28,7 @@ import {
 import { getPetProfile, updatePetProfile, createPet } from "../../services/pet";
 import DateInput from "../../components/DateInput/DateInput";
 import ResultsPetSitters from "../../components/ResultsPetSitters/ResultsPetSitters";
+import LogoutButton from "../../components/LogoutButton/LogoutButton";
 
 const OwnerProfile = () => {
   const [name, setName] = useState("");
@@ -68,9 +69,6 @@ const OwnerProfile = () => {
     profile();
   }, []);
 
-    setPicture(e.target.value);
-  };
- */
   /*   const handleName = (e) => {
     setName(e.target.value);
   }; */
@@ -121,9 +119,6 @@ const OwnerProfile = () => {
   const handleIsland = () => {
     setIsland("Gran Canaria");
   };
-  const handleBlockResults = () => {
-    setBlockResults(!blockResults);
-  };
 
   const handleDates = (dates) => {
     setDates(dates);
@@ -136,7 +131,7 @@ const OwnerProfile = () => {
       location: location,
       bio: about,
     };
-    
+
     if (petName.length !== 0) {
       const petData = {
         name: petName,
@@ -154,10 +149,19 @@ const OwnerProfile = () => {
 
     await updateProfile(data);
   };
+
   const handlePetsitters = async () => {
-    const { data } = await getPetsitterServices();
+    const services = {
+      atHome: housesitting,
+      walking: walking,
+      visits: boarding,
+      hairdresser: hairdresser,
+    };
+    const { data } = await getPetsitterServices(services);
     setBlockResults(!blockResults);
+    console.log(data);
   };
+
   return (
     <>
       <div className="wholeContainerOwner">
@@ -272,7 +276,7 @@ const OwnerProfile = () => {
                   <img className="logOutIcon" src={logOutIcon}></img>
                 </div>
                 <div className="logOutTextDiv">
-                  <button className="logOutButton">Log out</button>
+                  <LogoutButton />
                 </div>
               </div>
             </div>
@@ -334,8 +338,8 @@ const OwnerProfile = () => {
                 </div>
               </div>
               <div className="selectDateIslandText">
-              <h2 className="selectIsland">Select your island</h2>
-              <h2 className="selectDateText">Select your dates</h2>
+                <h2 className="selectIsland">Select your island</h2>
+                <h2 className="selectDateText">Select your dates</h2>
               </div>
               <div className="islandsAndDates">
                 <div className="islandsOW">
