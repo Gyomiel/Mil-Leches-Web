@@ -49,6 +49,7 @@ const OwnerProfile = () => {
   const [dates, setDates] = useState();
   const [island, setIsland] = useState("");
   const [blockResults, setBlockResults] = useState(false);
+  const [petsitters, setPetsitters] = useState();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -69,9 +70,6 @@ const OwnerProfile = () => {
     profile();
   }, []);
 
-  /*   const handleName = (e) => {
-    setName(e.target.value);
-  }; */
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -159,13 +157,15 @@ const OwnerProfile = () => {
     };
     const { data } = await getPetsitterServices(services);
     setBlockResults(!blockResults);
-    console.log(data);
+    setPetsitters(data);
   };
-
   return (
     <>
       <div className="wholeContainerOwner">
-        <ResultsPetSitters display={blockResults ? "flex" : "none"} />
+        <ResultsPetSitters
+          petsitters={petsitters}
+          display={blockResults ? "flex" : "none"}
+        />
         <section
           style={{ display: blockResults ? "none" : "flex" }}
           className="ownerProfileLeft"
