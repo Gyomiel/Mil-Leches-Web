@@ -12,6 +12,7 @@ import iconWalkingBlue from "../../assets/Icons/PawIconBlue.svg";
 import iconHairdresserBlue from "../../assets/Icons/HairdresserIconBlue.svg";
 import islands from "../../assets/various/islasmenosGran.svg";
 import gC from "../../assets/various/GranCanaria.svg";
+import logOutIcon from "../../assets/Icons/logOutIcon.svg";
 
 import InputText from "../../components/InputText/InputText";
 import InputPassword from "../../components/InputPassword/InputPassword";
@@ -252,14 +253,28 @@ const OwnerProfile = () => {
           </div>
         </section>
         <section className="rightSectionOwner">
-          <div className="messagesHelp">
-            <div className="msg">
-              <img className="iconMessages" src={iconMessages}></img>
-              <h2 className="messages">My messages</h2>
-            </div>
-            <div className="sos">
-              <img className="iconHelp" src={iconHelp}></img>
-              <h2 className="help">Need help?</h2>
+          <div className="menuBarPO">
+            <div className="messagesHelpO">
+              <div className="msg">
+                <img className="iconMessages" src={iconMessages}></img>
+                <button className="messages">My messages</button>
+              </div>
+              <div className="sos">
+                <div className="sosIcon">
+                  <img className="iconHelp" src={iconHelp}></img>
+                </div>
+                <div className="sosText">
+                  <button className="help">Need help?</button>
+                </div>
+              </div>
+              <div className="logOutDiv">
+                <div className="logOutIcondiv">
+                  <img className="logOutIcon" src={logOutIcon}></img>
+                </div>
+                <div className="logOutTextDiv">
+                  <button className="logOutButton">Log out</button>
+                </div>
+              </div>
             </div>
           </div>
           <div className="findPetSitterSection">
@@ -318,10 +333,19 @@ const OwnerProfile = () => {
                   </div>
                 </div>
               </div>
+              <div className="selectDateIslandText">
               <h2 className="selectIsland">Select your island</h2>
-              <img className="islandsO" src={islands}></img>
-              <img className="gC" src={gC} onClick={handleIsland}></img>
-              <DateInput dateFunc={handleDates}></DateInput>
+              <h2 className="selectDateText">Select your dates</h2>
+              </div>
+              <div className="islandsAndDates">
+                <div className="islandsOW">
+                  <img className="islandsO" src={islands}></img>
+                  <img className="gC" src={gC} onClick={handleIsland}></img>
+                </div>
+                <div className="dates">
+                  <DateInput dateFunc={handleDates}></DateInput>
+                </div>
+              </div>
               <button className="findIt" onClick={handlePetsitters}>
                 Find me a pet sitter
               </button>
