@@ -35,12 +35,12 @@ const Header = () => {
           <div>
             <Link to="/help">Help</Link>
           </div>
-          <div className={isAuth ? "hideButton" : "showButton"}>
+          <div className="showButton">
             <Link to="/signup">
               <button className="subtn">Sign Up</button>
             </Link>
           </div>
-          <div className={isAuth ? "hideButton" : "showButton"}>
+          <div className="showButton">
             <Link to="/login">
               <button className="libtn">Log in</button>
             </Link>

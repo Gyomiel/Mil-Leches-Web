@@ -2,6 +2,7 @@ import api from "./config";
 
 const signUp = async (body) => {
   try {
+    console.log(body);
     const { data } = await api.post("auth/signup", body);
     return data;
   } catch (error) {
