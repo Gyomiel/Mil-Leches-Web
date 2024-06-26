@@ -1,5 +1,6 @@
 const Pet = require("../models/pets.model");
 const User = require("../models/users.model");
+const Services = require("../models/services.model");
 const bcrypt = require("bcrypt");
 
 const getAllUsers = async (request, response) => {
@@ -111,6 +112,21 @@ const updateProfile = async (request, response) => {
   }
 };
 
+
+const getPetsitterServidces = async (request, response) => {
+  try {
+    const user = await User.findOne({
+      where: {
+        id: response.locals.user.id,
+      },
+      include: Services,
+    });
+    return response.status(200).json(user);
+  } catch (error) {
+    return response.status(501).send("No users or services found.");
+  }
+};
+
 module.exports = {
   getAllUsers,
   getOneUser,
@@ -119,4 +135,6 @@ module.exports = {
   deleteUser,
   getProfile,
   updateProfile,
+  getPetsitterServidces,
+
 };
