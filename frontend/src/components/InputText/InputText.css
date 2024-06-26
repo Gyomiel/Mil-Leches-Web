@@ -7,6 +7,7 @@
   padding: 8px 16px;
   align-items: center;
   gap: 16px;
+  font-size: 20px;
 }
 
 .ownerName {

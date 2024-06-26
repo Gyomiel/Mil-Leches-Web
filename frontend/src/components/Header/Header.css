@@ -13,8 +13,9 @@ header {
 }
 
 #headerLogo {
-  transform: scale(0.87);
+  transform: scale(1);
   display: inline-block;
+  margin-top:3px;
 }
 
 .divider {
@@ -39,20 +40,29 @@ a {
   color: white;
   height: 42px;
   width: 120px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   border: none;
   border-radius: 50px;
   align-self: center;
 }
 
+.subtn:hover{
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
 .libtn {
   color: var(--primaryTeal);
   background-color: white;
-  font-size: 20px;
+  font-size: 22px;
   border: none;
   align-self: center;
   font-weight: 700;
+}
+.libtn:hover {
+  font-size: 24px;
 }
 
 button:hover {

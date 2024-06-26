@@ -35,7 +35,7 @@ const Home = () => {
       <div className="servicesHome">
         <div className="houseHome">
           <img className="iconHouseHome" src={iconHouseGreen}></img>
-          <h3 className="textHouseHome">House-sitting</h3>
+          <h3 className="textHouseHome">House sitting</h3>
         </div>
         <div className="boardingHome">
           <img className="iconBoardingHome" src={iconBoardingGreen}></img>
@@ -43,11 +43,11 @@ const Home = () => {
         </div>
         <div className="walkingHome">
           <img className="iconWalkingHome" src={iconWalkingGreen}></img>
-          <h3 className="textWalkingHome">Walking</h3>
+          <h3 className="textWalkingHome">Dog walking</h3>
         </div>
         <div className="hairdresserHome">
           <img className="iconHairdresserHome" src={iconHairdresserGreen}></img>
-          <h3 className="textHairdresserHome">House-sitting</h3>
+          <h3 className="textHairdresserHome">Grooming</h3>
         </div>
       </div>
     </>

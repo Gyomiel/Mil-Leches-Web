@@ -1,3 +1,4 @@
+const Pet = require("../models/pets.model");
 const User = require("../models/users.model");
 const Services = require("../models/services.model");
 const bcrypt = require("bcrypt");
@@ -64,12 +65,22 @@ const deleteUser = async (request, response) => {
 
 const getProfile = async (request, response) => {
   try {
-    const user = await User.findOne({
-      where: {
-        id: response.locals.user.id,
-      },
-    });
-    return response.status(200).json(user);
+    if (response.locals.user.role === "petsitter") {
+      const user = await User.findOne({
+        where: {
+          id: response.locals.user.id,
+        },
+      });
+      return response.status(200).json(user);
+    } else {
+      const user = await User.findOne({
+        where: {
+          id: response.locals.user.id,
+        },
+        include: Pet,
+      });
+      return response.status(200).json(user);
+    }
   } catch (error) {
     return response.status(501).send("User not found.");
   }
@@ -100,12 +111,14 @@ const updateProfile = async (request, response) => {
   }
 };
 
-const addServiceToUser = async (request, response) => {
+
+const getPetsitterServidces = async (request, response) => {
   try {
     const user = await User.findOne({
       where: {
         id: response.locals.user.id,
       },
+      include: Services,
     });
     const data = {
       atHome: request.body.atHome ? true : false,
@@ -137,5 +150,6 @@ module.exports = {
   deleteUser,
   getProfile,
   updateProfile,
-  addServiceToUser,
+  getPetsitterServidces,
+
 };

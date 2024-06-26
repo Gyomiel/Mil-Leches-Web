@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div>
       <footer>
-        <p>
+        <p className="footerP">
           Copyright © 2024 | Made with ♥︎ by Mil Leches Team •ᴗ• | All rights
           deserved.
         </p>
