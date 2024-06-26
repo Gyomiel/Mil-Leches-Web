@@ -36,6 +36,7 @@
   padding: 8px 16px;
   align-items: center;
   gap: 16px;
+  font-size: 20px;
 }
 .ownerProfileLeft {
   display: flex;
@@ -52,16 +53,17 @@
   flex-direction: column;
   margin-top: -40px;
   margin-left: 50px;
+  line-height: 13px;
 }
 
 .petProfileO {
   width: 420px;
-  height: 850px;
+  height: 920px;
   border-radius: 48px;
   background: linear-gradient(0deg, #e7e7e7 0%, #e7e7e7 100%), #b5dbff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-left: 60px;
-  margin-top: 65px;
+  margin-top: 40px;
 }
 
 .petProfileO {
@@ -70,9 +72,14 @@
 }
 
 .petPic {
-  width: 250px;
+  width: 200px;
   margin-top: 40px;
-  margin-left: 85px;
+  margin-left: 110px;
+  margin-bottom: 40px;
+}
+.profileIconP {
+  width: 20px;
+  margin-bottom: 40px;
 }
 
 .petName {
@@ -86,6 +93,7 @@
   flex-direction: column;
   margin-top: -40px;
   margin-left: 30px;
+  line-height: 10px;
 }
 .bookingsectionO {
   display: flex;
@@ -104,6 +112,11 @@
   font-weight: bolder;
   font-size: 20px;
 }
+.futureBooking1O:hover {
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
 .futureBookingsO {
   display: flex;
   flex-direction: column;
@@ -147,6 +160,10 @@
   font-weight: bolder;
   font-size: 20px;
 }
+.pastBookingO1:hover {
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
 
 .pastBookingO2 {
   position: relative;
@@ -164,7 +181,11 @@
   border: 0px;
   font-weight: bolder;
   font-size: 20px;
-  margin-top: -10px;
+  margin-top: 20px;
+}
+.pastBookingO2:hover {
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .pastBookingsO {
@@ -173,7 +194,7 @@
 
 .findPetSitterContainer {
   width: 700px;
-  height: 500px;
+  height: 550px;
   border-radius: 48px;
   border: 1px solid #bebebe;
   background: #fff;
@@ -197,7 +218,7 @@
 .housetitleO {
   display: inline;
   margin-left: 13px;
-  font-size: 20px;
+  font-size: 25px;
 
   margin-right: 20px;
 }
@@ -212,15 +233,25 @@
   stroke-width: 1px;
   stroke: #fff;
   width: 18px;
+  height: 16px;
 }
 
+.checkboxOW {
+  fill: var(--Shade-01, #fff);
+  stroke-width: 1px;
+  stroke: #fff;
+  width: 18px;
+  height: 16px;
+  margin-left: 15px;
+}
 .checkbox1O {
   fill: var(--Shade-01, #fff);
   stroke-width: 1px;
   stroke: #fff;
   width: 18px;
+  height: 16px;
   margin-top: 35px;
-  margin-left: -15px;
+  margin-left: -14px;
 }
 
 .boardingO {
@@ -240,7 +271,7 @@
 .boardingtitleO {
   display: inline;
   margin-left: 13px;
-  font-size: 20px;
+  font-size: 25px;
 
   margin-right: 20px;
 }
@@ -266,7 +297,7 @@
 .hairdressertitleO {
   display: inline;
   margin-left: 13px;
-  font-size: 20px;
+  font-size: 25px;
 
   margin-right: 20px;
 }
@@ -279,7 +310,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: 17px;
+  font-size: 12px;
   margin-left: 48px;
 }
 .AvgwO {
@@ -291,7 +322,7 @@
 .walkingtitleO {
   display: inline;
   margin-left: 13px;
-  font-size: 20px;
+  font-size: 25px;
 
   margin-right: 20px;
 }
@@ -334,9 +365,64 @@
 
 .findIt {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 30px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  background-color: var(--primaryTeal);
+  color: white;
+  height: 42px;
+  width: 220px;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  align-self: center;
 }
 .gCGrey {
-  color:grey;
+  color: grey;
+  z-index: 1;
+}
+.gC:hover {
+  filter: hue-rotate(40deg);
+  cursor: pointer;
+}
+.saveO {
+  border-radius: 8px;
+  background: #7e8081;
+  color: white;
+  border: 0px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 150px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 95px;
+}
+
+.saveO:hover {
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.petNameBox {
+  display: flex;
+}
+.editIconPet {
+  margin-left: 13px;
+  margin-top: -10px;
+  width: 25px;
+}
+.ownerNameBox {
+  display: flex;
+}
+.editIconName {
+  margin-left: 15px;
+  margin-top: -10px;
+  width: 25px;
+}
+.box11O {
+  font-size: 25px;
 }

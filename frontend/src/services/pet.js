@@ -1,10 +1,23 @@
 import api from "./config";
 
-const getProfile = async () => {
+const getPetProfile = async () => {
   try {
     const token = localStorage.getItem("token");
 
-    const response = await api.get("user/profile", {
+    const response = await api.get("pets/profile", {
+      headers: { authorization: token },
+    });
+
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+const createPet = async (body) => {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await api.post("pets", body, {
       headers: { authorization: token },
     });
     return response;
@@ -13,11 +26,11 @@ const getProfile = async () => {
   }
 };
 
-const updateProfile = async (body) => {
+const updatePetProfile = async (body) => {
   try {
     const token = localStorage.getItem("token");
-    console.log(body);
-    const response = await api.post("user/profile", body, {
+
+    const response = await api.post("pets/profile", body, {
       headers: { authorization: token },
     });
     return response;
@@ -26,17 +39,4 @@ const updateProfile = async (body) => {
   }
 };
 
-
-const getPetsitterServices = async () => {
-  try {
-    const token = localStorage.getItem("token");
-
-    const response = await api.get("user/profile/services", {
-      headers: { authorization: token },
-    });
-    return response;
-  } catch (error) {
-    console.log(error.message);
-  }
-};
-export { getProfile, updateProfile, getPetsitterServices };
+export { getPetProfile, updatePetProfile, createPet };
