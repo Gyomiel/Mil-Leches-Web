@@ -112,6 +112,7 @@ const updateProfile = async (request, response) => {
   }
 };
 
+
 const getPetsitterServidces = async (request, response) => {
   try {
     const user = await User.findOne({
@@ -135,4 +136,5 @@ module.exports = {
   getProfile,
   updateProfile,
   getPetsitterServidces,
+
 };
