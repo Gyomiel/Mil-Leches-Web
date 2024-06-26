@@ -4,7 +4,6 @@ const Service = require("../api/models/services.model");
 const Booking = require("../api/models/bookings.model");
 const Comment = require("../api/models/comments.model");
 const Thread = require("../api/models/thread.model");
-const UserBooking = require("../api/models/user_bookings.model");
 
 const initializeRelationships = () => {
   try {
@@ -12,18 +11,21 @@ const initializeRelationships = () => {
     Pet.belongsTo(User);
     User.belongsToMany(Service, { through: "users_services" });
     Service.belongsToMany(User, { through: "users_services" });
-    User.belongsToMany(Booking, {
-      through: UserBooking,
-      foreignKey: "ownerId",
+
+    User.hasMany(Booking, {
       foreignKey: "petsitterId",
-      foreignKey: "bookingId",
     });
-    Booking.belongsToMany(User, {
-      through: UserBooking,
+    User.hasMany(Booking, {
       foreignKey: "ownerId",
-      foreignKey: "petsitterId",
-      foreignKey: "bookingId",
     });
+
+    Booking.belongsTo(User, {
+      foreignKey: "petsitterId",
+    });
+    Booking.belongsTo(User, {
+      foreignKey: "ownerId",
+    });
+
     Booking.hasOne(Thread);
     Thread.belongsTo(Booking);
     Thread.hasMany(Comment);
