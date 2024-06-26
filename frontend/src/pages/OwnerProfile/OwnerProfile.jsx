@@ -26,7 +26,7 @@ import {
 } from "../../services/user";
 import { getPetProfile, updatePetProfile, createPet } from "../../services/pet";
 import DateInput from "../../components/DateInput/DateInput";
-
+import ResultsPetSitters from "../../components/ResultsPetSitters/ResultsPetSitters";
 
 const OwnerProfile = () => {
   const [name, setName] = useState("");
@@ -46,7 +46,7 @@ const OwnerProfile = () => {
   const [petBehaviour, setPetBehaviour] = useState("");
   const [dates, setDates] = useState();
   const [island, setIsland] = useState("");
-
+  const [blockResults, setBlockResults] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -66,12 +66,6 @@ const OwnerProfile = () => {
 
     profile();
   }, []);
-
-
-  const handlePetsitters = async () => {
-    const { data } = await getPetsitterServices();
-    console.log(data);
-  };
 
   const handlePicture = (e) => {
     setPicture(e.target.value);
@@ -127,6 +121,9 @@ const OwnerProfile = () => {
   const handleIsland = () => {
     setIsland("Gran Canaria");
   };
+  const handleBlockResults = () => {
+    setBlockResults(!blockResults);
+  };
 
   const handleDates = (dates) => {
     setDates(dates);
@@ -148,19 +145,26 @@ const OwnerProfile = () => {
         vet: petVet,
         behaviour: petBehaviour,
       };
-      console.log("a");
       await createPet(petData);
       await updateProfile(data);
     } else {
-      
+      return;
     }
-    await updateProfile(data);
 
+    await updateProfile(data);
+  };
+  const handlePetsitters = async () => {
+    const { data } = await getPetsitterServices();
+    setBlockResults(!blockResults);
   };
   return (
     <>
       <div className="wholeContainerOwner">
-        <section className="ownerProfileLeft">
+        <ResultsPetSitters display={blockResults ? "flex" : "none"} />
+        <section
+          style={{ display: blockResults ? "none" : "flex" }}
+          className="ownerProfileLeft"
+        >
           <div className="ownerProfPicArea">
             <img className="ownerPic" src={ownerPic}></img>
             <img className="profileIcon" src={iconProfile}></img>
@@ -197,7 +201,10 @@ const OwnerProfile = () => {
             </div>
           </div>
         </section>
-        <section className="petProfileO">
+        <section
+          className="petProfileO"
+          style={{ display: blockResults ? "none" : "flex" }}
+        >
           <div className="petProfPicArea">
             <img className="petPic" src={petPic}></img>
             <img className="profileIconP" src={iconProfile}></img>

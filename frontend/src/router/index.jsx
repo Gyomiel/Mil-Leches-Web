@@ -10,6 +10,7 @@ import ProfilePetsitter from "../pages/ProfilePetsitter/ProfilePetsitter";
 import OwnerProfile from "../pages/OwnerProfile/OwnerProfile";
 import NotFound from "../pages/NotFound/NotFound";
 import ContactUs from "../pages/ContactUs/ContactUs";
+import ResultsPetSitters from "../components/ResultsPetSitters/ResultsPetSitters"
 
 
 const ownerRoute = () => {
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
       {
         path: "/contactus",
         element: <ContactUs />,
+      },
+      {
+        path: "/results",
+        element: <ResultsPetSitters />,
       },
     ],
   },

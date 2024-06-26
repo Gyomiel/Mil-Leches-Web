@@ -426,3 +426,10 @@
 .box11O {
   font-size: 25px;
 }
+
+.displayIt {
+  display: block;
+}
+.displayNone {
+  display: none;
+}
