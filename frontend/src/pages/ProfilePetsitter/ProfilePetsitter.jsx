@@ -2,7 +2,7 @@
 import iconHelp from "../../assets/Icons/helpIcon.svg";
 import iconMessages from "../../assets/Icons/messagesIcon.svg";
 import calendar from "../../assets/various/Calendar.png";
-import iconPlus from "../../assets/Icons/plusIcon.svg";
+
 import review1 from "../../assets/various/review1.svg";
 import review2 from "../../assets/various/review2.svg";
 //components
@@ -10,8 +10,16 @@ import PetsitterProfile from "../../components/PetsitterProfile/PetsitterProfile
 //CSS
 import "./ProfilePetsitter.css";
 import ReservationList from "../../components/reservelist/reservelist";
+import FutureBoking from "../../components/FutureBoking/FutureBoking";
+import PastBoking from "../../components/PastBoking/PastBoking";
 
 const ProfilePetsitter = () => {
+
+
+
+
+
+
   return (
     <section className="mainContainerPage">
       <PetsitterProfile className="profile" />
@@ -29,21 +37,9 @@ const ProfilePetsitter = () => {
         <div className="calendarAndBookings">
           <img className="calendar" src={calendar}></img>
           <div className="bookingsection">
-            <div className="futureBookings">
-              <h2 className="myFutureB">My future bookings</h2>
-              <button className="futureBooking1">
-              <ReservationList/>
-              </button>
-              <img className="plus1" src={iconPlus}></img>
-            </div>
-            <div className="pastBookings">
-              <h2 className="myPastB">Past bookings</h2>
-              <button className="pastBooking1">12/06/2024 - 13/06/2024</button>
-              <br></br>
-              <br></br>
-              <button className="pastBooking2">01/04/2024 - 01/04/2024</button>
-              <img className="plus2" src={iconPlus}></img>
-            </div>
+            <FutureBoking/>
+            <PastBoking/>
+             
           </div>
         </div>
         <div className="reviews">

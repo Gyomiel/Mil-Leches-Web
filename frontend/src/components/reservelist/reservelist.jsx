@@ -1,25 +1,19 @@
-import React, {useState} from 'react';
-import { getAllBokings } from '../../services/bookings';
-import { useEffect } from 'react';
 
-const ReservationList = () =>{
-    const [allreservations, setallReservations] = useState([]);
+import "./reservelist.css"
 
-   const fecha = "27-07-2024"
+const ReservationList = ({reservations}) => {
+   
+console.log(reservations)
 
-const handlebookings = async () => {
-    const data = await getAllBokings ()
-    setallReservations(data)
-    console.log(data)
-}
+    return (
+        <div>
+            {reservations?.map((item, index) => (
+                <div key={index}>
+                    <p className='DateIn'> {item.checkIn.replace(/-/g, '/')} - {item.checkOut.replace(/-/g, '/')}</p>
+                </div>
+            ))}
+        </div>
+    );
+};
 
-useEffect(() => {handlebookings()}, [] )
-
-
-
-   return (
-    <div>{allreservations.map((item) => {return item.checkIn})}</div>
-
-   )
-}
-export default ReservationList
+export default ReservationList;

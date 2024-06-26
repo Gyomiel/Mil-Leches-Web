@@ -19,7 +19,7 @@ const getOneUser = async (request, response) => {
     const user = await User.findOne({
       where: {
         id: request.params.id,
-      },git config pull.rebase false
+      }
     });
     return response.status(200).json(user);
   } catch (error) {
