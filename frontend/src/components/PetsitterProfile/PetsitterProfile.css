@@ -40,6 +40,7 @@ body {
 .profileIcon {
   height: 20.1px;
   width: 23.1px;
+  margin-top:20px
 }
 .uploadPic {
   margin-top: -1px;
@@ -51,7 +52,7 @@ body {
   display: flex;
   flex-direction: row;
   margin-left: 230px;
-  margin-top: 5px;
+  margin-top: -75px;
   justify-content: space-evenly;
 }
 .profilePic {
@@ -303,4 +304,7 @@ ul {
 }
 .servicestext {
   font-size: 24px;
+}
+.uploadPic{
+  margin-top: 20px;
 }

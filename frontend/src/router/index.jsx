@@ -10,7 +10,8 @@ import ProfilePetsitter from "../pages/ProfilePetsitter/ProfilePetsitter";
 import OwnerProfile from "../pages/OwnerProfile/OwnerProfile";
 import NotFound from "../pages/NotFound/NotFound";
 import ContactUs from "../pages/ContactUs/ContactUs";
-import ResultsPetSitters from "../components/ResultsPetSitters/ResultsPetSitters"
+import Prueba from "../pages/prueba/Prueba"
+import PetsitterCard from "../components/PetsitterCard/PetsitterCard";
 
 
 const ownerRoute = () => {
@@ -79,7 +80,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/results",
-        element: <ResultsPetSitters />,
+        element: <PetsitterCard/>
       },
     ],
   },
