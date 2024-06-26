@@ -18,7 +18,7 @@ import InputText from "../../components/InputText/InputText";
 import InputPassword from "../../components/InputPassword/InputPassword";
 
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { HashRouter, useNavigate } from "react-router-dom";
 
 import {
   getProfile,
@@ -35,10 +35,10 @@ const OwnerProfile = () => {
   const [password, setPassword] = useState("");
   const [location, setLocation] = useState("");
   const [about, setAbout] = useState("");
-  // const [housesitting, setHousesitting] = useState(false);
-  // const [hairdresser, setHairdresser] = useState(false);
-  // const [boarding, setBoarding] = useState(false);
-  // const [walking, setWalking] = useState(false);
+  const [housesitting, setHousesitting] = useState(false);
+  const [hairdresser, setHairdresser] = useState(false);
+  const [boarding, setBoarding] = useState(false);
+  const [walking, setWalking] = useState(false);
   const [petName, setPetName] = useState("");
   const [petBreed, setPetBreed] = useState("");
   const [petAge, setPetAge] = useState("");
@@ -68,13 +68,12 @@ const OwnerProfile = () => {
     profile();
   }, []);
 
-  const handlePicture = (e) => {
     setPicture(e.target.value);
   };
-
-  const handleName = (e) => {
+ */
+  /*   const handleName = (e) => {
     setName(e.target.value);
-  };
+  }; */
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -137,6 +136,7 @@ const OwnerProfile = () => {
       location: location,
       bio: about,
     };
+    
     if (petName.length !== 0) {
       const petData = {
         name: petName,
