@@ -18,9 +18,13 @@ import InputPassword from "../InputPassword/InputPassword";
 import InputTextArea from "../InputTextArea/InputTextArea";
 
 //THINGYS
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getProfile, updateProfile, addService } from "../../services/user";
+import {
+  getProfile,
+  updateProfile,
+  addPetsitterServices,
+} from "../../services/user";
 
 function PetsitterProfile() {
   const [picture, setPicture] = useState("");
@@ -73,7 +77,7 @@ function PetsitterProfile() {
     setHairdresser(!hairdresser);
   };
   const handleBoarding = () => {
-    setBoarding(boarding);
+    setBoarding(!boarding);
   };
   const handleWalking = () => {
     setWalking(!walking);
@@ -97,7 +101,7 @@ function PetsitterProfile() {
       walking: walking,
       hairdresser: hairdresser,
     };
-    await addService(services);
+    await addPetsitterServices(services);
   };
   return (
     <div className="mainContainer">

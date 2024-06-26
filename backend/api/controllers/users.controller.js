@@ -2,6 +2,7 @@ const Pet = require("../models/pets.model");
 const User = require("../models/users.model");
 const Services = require("../models/services.model");
 const bcrypt = require("bcrypt");
+const { Op } = require("sequelize");
 
 const getAllUsers = async (request, response) => {
   try {
@@ -111,8 +112,7 @@ const updateProfile = async (request, response) => {
   }
 };
 
-
-const getPetsitterServidces = async (request, response) => {
+const addPetsitterServices = async (request, response) => {
   try {
     const user = await User.findOne({
       where: {
@@ -120,25 +120,57 @@ const getPetsitterServidces = async (request, response) => {
       },
       include: Services,
     });
-    const data = {
-      atHome: request.body.atHome ? true : false,
-      visits: request.body.visits ? true : false,
-      hairdresser: request.body.hairdresser ? 1 : 0,
-      walking: request.body.walking ? 1 : 0,
-    };
-    const service = await Services.findOne({
-      where: {
-        atHome: (request.body.atHome),
-        visits: (request.body.visits),
-      },
-    });
-    console.log(service);
+    const query = {};
+    request.body.visits === true
+      ? (query.visits = true)
+      : (query.visits = false);
+    request.body.hairdresser === true
+      ? (query.hairdresser = true)
+      : (query.hairdresser = false);
+    request.body.atHome === true
+      ? (query.atHome = true)
+      : (query.atHome = false);
+    request.body.walking === true
+      ? (query.walking = true)
+      : (query.walking = false);
+    const service = await Services.create(query);
 
     await user.addService(service);
-    return response.status(200).json(user);
+    const updatedUser = await User.findOne({
+      where: { id: response.locals.user.id },
+      include: Services,
+    });
+
+    return response.status(200).json(updatedUser);
   } catch (error) {
     console.log(error.message);
     return response.status(501).send(`Couldn't update user.`);
+  }
+};
+
+const getPetsitterServices = async (request, response) => {
+  try {
+    const { services } = request.query;
+    const query = {};
+    if (services.visits === "true") query.visits = true;
+    if (services.hairdresser === "true") query.hairdresser = true;
+    if (services.atHome === "true") query.atHome = true;
+    if (services.walking === "true") query.walking = true;
+    console.log(services);
+    const user = await User.findAll({
+      where: {
+        role: "petsitter",
+        location: "Gran Canaria",
+      },
+      include: {
+        model: Services,
+        where: query,
+      },
+    });
+    return response.status(200).json(user);
+  } catch (error) {
+    console.log(error.message);
+    return response.status(501).send("No users or services found.");
   }
 };
 
@@ -150,6 +182,6 @@ module.exports = {
   deleteUser,
   getProfile,
   updateProfile,
-  getPetsitterServidces,
-
+  getPetsitterServices,
+  addPetsitterServices,
 };
