@@ -9,6 +9,7 @@ import review2 from "../../assets/various/review2.svg";
 import PetsitterProfile from "../../components/PetsitterProfile/PetsitterProfile";
 //CSS
 import "./ProfilePetsitter.css";
+import ReservationList from "../../components/reservelist/reservelist";
 
 const ProfilePetsitter = () => {
   return (
@@ -31,7 +32,7 @@ const ProfilePetsitter = () => {
             <div className="futureBookings">
               <h2 className="myFutureB">My future bookings</h2>
               <button className="futureBooking1">
-                03/07/2024 - 05/07/2024
+              <ReservationList/>
               </button>
               <img className="plus1" src={iconPlus}></img>
             </div>
@@ -49,6 +50,7 @@ const ProfilePetsitter = () => {
           <h2 className="reviewTitle">My reviews from owners</h2>
           <img className="reviewsPic1" src={review1}></img>
           <img className="reviewsPic2" src={review2}></img>
+          <ReservationList/>
         </div>
       </section>
     </section>

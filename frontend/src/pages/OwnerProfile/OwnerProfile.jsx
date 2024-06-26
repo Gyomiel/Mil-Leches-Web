@@ -20,6 +20,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getProfile, updateProfile } from "../../services/user";
 import { getPetProfile, updatePetProfile, createPet } from "../../services/pet";
+import ReservationList from "../../components/reservelist/reservelist";
 
 const OwnerProfile = () => {
   const [name, setName] = useState("");
@@ -302,6 +303,7 @@ const OwnerProfile = () => {
               </div>
             </div>
           </div>
+          <ReservationList/>
         </section>
       </div>
     </>

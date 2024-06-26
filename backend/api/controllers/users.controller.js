@@ -1,4 +1,6 @@
+const Booking = require("../models/bookings.model");
 const Pet = require("../models/pets.model");
+const UserBooking = require("../models/user_bookings.model");
 const User = require("../models/users.model");
 const bcrypt = require("bcrypt");
 
@@ -109,6 +111,33 @@ const updateProfile = async (request, response) => {
   } catch (error) {
     return response.status(501).send(`Couldn't update user.`);
   }
+
+};
+
+const getUserBookings = async (request, response) => {
+  try {
+    let bookings 
+    if (response.locals.user.role === "petsitter") {
+        bookings = await UserBooking.findAll({
+        where: {
+          petsitterId : response.locals.user.id,
+        },
+        include: Booking,
+      });
+      
+    } else if (response.locals.user.role === "owner") {
+      bookings = await UserBooking.findAll({
+        where: {
+          ownerId: response.locals.user.id,
+        },
+        include: Booking,
+      });
+      }
+    return response.status(200).json(bookings);
+  } catch (error) {
+    console.log(error.message)
+    return response.status(501).send("error getting this user's bookings");
+  }
 };
 
 module.exports = {
@@ -119,4 +148,5 @@ module.exports = {
   deleteUser,
   getProfile,
   updateProfile,
+  getUserBookings
 };
