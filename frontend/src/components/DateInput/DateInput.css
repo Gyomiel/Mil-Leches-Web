@@ -1,18 +1,14 @@
 .dateDiv {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-auto-columns: 1fr;
-  grid-auto-flow: row;
-  gap: 0px 0px;
-  margin: 0px;
+  display: flex;
+  flex-direction: column;
   margin-top: 25px;
 }
 
-.DateTool {
+.DateToolStart {
   border-radius: 48px;
-  border: 0;
-  background: linear-gradient(0deg, #608ee9 0%, #608ee9 100%), #b5dbff;
+  border: 1px solid black;
+  border-color: grey;
+  background: white;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   width: 280px;
   height: 25px;
@@ -22,23 +18,41 @@
   font-weight: bolder;
   font-size: 20px;
   font-display: calc(50%);
-  color: white;
+  color: black;
 }
-
-.dateDesign {
-  border: 0;
-  background: linear-gradient(0deg, #608ee9 0%, #608ee9 100%), #b5dbff;
+.DateToolFinish {
+  border-radius: 48px;
+  border: 1px solid black;
+  border-color: grey;
+  background: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 280px;
+  height: 25px;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 16px;
   font-weight: bolder;
   font-size: 20px;
   font-display: calc(50%);
-  color: white;
+  color: black;
+  
+}
+
+
+.dateDesign {
+  border: 0;
+  background: white;
+  font-weight: bolder;
+  font-size: 20px;
+  font-display: calc(50%);
+  color: black
 }
 
 .startDiv {
   width: 320px;
   height: 25px;
   margin: 0px;
-  margin-left: 50px;
+  margin-bottom: 35px;
 }
 
 .finishDiv {
@@ -46,4 +60,13 @@
   height: 25px;
   grid-area: auto;
   margin: 0px;
+}
+
+.dates {
+  display:flex;
+  flex-direction: column;
+}
+.wholeDate{
+  display: flex;
+  flex-direction: column;
 }

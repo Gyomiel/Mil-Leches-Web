@@ -15,8 +15,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-left: 70px;
-  margin-top: 60px;
+  padding-left: 16px;
+  margin-top: 10px;
 }
 .iconMessages {
   width: 45px;
@@ -67,7 +67,7 @@
   font-size: 28px;
 }
 .sos {
-  margin-left: 20px;
+  margin-left: 35px;
   display:flex;
   margin-top:5px
 }
@@ -216,6 +216,7 @@
 }
 .logOutIcon{
   width: 35px;
+  margin-top:1px
 
 }
 .logOutDiv{
@@ -240,4 +241,14 @@
 }
 .logOutButton:hover {
   font-size: 28px;
+}
+.menuBarP {
+  
+  width: 750px;
+  height: 70px;
+  background-color: rgb(233, 233, 233);
+  border-radius: 19px;
+  margin-top: 40px;
+  margin-left:55px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }

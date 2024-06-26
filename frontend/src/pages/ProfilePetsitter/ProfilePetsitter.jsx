@@ -16,25 +16,27 @@ const ProfilePetsitter = () => {
     <section className="mainContainerPage">
       <PetsitterProfile className="profile" />
       <section className="allright">
-        <div className="messagesHelp">
-          <div className="msg">
-            <img className="iconMessages" src={iconMessages}></img>
-            <button className="messages">My messages</button>
-          </div>
-          <div className="sos">
-            <div className="sosIcon">
-              <img className="iconHelp" src={iconHelp}></img>
+        <div className="menuBarP">
+          <div className="messagesHelp">
+            <div className="msg">
+              <img className="iconMessages" src={iconMessages}></img>
+              <button className="messages">My messages</button>
             </div>
-            <div className="sosText">
-              <button className="help">Need help?</button>
+            <div className="sos">
+              <div className="sosIcon">
+                <img className="iconHelp" src={iconHelp}></img>
+              </div>
+              <div className="sosText">
+                <button className="help">Need help?</button>
+              </div>
             </div>
-          </div>
-          <div className="logOutDiv">
-            <div className="logOutIcondiv">
-              <img className="logOutIcon" src={logOutIcon}></img>
-            </div>
-            <div className="logOutTextDiv">
-              <button className="logOutButton">Log out</button>
+            <div className="logOutDiv">
+              <div className="logOutIcondiv">
+                <img className="logOutIcon" src={logOutIcon}></img>
+              </div>
+              <div className="logOutTextDiv">
+                <button className="logOutButton">Log out</button>
+              </div>
             </div>
           </div>
         </div>
