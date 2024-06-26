@@ -26,6 +26,7 @@ const updateProfile = async (body) => {
   }
 };
 
+
 const getPetsitterServices = async () => {
   try {
     const token = localStorage.getItem("token");
@@ -38,5 +39,4 @@ const getPetsitterServices = async () => {
     console.log(error.message);
   }
 };
-
 export { getProfile, updateProfile, getPetsitterServices };
