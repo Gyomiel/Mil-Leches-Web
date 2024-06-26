@@ -77,7 +77,6 @@ const getProfile = async (request, response) => {
 
 const updateProfile = async (request, response) => {
   try {
-    console.log(response.locals.user.id);
     const user = await User.findOne({
       where: {
         id: response.locals.user.id,
@@ -108,11 +107,24 @@ const addServiceToUser = async (request, response) => {
         id: response.locals.user.id,
       },
     });
-    const service = await Services.findByPk(request.body.serviceId);
+    const data = {
+      atHome: request.body.atHome ? true : false,
+      visits: request.body.visits ? true : false,
+      hairdresser: request.body.hairdresser ? 1 : 0,
+      walking: request.body.walking ? 1 : 0,
+    };
+    const service = await Services.findOne({
+      where: {
+        atHome: (request.body.atHome),
+        visits: (request.body.visits),
+      },
+    });
+    console.log(service);
 
     await user.addService(service);
     return response.status(200).json(user);
   } catch (error) {
+    console.log(error.message);
     return response.status(501).send(`Couldn't update user.`);
   }
 };

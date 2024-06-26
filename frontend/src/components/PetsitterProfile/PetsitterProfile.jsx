@@ -20,7 +20,7 @@ import InputTextArea from "../InputTextArea/InputTextArea";
 //THINGYS
 import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { getProfile, updateProfile } from "../../services/user";
+import { getProfile, updateProfile, addService } from "../../services/user";
 
 function PetsitterProfile() {
   const [picture, setPicture] = useState("");
@@ -66,17 +66,17 @@ function PetsitterProfile() {
   const handleAbout = (e) => {
     setAbout(e.target.value);
   };
-  const handleHousesitting = (e) => {
-    setHousesitting(e.target.value);
+  const handleHousesitting = () => {
+    setHousesitting(!housesitting);
   };
-  const handleHairdresser = (e) => {
-    setHairdresser(e.target.value);
+  const handleHairdresser = () => {
+    setHairdresser(!hairdresser);
   };
-  const handleBoarding = (e) => {
-    setBoarding(e.target.value);
+  const handleBoarding = () => {
+    setBoarding(boarding);
   };
-  const handleWalking = (e) => {
-    setWalking(e.target.value);
+  const handleWalking = () => {
+    setWalking(!walking);
   };
   const handleEditName = () => {
     setEditName(!editName);
@@ -91,7 +91,13 @@ function PetsitterProfile() {
       bio: about,
     };
     await updateProfile(data);
-    console.log(data.bio);
+    const services = {
+      atHome: housesitting,
+      visits: boarding,
+      walking: walking,
+      hairdresser: hairdresser,
+    };
+    await addService(services);
   };
   return (
     <div className="mainContainer">
@@ -140,7 +146,10 @@ function PetsitterProfile() {
             </button>
             <h2 className="aboutme">About me</h2>
             <div>
-              <InputTextArea value={about} className="textArea"onFunc={handleAbout}
+              <InputTextArea
+                value={about}
+                className="textArea"
+                onFunc={handleAbout}
               />
               <img className="editIcon" src={iconEdit}></img>
             </div>
@@ -157,7 +166,6 @@ function PetsitterProfile() {
               <input
                 className="checkbox1"
                 type="checkbox"
-                value="patata"
                 onClick={handleHousesitting}
               ></input>
             </div>
@@ -167,7 +175,11 @@ function PetsitterProfile() {
                 <h3 className="boardingtitle">Boarding</h3>
                 <h5 className="Avgb">Avg. 20€ Night</h5>
               </div>
-              <input className="checkbox" type="checkbox"></input>
+              <input
+                className="checkbox"
+                type="checkbox"
+                onClick={handleBoarding}
+              ></input>
             </div>
             <div className="hairdresser">
               <img className="iconHairdresser" src={iconHairdresser}></img>
@@ -175,14 +187,22 @@ function PetsitterProfile() {
                 <h3 className="hairdressertitle">Hairdresser</h3>
                 <h5 className="Avgh">Avg. 9€ Hour</h5>
               </div>
-              <input className="checkbox" type="checkbox"></input>
+              <input
+                className="checkbox"
+                type="checkbox"
+                onClick={handleHairdresser}
+              ></input>
               <div className="walking">
                 <img className="iconWalking" src={iconWalking}></img>
                 <div className="textwalkingavg">
                   <h3 className="walkingtitle">Walking</h3>
                   <h5 className="Avgw">Avg. 9€ Hour</h5>
                 </div>
-                <input className="checkbox" type="checkbox"></input>
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  onClick={handleWalking}
+                ></input>
               </div>
             </div>
           </div>
