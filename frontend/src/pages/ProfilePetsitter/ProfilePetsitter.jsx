@@ -10,6 +10,7 @@ import logOutIcon from "../../assets/Icons/logOutIcon.svg";
 import PetsitterProfile from "../../components/PetsitterProfile/PetsitterProfile";
 //CSS
 import "./ProfilePetsitter.css";
+import LogoutButton from "../../components/LogoutButton/LogoutButton";
 
 const ProfilePetsitter = () => {
   return (
@@ -35,7 +36,7 @@ const ProfilePetsitter = () => {
                 <img className="logOutIcon" src={logOutIcon}></img>
               </div>
               <div className="logOutTextDiv">
-                <button className="logOutButton">Log out</button>
+                <LogoutButton />
               </div>
             </div>
           </div>

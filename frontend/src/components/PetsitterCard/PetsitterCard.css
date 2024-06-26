@@ -6,6 +6,7 @@
   border-radius: 28px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 .topPartCard {
   display: flex;
@@ -22,8 +23,8 @@
 .petsitLocation {
   display: flex;
 }
-.petsitLocationName{
-    font-weight: 400;
+.petsitLocationName {
+  font-weight: 400;
 }
 .petsitNameC {
   font-size: 27px;
@@ -66,11 +67,10 @@
   display: flex;
   flex-direction: row;
   align-items: start;
-  
 }
 .bioHere {
   margin-left: 5px;
-  margin-top:0px;
+  margin-top: 0px;
   margin-right: 10x;
   padding: 15px;
   width: 450px;
