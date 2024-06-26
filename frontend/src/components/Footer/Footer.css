@@ -1,5 +1,5 @@
 footer {
-  background-color: var(--secondaryBlue);
+  background-color:rgba(96, 142, 233, 0.48);
 }
 
 .footerP {
@@ -11,7 +11,7 @@ footer {
   bottom: 0;
   left: 0;
   z-index: 10;
-  background-color: var(--secondaryBlue);
+  background-color:rgba(96, 142, 233, 0.48);
   background-size: 100%;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
