@@ -57,7 +57,7 @@ const AboutUsLO = () => {
       </section>
       <div className="abtBtn">
         <Link to="/signup">
-          <button className="aboutButton">Get started!</button>
+          <button className="aboutButton">Get started</button>
         </Link>
       </div>
     </div>

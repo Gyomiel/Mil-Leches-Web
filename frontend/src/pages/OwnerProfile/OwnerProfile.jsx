@@ -17,7 +17,8 @@ import InputText from "../../components/InputText/InputText";
 import InputPassword from "../../components/InputPassword/InputPassword";
 
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { HashRouter, useNavigate } from "react-router-dom";
+
 import {
   getProfile,
   updateProfile,
@@ -66,16 +67,23 @@ const OwnerProfile = () => {
   }, []);
 
   const handlePetsitters = async () => {
-    const { data } = await getPetsitterServices();
+    const services = {
+      atHome: housesitting,
+      walking: walking,
+      visits: boarding,
+      hairdresser: hairdresser,
+    };
+    const { data } = await getPetsitterServices(services);
     console.log(data);
   };
 
-  const handlePicture = (e) => {
+  /*   const handlePicture = (e) => {
     setPicture(e.target.value);
   };
-  const handleName = (e) => {
+ */
+  /*   const handleName = (e) => {
     setName(e.target.value);
-  };
+  }; */
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -99,9 +107,6 @@ const OwnerProfile = () => {
   };
   const handleWalking = () => {
     setWalking(!walking);
-  };
-  const handleEditName = () => {
-    setEditName(!editName);
   };
 
   const handlePetName = (e) => {
@@ -139,18 +144,15 @@ const OwnerProfile = () => {
       bio: about,
     };
 
-    if (petName.length === 0) {
-      const petData = {
-        name: petName,
-        breed: petBreed,
-        age: petAge,
-        sickness: petSickness,
-        vet: petVet,
-        behaviour: petBehaviour,
-      };
-      await createPet(petData);
-    }
-
+    const petData = {
+      name: petName,
+      breed: petBreed,
+      age: petAge,
+      sickness: petSickness,
+      vet: petVet,
+      behaviour: petBehaviour,
+    };
+    await createPet(petData);
     await updateProfile(data);
   };
   return (

@@ -1,8 +1,8 @@
 import "./SignUpForm.css";
 import signUpPic from "../../assets/signUpPic.png";
-import userSignUp from "../../assets/userSignUp.png";
-import emailSignUp from "../../assets/emailSignUp.png";
-import lockSignUp from "../../assets/lockSignUp.png";
+import userSignUp from "../../assets/Icons/userIcon.svg";
+import emailSignUp from "../../assets/Icons/emaiIconL.svg";
+import lockSignUp from "../../assets/Icons/lockICon.svg";
 import { signUp } from "../../services/auth";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -64,34 +64,48 @@ const SignUpForm = () => {
   return (
     <div id="centerForm">
       <form id="signUpForm" onSubmit={(e) => e.preventDefault()}>
-        <h2>Create your free account now!</h2>
+        <h2 className="createFreeAccount">Create your free account now!</h2>
         <img className="signUpPic" src={signUpPic} />
-        <div className="userWholeInput">
-          <img src={userSignUp} className="userWholeInputImg" />
-          <input
-            id="nameInput"
-            type="text"
-            placeholder="Name"
-            onChange={handleName}
-          />
-        </div>
-        <div className="emailWholeInput">
-          <img src={emailSignUp} />
-          <input
-            id="emailInput"
-            type="text"
-            placeholder="Email"
-            onChange={handleEmail}
-          />
-        </div>
-        <div className="passwordWholeInput">
-          <img src={lockSignUp} />
-          <input
-            id="passInput"
-            type="password"
-            placeholder="Password"
-            onChange={handlePassword}
-          />
+        <div className="wholeTextAreaL">
+          <div className="userNameInputAreaL">
+            <div className="userIconL">
+              <img src={userSignUp} className="userWholeInputImg" />
+            </div>
+            <div className="userInputL">
+              <input
+                id="nameInput"
+                type="text"
+                placeholder="Name"
+                onChange={handleName}
+              />
+            </div>
+          </div>
+          <div className="emailWholeInput">
+            <div className="emailImgL">
+              <img className="emailImgL" src={emailSignUp} />
+            </div>
+            <div className="inputEmailL">
+              <input
+                id="emailInput"
+                type="text"
+                placeholder="Email"
+                onChange={handleEmail}
+              />
+            </div>
+          </div>
+          <div className="passwordWholeInputO">
+            <div className="lockIcon">
+              <img className="iconLockL" src={lockSignUp} />
+            </div>
+            <div className="passwordInputL">
+              <input
+                id="passInput"
+                type="password"
+                placeholder="Password"
+                onChange={handlePassword}
+              />
+            </div>
+          </div>
         </div>
         <div className="pleaseStop">
           <div className="letMeLive">
@@ -102,7 +116,7 @@ const SignUpForm = () => {
               name="role"
               onClick={handleRole}
             />
-            <label htmlFor="owner">I am a pet owner</label>
+            <label className="ownerL"htmlFor="owner">I am a pet owner</label>
           </div>
           <div className="letMeLive2">
             <input
@@ -112,7 +126,7 @@ const SignUpForm = () => {
               name="role"
               onClick={handleRole}
             />
-            <label htmlFor="petsitter">I am a pet sitter</label>
+            <label className="petSitterL" htmlFor="petsitter">I am a pet sitter</label>
           </div>
         </div>
         <div className="leaveMeAlone">
@@ -129,17 +143,21 @@ const SignUpForm = () => {
             .
           </p>
         </div>
+        <div className="signButtonL">
         <button
           className={isCompleted ? "signUpButton" : "disabledButton"}
           onClick={handleSignUp}
         >
           Sign up
         </button>
-        <h4>
+        </div>
+        <h4 className="alreadyL">
           Already have an account?{" "}
-          <Link to='/login'><a className="login" href="">
-            Log in!
-          </a></Link>
+          <Link to="/login">
+            <a className="login" href="">
+              Log in!
+            </a>
+          </Link>
         </h4>
       </form>
     </div>

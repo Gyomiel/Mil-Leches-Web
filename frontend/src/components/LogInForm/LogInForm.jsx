@@ -1,7 +1,8 @@
 import "./LogInForm.css";
-import userSignUp from "../../assets/userSignUp.png";
-import lockSignUp from "../../assets/lockSignUp.png";
+import userSignUp from "../../assets/Icons/emaiIconL.svg";
+import lockSignUp from "../../assets/Icons/lockICon.svg";
 import logInDog from "../../assets/logInDog.png";
+import googleButton from "../../assets/Icons/googlebutton1.svg"
 import { logIn } from "../../services/auth";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -24,7 +25,7 @@ const LogInForm = () => {
     const key = await logIn(data);
     console.log(key.token);
     localStorage.setItem("token", key.token);
-    localStorage.setItem("role", key.role)
+    localStorage.setItem("role", key.role);
     key.role === "owner"
       ? navigate("/ProfileOwner")
       : navigate("/ProfilePetsitter");
@@ -33,46 +34,66 @@ const LogInForm = () => {
     <div id="centerForm">
       <img className="logInDog" src={logInDog} />
       <form id="logInForm" onSubmit={(e) => e.preventDefault()}>
-        <h2 className="loginh2">Log in!</h2>
+        <h2 className="loginh2">Log in</h2>
         <div className="userWholeInput">
-          <img src={userSignUp} className="userWholeInputImg" />
-          <input
-            className="nameInput"
-            type="text"
-            placeholder="Email"
-            onChange={handleEmail}
-          />
+          <div className="emailImgLi">
+            <img src={userSignUp} className="userWholeInputImgLi" />
+          </div>
+          <div className="emailInputLi">
+            <input
+              className="nameInput"
+              type="text"
+              placeholder="Email"
+              onChange={handleEmail}
+            />
+          </div>
         </div>
         <div className="passwordWholeInput">
-          <img src={lockSignUp} />
-          <input
-            className="passInput"
-            type="password"
-            placeholder="Password"
-            onChange={handlePassword}
-          />
+          <div className="passwImgLi">
+            <img className="lockLi" src={lockSignUp} />
+          </div>
+          <div className="passwInpLi">
+            <input
+              className="passInput"
+              type="password"
+              placeholder="Password"
+              onChange={handlePassword}
+            />
+          </div>
         </div>
         <p className="trouble">
           <a className="troubleLink" href="">
             Trouble logging in?
           </a>
         </p>
-        <div className="pleaseStop">
-          <p className="letMeLive2">
+        <div className="pleaseStopLi">
+          <p className="letMeLive2Li">
             <input type="checkbox" />
-            <label htmlFor="">Remember me</label>
+            <label className="remember">Remember me</label>
           </p>
         </div>
+        <div>
         <button className="logInButton" onClick={handleLogIn}>
           Log In
         </button>
+        </div>
         <h4 className="loginh4">
           Do not have an account?
           <Link to="/signup">
-            <a className="login" href=""> Sign up!
+            <a className="login" href="">
+              {" "}
+              Sign up!
             </a>
           </Link>
         </h4>
+        <div>
+        <h6 className="or">or</h6>
+        </div>
+        <div>
+          <a href ="www.google.com">
+        <img className= "google"src={googleButton}></img>
+        </a>
+        </div>
       </form>
     </div>
   );
