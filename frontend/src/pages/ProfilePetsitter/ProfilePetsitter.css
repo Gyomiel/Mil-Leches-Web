@@ -8,22 +8,22 @@
 .msg {
   padding-top: 7px;
   margin-right: 0px;
-  margin-left: -40px;
+  margin-left: px;
 }
 .messagesHelp {
-  width: 600px;
+  width: 700px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-left: 90px;
+  padding-left: 70px;
   margin-top: 60px;
 }
 .iconMessages {
-  width: 60px;
+  width: 45px;
   display: inline;
 }
 .messages:hover {
-  font-size: 34px;
+  font-size: 28px;
 }
 
 .messages {
@@ -36,14 +36,15 @@
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  font-size: 33px;
+  font-size: 26px;
   font-weight: bolder;
   margin-left: 15px;
 }
 
 .iconHelp {
-  width: 42px;
+  width: 32px;
   display: inline;
+
 }
 .help {
   display: inline;
@@ -57,15 +58,18 @@
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  font-size: 33px;
+  font-size: 26px;
   font-weight: bolder;
   margin-left: 15px;
+  margin-top:2px
 }
 .help:hover {
-  font-size: 34px;
+  font-size: 28px;
 }
 .sos {
-  margin-left: 100px;
+  margin-left: 20px;
+  display:flex;
+  margin-top:5px
 }
 
 .calendarAndBookings {
@@ -209,4 +213,31 @@
 .reviewsPic1:hover {
   width: 770px;
   margin-left: -20px;
+}
+.logOutIcon{
+  width: 35px;
+
+}
+.logOutDiv{
+  display:flex;
+  margin-left:40px;
+  margin-top:6px;
+}
+
+.logOutButton {
+  display: inline;
+  padding-left: 20px;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 26px;
+  font-weight: bolder;
+  margin-left: 15px;
+}
+.logOutButton:hover {
+  font-size: 28px;
 }

@@ -5,6 +5,7 @@ import calendar from "../../assets/various/Calendar.png";
 import iconPlus from "../../assets/Icons/plusIcon.svg";
 import review1 from "../../assets/various/review1.svg";
 import review2 from "../../assets/various/review2.svg";
+import logOutIcon from "../../assets/Icons/logOutIcon.svg";
 //components
 import PetsitterProfile from "../../components/PetsitterProfile/PetsitterProfile";
 //CSS
@@ -21,8 +22,20 @@ const ProfilePetsitter = () => {
             <button className="messages">My messages</button>
           </div>
           <div className="sos">
-            <img className="iconHelp" src={iconHelp}></img>
-            <button className="help">Need help?</button>
+            <div className="sosIcon">
+              <img className="iconHelp" src={iconHelp}></img>
+            </div>
+            <div className="sosText">
+              <button className="help">Need help?</button>
+            </div>
+          </div>
+          <div className="logOutDiv">
+            <div className="logOutIcondiv">
+              <img className="logOutIcon" src={logOutIcon}></img>
+            </div>
+            <div className="logOutTextDiv">
+              <button className="logOutButton">Log out</button>
+            </div>
           </div>
         </div>
         <div className="calendarAndBookings">
