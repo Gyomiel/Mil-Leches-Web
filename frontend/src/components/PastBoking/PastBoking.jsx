@@ -40,7 +40,6 @@ function PastBoking() {
   return (
     pastReservations.length > 0 &&
     <div className="pastBookings">
-              <h2 className="myPastB">Past bookings</h2>
               <button className="pastBooking1">
               <ReservationList reservations={pastReservations}/>
               </button>

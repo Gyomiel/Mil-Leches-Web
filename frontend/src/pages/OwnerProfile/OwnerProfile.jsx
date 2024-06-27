@@ -361,7 +361,7 @@ const OwnerProfile = () => {
                 <button className="futureBooking1O">
                   03/07/2024 - 05/07/2024
                 </button>
-                <img className="plus1O" src={iconPlus}></img>
+                
               </div>
               <div className="pastBookingsO">
                 <h2 className="pastBookO">Past bookings</h2>
