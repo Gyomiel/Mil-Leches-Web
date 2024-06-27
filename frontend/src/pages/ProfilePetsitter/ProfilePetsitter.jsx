@@ -53,16 +53,17 @@ const ProfilePetsitter = () => {
         <div className="calendarAndBookings">
           <img className="calendar" src={calendar}></img>
           <div className="bookingsection">
-            <FutureBoking/>
-            <PastBoking/>
-             
+            <h2 className="myFutureB">My future bookings</h2>
+            <FutureBoking />
+            <h2 className="myPastB">Past bookings</h2>
+            <PastBoking />
           </div>
         </div>
         <div className="reviews">
           <h2 className="reviewTitle">My reviews from owners</h2>
           <img className="reviewsPic1" src={review1}></img>
           <img className="reviewsPic2" src={review2}></img>
-          <ReservationList/>
+          <ReservationList />
         </div>
       </section>
     </section>

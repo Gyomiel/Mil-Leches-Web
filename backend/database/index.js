@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize");
 require("dotenv").config();
 
-const connection = new Sequelize("Mil-Leches_DB", "alma", "reboot", {
+const connection = new Sequelize("Mil-Leches_DB", "didi", "reboot", {
   host: "localhost",
   dialect: "mysql",
   port: 3306,

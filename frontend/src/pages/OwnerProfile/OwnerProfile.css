@@ -181,7 +181,7 @@
   border: 0px;
   font-weight: bolder;
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: -10px;
 }
 .pastBookingO2:hover {
   box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
@@ -192,6 +192,9 @@
   margin-left: 50px;
 }
 
+.pastBookO{
+  margin-left: 10px;
+}
 .findPetSitterContainer {
   width: 760px;
   height: 550px;
@@ -358,7 +361,7 @@
   margin-left:140px;
 }
 
-.selectDateText{
+.selectDateTextOw{
    display: flex;
   justify-content: left;
   color: #666565;
@@ -475,6 +478,6 @@
   margin-top:20px;
 }
 .dates{
-  margin-left: 30px;
+  margin-left: 160px;
   margin-top:-10px;
 }

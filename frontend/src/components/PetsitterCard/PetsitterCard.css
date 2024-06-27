@@ -73,8 +73,13 @@
 }
 .bioHere {
   margin-left: 5px;
+<<<<<<< HEAD
+  margin-top:0px;
+  margin-right: 0pzx;
+=======
   margin-top: 0px;
   margin-right: 10x;
+>>>>>>> 9a0d49158c00b8c23e985d9edf391f7e7563cf8e
   padding: 15px;
   width: 450px;
   height: 110px;
