@@ -7,12 +7,16 @@ const {
   deleteUser,
   getProfile,
   updateProfile,
+  getUserBookings,
+
+  
   getPetsitterServices,
   addPetsitterServices,
 } = require("../controllers/users.controller");
 const { checkAuth, checkAdmin } = require("../middlewares/auth");
 
 router.get("/", checkAuth, checkAdmin, getAllUsers);
+router.get("/mybookings", checkAuth, getUserBookings)
 router.get("/profile", checkAuth, getProfile);
 router.post("/profile", checkAuth, updateProfile);
 //router.post("/user/services", checkAuth, addServiceToUser);

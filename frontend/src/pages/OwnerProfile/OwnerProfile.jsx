@@ -26,6 +26,7 @@ import {
   getPetsitterServices,
 } from "../../services/user";
 import { getPetProfile, updatePetProfile, createPet } from "../../services/pet";
+import ReservationList from "../../components/reservelist/reservelist";
 import DateInput from "../../components/DateInput/DateInput";
 import ResultsPetSitters from "../../components/ResultsPetSitters/ResultsPetSitters";
 import LogoutButton from "../../components/LogoutButton/LogoutButton";
@@ -376,6 +377,7 @@ const OwnerProfile = () => {
               </div>
             </div>
           </div>
+          <ReservationList/>
         </section>
       </div>
     </>
