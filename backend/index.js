@@ -2,8 +2,9 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const morgan = require("morgan");
+const path = require("path");
 const { checkDB, connection, syncModels } = require("./database/index");
-const initializeRelationships = require('./database/relations')
+const initializeRelationships = require("./database/relations");
 
 const checkAndSyncMySQL = async () => {
   try {
@@ -21,7 +22,8 @@ const initializeAndListenExpress = () => {
       .use(express.json())
       .use(cors())
       .use(morgan("dev"))
-      .use('/api', require('./api/routes/index'))
+      .use("/uploads", express.static(path.join(__dirname, "uploads")))
+      .use("/api", require("./api/routes/index"))
       .listen(3000, () => {
         console.log("Listening from port 3000.");
       });

@@ -18,26 +18,36 @@ import InputPassword from "../InputPassword/InputPassword";
 import InputTextArea from "../InputTextArea/InputTextArea";
 
 //THINGYS
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getProfile, updateProfile } from "../../services/user";
+import {
+  getProfile,
+  updateProfile,
+  addPetsitterServices,
+  uploadImage,
+} from "../../services/user";
 
 function PetsitterProfile() {
-    const uploadedImage = React.useRef(null);
-    const imageUploader = React.useRef(null);
+  const uploadedImage = React.useRef(null);
+  const imageUploader = React.useRef(null);
 
-    const handleImageUpload = (e) => {
-      const [file] = e.target.files;
-      if (file) {
-        const reader = new FileReader();
-        const { current } = uploadedImage;
-        current.file = file;
-        reader.onload = (e) => {
-          current.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    };
+  const uploadUserImage = async (e) => {
+    const [file] = e.target.files;
+    await uploadImage(file);
+    setImageChanged(true);
+  };
+  const handleImageUpload = (e) => {
+    const [file] = e.target.files;
+    if (file) {
+      const reader = new FileReader();
+      const { current } = uploadedImage;
+      current.file = file;
+      reader.onload = (e) => {
+        current.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  };
   const [picture, setPicture] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -49,6 +59,7 @@ function PetsitterProfile() {
   const [boarding, setBoarding] = useState(false);
   const [walking, setWalking] = useState(false);
   const [editName, setEditName] = useState(false);
+  const [imageChanged, setImageChanged] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -59,13 +70,12 @@ function PetsitterProfile() {
       // setPassword(data.password);
       setLocation(data.location);
       setAbout(data.bio);
+      setPicture(`http://localhost:3000/uploads//${data.image}`);
     };
     profile();
-  }, []);
+    setImageChanged(false);
+  }, [imageChanged]);
 
-  const handlePicture = (e) => {
-    setPicture(e.target.value);
-  };
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -81,17 +91,17 @@ function PetsitterProfile() {
   const handleAbout = (e) => {
     setAbout(e.target.value);
   };
-  const handleHousesitting = (e) => {
-    setHousesitting(e.target.value);
+  const handleHousesitting = () => {
+    setHousesitting(!housesitting);
   };
-  const handleHairdresser = (e) => {
-    setHairdresser(e.target.value);
+  const handleHairdresser = () => {
+    setHairdresser(!hairdresser);
   };
-  const handleBoarding = (e) => {
-    setBoarding(e.target.value);
+  const handleBoarding = () => {
+    setBoarding(!boarding);
   };
-  const handleWalking = (e) => {
-    setWalking(e.target.value);
+  const handleWalking = () => {
+    setWalking(!walking);
   };
   const handleEditName = () => {
     setEditName(!editName);
@@ -106,7 +116,13 @@ function PetsitterProfile() {
       bio: about,
     };
     await updateProfile(data);
-    console.log(data.bio);
+    const services = {
+      atHome: housesitting,
+      visits: boarding,
+      walking: walking,
+      hairdresser: hairdresser,
+    };
+    await addPetsitterServices(services);
   };
   return (
     <div className="mainContainer">
@@ -123,7 +139,7 @@ function PetsitterProfile() {
             <input
               type="file"
               accept="image/*"
-              onChange={handleImageUpload}
+              onChange={uploadUserImage}
               ref={imageUploader}
               style={{
                 display: "none",
@@ -135,6 +151,9 @@ function PetsitterProfile() {
                 height: "220px",
                 width: "340px",
                 margin: 60,
+                backgroundImage: `url(${picture})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
               }}
               onClick={() => imageUploader.current.click()}
             >
@@ -207,7 +226,6 @@ function PetsitterProfile() {
               <input
                 className="checkbox1"
                 type="checkbox"
-                value="patata"
                 onClick={handleHousesitting}
               ></input>
             </div>
@@ -217,7 +235,11 @@ function PetsitterProfile() {
                 <h3 className="boardingtitle">Boarding</h3>
                 <h5 className="Avgb">Avg. 20€ Night</h5>
               </div>
-              <input className="checkbox" type="checkbox"></input>
+              <input
+                className="checkbox"
+                type="checkbox"
+                onClick={handleBoarding}
+              ></input>
             </div>
             <div className="hairdresser">
               <img className="iconHairdresser" src={iconHairdresser}></img>
@@ -225,14 +247,22 @@ function PetsitterProfile() {
                 <h3 className="hairdressertitle">Hairdresser</h3>
                 <h5 className="Avgh">Avg. 9€ Hour</h5>
               </div>
-              <input className="checkbox" type="checkbox"></input>
+              <input
+                className="checkbox"
+                type="checkbox"
+                onClick={handleHairdresser}
+              ></input>
               <div className="walking">
                 <img className="iconWalking" src={iconWalking}></img>
                 <div className="textwalkingavg">
                   <h3 className="walkingtitle">Walking</h3>
                   <h5 className="Avgw">Avg. 9€ Hour</h5>
                 </div>
-                <input className="checkbox" type="checkbox"></input>
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  onClick={handleWalking}
+                ></input>
               </div>
             </div>
           </div>
