@@ -1,11 +1,19 @@
 import "./PetsitterCard.css";
 import petsitPic from "../../assets/PeopleImages/PetsitterProfilePic.png";
 import locationIcon from "../../assets/Icons/locationIcon.svg";
+import { useState } from "react";
 
 function PetsitterCard({ petsitter }) {
+  const [alert, setAlert] = useState(false); 
+  const handleBookingAlert = () => {
+     setAlert(!alert);
+   };
   return (
     <div>
-      <div className="petsitterCard">
+      <div
+        className="petsitterCard"
+        style={{ display: alert ? "none" : "flex" }}
+      >
         <div className="topPartCard">
           <section className="petsitPic">
             <div
@@ -30,7 +38,7 @@ function PetsitterCard({ petsitter }) {
           </section>
         </div>
         <div className="bottomCard">
-          <section className="contactButton">
+          <section className="contactButton" onClick={handleBookingAlert}>
             <button className="bookNow">Book now</button>
           </section>
           <section className="commentBio">
@@ -40,6 +48,7 @@ function PetsitterCard({ petsitter }) {
           </section>
         </div>
       </div>
+      <h1 className="Jonathan" style={{ display: alert ? "flex" : "none" }}> Jonathan has been booked!</h1>
     </div>
   );
 }

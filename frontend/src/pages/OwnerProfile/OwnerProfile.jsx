@@ -52,6 +52,7 @@ const OwnerProfile = () => {
   const [blockResults, setBlockResults] = useState(false);
   const [petsitters, setPetsitters] = useState();
   const navigate = useNavigate();
+  const [alert, setAlert] = useState(false)
 
   useEffect(() => {
     const profile = async () => {
