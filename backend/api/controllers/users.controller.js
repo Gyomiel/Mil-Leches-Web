@@ -2,8 +2,6 @@ const Pet = require("../models/pets.model");
 const User = require("../models/users.model");
 const Services = require("../models/services.model");
 const bcrypt = require("bcrypt");
-const { Op } = require("sequelize");
-
 const getAllUsers = async (request, response) => {
   try {
     const users = await User.findAll({ paranoid: false });
@@ -174,6 +172,18 @@ const getPetsitterServices = async (request, response) => {
   }
 };
 
+const uploadImage = async (request, response) => {
+  try {
+    const user = await User.findByPk(response.locals.user.id);
+    user.image = request.file.filename.replace(/^"(.*)"$/, "$1");
+    await user.save();
+    return response.status(200).json(user);
+  } catch (error) {
+    console.log(error.message);
+    return response.status(501).send("Couldn't upload image");
+  }
+};
+
 module.exports = {
   getAllUsers,
   getOneUser,
@@ -184,4 +194,5 @@ module.exports = {
   updateProfile,
   getPetsitterServices,
   addPetsitterServices,
+  uploadImage,
 };

@@ -24,24 +24,30 @@ import {
   getProfile,
   updateProfile,
   addPetsitterServices,
+  uploadImage,
 } from "../../services/user";
 
 function PetsitterProfile() {
-    const uploadedImage = React.useRef(null);
-    const imageUploader = React.useRef(null);
+  const uploadedImage = React.useRef(null);
+  const imageUploader = React.useRef(null);
 
-    const handleImageUpload = (e) => {
-      const [file] = e.target.files;
-      if (file) {
-        const reader = new FileReader();
-        const { current } = uploadedImage;
-        current.file = file;
-        reader.onload = (e) => {
-          current.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    };
+  const uploadUserImage = async (e) => {
+    const [file] = e.target.files;
+    await uploadImage(file);
+    setImageChanged(true);
+  };
+  const handleImageUpload = (e) => {
+    const [file] = e.target.files;
+    if (file) {
+      const reader = new FileReader();
+      const { current } = uploadedImage;
+      current.file = file;
+      reader.onload = (e) => {
+        current.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  };
   const [picture, setPicture] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -53,6 +59,7 @@ function PetsitterProfile() {
   const [boarding, setBoarding] = useState(false);
   const [walking, setWalking] = useState(false);
   const [editName, setEditName] = useState(false);
+  const [imageChanged, setImageChanged] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -63,13 +70,12 @@ function PetsitterProfile() {
       // setPassword(data.password);
       setLocation(data.location);
       setAbout(data.bio);
+      setPicture(`http://localhost:3000/uploads//${data.image}`);
     };
     profile();
-  }, []);
+    setImageChanged(false);
+  }, [imageChanged]);
 
-  const handlePicture = (e) => {
-    setPicture(e.target.value);
-  };
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -133,7 +139,7 @@ function PetsitterProfile() {
             <input
               type="file"
               accept="image/*"
-              onChange={handleImageUpload}
+              onChange={uploadUserImage}
               ref={imageUploader}
               style={{
                 display: "none",
@@ -145,6 +151,9 @@ function PetsitterProfile() {
                 height: "220px",
                 width: "340px",
                 margin: 60,
+                backgroundImage: `url(${picture})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
               }}
               onClick={() => imageUploader.current.click()}
             >
