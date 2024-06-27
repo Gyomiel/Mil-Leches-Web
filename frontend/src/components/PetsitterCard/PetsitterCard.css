@@ -73,16 +73,17 @@
 }
 .bioHere {
   margin-left: 5px;
-<<<<<<< HEAD
-  margin-top:0px;
-  margin-right: 0pzx;
-=======
   margin-top: 0px;
   margin-right: 10x;
->>>>>>> 9a0d49158c00b8c23e985d9edf391f7e7563cf8e
   padding: 15px;
   width: 450px;
   height: 110px;
   font-weight: 400;
   margin-bottom: 10px;
+}
+.Jonathan {
+  background-color: rgb(243, 178, 57);
+  padding: 10px 20px;
+  border-radius: 16px;
+  color:white;
 }
