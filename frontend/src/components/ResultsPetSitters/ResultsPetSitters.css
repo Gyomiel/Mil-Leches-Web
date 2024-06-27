@@ -1,0 +1,22 @@
+.mainContainerResults {
+  width: 950px;
+  height: 900px;
+  border-radius: 28px;
+  z-index: 1;
+  margin-top: 40px;
+  margin-left: 55px;
+  flex-direction: column;
+  align-items: center;
+  border:1px solid rgb(167, 167, 167);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.mainDivResults {
+  position: relative;
+}
+
+.petsittersIslandTitle {
+  padding-top: 40px;
+  margin-left: 0px;
+  font-size: 45px;
+  color: black
+}
