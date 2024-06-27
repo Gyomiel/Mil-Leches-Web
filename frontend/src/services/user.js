@@ -53,9 +53,25 @@ const addPetsitterServices = async (body) => {
     console.log(error.message);
   }
 };
+
+const uploadImage = async (file) => {
+  try {
+     const formData = new FormData();
+     formData.append("file", file);
+    const token = localStorage.getItem("token");
+    const response = await api.post("user/profile/image", formData, {
+      headers: { authorization: token },
+    });
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
 export {
   getProfile,
   updateProfile,
   getPetsitterServices,
   addPetsitterServices,
+  uploadImage,
 };

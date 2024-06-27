@@ -5,7 +5,6 @@ const checkAuth = (request, response, next) => {
   if (!request.headers.authorization) {
     return response.status(401).send("Token not found.");
   }
-
   jwt.verify(
     request.headers.authorization,
     "didiBorjaMarta",

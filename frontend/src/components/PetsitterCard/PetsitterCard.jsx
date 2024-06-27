@@ -8,7 +8,14 @@ function PetsitterCard({ petsitter }) {
       <div className="petsitterCard">
         <div className="topPartCard">
           <section className="petsitPic">
-            <img className="petsitPic" src={petsitPic}></img>
+            <div
+              className="petsitPic"
+              style={{
+                backgroundImage: `url(${`http://localhost:3000/uploads/${petsitter.image}`})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
+            ></div>
           </section>
           <section className="petsitName">
             <h3 className="petsitNameC">{petsitter.name}</h3>
@@ -28,7 +35,7 @@ function PetsitterCard({ petsitter }) {
           </section>
           <section className="commentBio">
             <div className="bioRe">
-              <h3 className="bioHere">{petsitter.bio}</h3>
+              <p className="bioHere">{petsitter.bio}</p>
             </div>
           </section>
         </div>
