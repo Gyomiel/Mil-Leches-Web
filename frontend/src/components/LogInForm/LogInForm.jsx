@@ -23,7 +23,7 @@ const LogInForm = () => {
       password: password,
     };
     const key = await logIn(data);
-    console.log(key.token);
+    console.log(key);
     localStorage.setItem("token", key.token);
     localStorage.setItem("role", key.role);
     key.role === "owner"
