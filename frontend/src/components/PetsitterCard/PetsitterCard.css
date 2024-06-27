@@ -5,8 +5,9 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 28px;
   display: flex;
-  margin-bottom: 20px;
-  border:1px solid rgb(204, 204, 204);
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
 .topPartCard {
   display: flex;
@@ -40,10 +41,7 @@
   margin-right: 3px;
 }
 .bookNow {
-   background:
-      rgba(91, 192, 190, 0.82) 100%;
-
-
+  background-color: #5bc0be;
   color: white;
   height: 40px;
   width: 120px;
@@ -70,7 +68,6 @@
   display: flex;
   flex-direction: row;
   align-items: start;
-
 }
 .bioHere {
   margin-left: 5px;
