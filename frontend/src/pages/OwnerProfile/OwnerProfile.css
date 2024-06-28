@@ -1,0 +1,483 @@
+.wholeContainerOwner {
+  display: flex;
+}
+.ownerProfileLeft {
+  height: 920px;
+  width: 460px;
+  margin-top: 40px;
+  margin-left: 60px;
+  border-radius: 48px;
+  background: linear-gradient(
+      0deg,
+      rgba(91, 192, 190, 0.82) 0%,
+      rgba(91, 192, 190, 0.82) 100%
+    ),
+    #b5dbff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 30px;
+}
+
+.ownerPic {
+  border-radius: 48px;
+  width: 250px;
+}
+
+.ownerName {
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+.textAreaObox {
+  height: 180px;
+  width: 300px;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  background: #fff;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 16px;
+  font-size: 20px;
+}
+.ownerProfileLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.ownerProfPicArea {
+  margin-top: 40px;
+  margin-left: 100px;
+}
+
+.textProfileBox {
+  display: flex;
+  flex-direction: column;
+  margin-top: -40px;
+  margin-left: 50px;
+  line-height: 13px;
+}
+
+.petProfileO {
+  width: 420px;
+  height: 920px;
+  border-radius: 48px;
+  background: linear-gradient(0deg, #e7e7e7 0%, #e7e7e7 100%), #b5dbff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-left: 60px;
+  margin-top: 40px;
+}
+
+.petProfileO {
+  display: flex;
+  flex-direction: column;
+}
+
+.petPic {
+  width: 200px;
+  margin-top: 40px;
+  margin-left: 110px;
+  margin-bottom: 40px;
+}
+.profileIconP {
+  width: 20px;
+  margin-bottom: 40px;
+}
+
+.petName {
+  margin-left: 30px;
+  margin-top: 10px;
+  font-size: 40px;
+  color: #608ee9;
+}
+.textProfileBoxPet {
+  display: flex;
+  flex-direction: column;
+  margin-top: -40px;
+  margin-left: 30px;
+  line-height: 10px;
+}
+.bookingsectionO {
+  display: flex;
+  margin-top: 30px;
+}
+
+.futureBooking1O {
+  position: relative;
+  width: 390px;
+  height: 45px;
+  border-radius: 48px;
+  background: linear-gradient(0deg, #608ee9 0%, #608ee9 100%), #b5dbff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+  border: 0px;
+  font-weight: bolder;
+  font-size: 20px;
+}
+.futureBooking1O:hover {
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.futureBookingsO {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+.plus1O {
+  display: block;
+  height: 20px;
+  margin-top: 10px;
+  padding-left: 130px;
+  margin-left: -120px;
+}
+
+.pastBookingsO {
+  display: flex;
+  flex-direction: column;
+}
+.plus2O {
+  display: block;
+  height: 20px;
+  margin-top: 10px;
+  padding-left: 130px;
+  margin-left: -120px;
+}
+
+.pastBookingO1 {
+  position: relative;
+  width: 390px;
+  height: 45px;
+  border-radius: 48px;
+  background: linear-gradient(
+      0deg,
+      rgba(96, 142, 233, 0.33) 0%,
+      rgba(96, 142, 233, 0.33) 100%
+    ),
+    rgba(181, 219, 255, 0.56);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+  border: 0px;
+  font-weight: bolder;
+  font-size: 20px;
+}
+.pastBookingO1:hover {
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.pastBookingO2 {
+  position: relative;
+  width: 390px;
+  height: 45px;
+  border-radius: 48px;
+  background: linear-gradient(
+      0deg,
+      rgba(96, 142, 233, 0.33) 0%,
+      rgba(96, 142, 233, 0.33) 100%
+    ),
+    rgba(181, 219, 255, 0.56);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+  border: 0px;
+  font-weight: bolder;
+  font-size: 20px;
+  margin-top: -10px;
+}
+.pastBookingO2:hover {
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.pastBookingsO {
+  margin-left: 50px;
+}
+
+.pastBookO{
+  margin-left: 10px;
+}
+.findPetSitterContainer {
+  width: 760px;
+  height: 550px;
+  border-radius: 48px;
+  border: 1px solid #bebebe;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-top: 40px;
+  margin-left: 78px;
+}
+.housesittingO {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 17px;
+}
+.texthouseavgO {
+  margin-top: 30px;
+}
+.iconHouseO {
+  display: inline;
+  width: 50px;
+}
+.housetitleO {
+  display: inline;
+  margin-left: 13px;
+  font-size: 25px;
+
+  margin-right: 20px;
+}
+.AvghO {
+  margin-top: 0px;
+  margin-left: 14px;
+  color: black;
+}
+
+.checkboxO {
+  fill: var(--Shade-01, #fff);
+  stroke-width: 1px;
+  stroke: #fff;
+  width: 18px;
+  height: 16px;
+}
+
+.checkboxOW {
+  fill: var(--Shade-01, #fff);
+  stroke-width: 1px;
+  stroke: #fff;
+  width: 18px;
+  height: 16px;
+  margin-left: 15px;
+}
+.checkbox1O {
+  fill: var(--Shade-01, #fff);
+  stroke-width: 1px;
+  stroke: #fff;
+  width: 18px;
+  height: 16px;
+  margin-top: 35px;
+  margin-left: -14px;
+}
+
+.boardingO {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 17px;
+  margin-top: 30px;
+  margin-left: 60px;
+}
+.AvgbO {
+  margin-top: 0px;
+  margin-left: 14px;
+  color: grey;
+  padding-right: 20px;
+}
+.boardingtitleO {
+  display: inline;
+  margin-left: 13px;
+  font-size: 25px;
+
+  margin-right: 20px;
+}
+
+.iconBoardingO {
+  display: inline;
+  width: 40px;
+  margin-top: -30px;
+}
+
+.hairdresserO {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 17px;
+}
+.AvghO {
+  margin-top: 0px;
+  margin-left: 14px;
+  color: grey;
+  padding-right: 70px;
+}
+.hairdressertitleO {
+  display: inline;
+  margin-left: 13px;
+  font-size: 25px;
+
+  margin-right: 20px;
+}
+.iconHairdresserO {
+  display: inline;
+  width: 50px;
+  margin-top: -30px;
+}
+.walkingO {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 12px;
+  margin-left: 48px;
+  
+}
+.AvgwO {
+  margin-top: 0px;
+  font-size: 14px;
+  margin-left: 14px;
+  color: grey;
+  margin-right: 30px;
+}
+.walkingtitleO {
+  display: inline;
+  margin-left: 13px;
+  font-size: 25px;
+  margin-top:-10px;
+
+  margin-right: 20px;
+}
+.iconWalkingO {
+  display: inline;
+  width: 50px;
+  margin-top: -30px;
+}
+
+.servicesO {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: -20px;
+  padding-left: 125px;
+}
+
+.lookingFor {
+  font-size: 25px;
+  margin-left: 35px;
+  color: #666565;
+}
+
+.selectIsland {
+  display: flex;
+  justify-content: left;
+  color: #666565;
+  font-size: 20px;
+  margin-top: 40px;
+  margin-left:140px;
+}
+
+.selectDateTextOw{
+   display: flex;
+  justify-content: left;
+  color: #666565;
+  font-size: 20px;
+  margin-top: 40px;
+  margin-left:195px;
+}
+
+.islandsO {
+  margin-left: 140px;
+  margin-top: -70px;
+}
+.selectDateIslandText{
+  display: flex;
+}
+.gC {
+  margin-left: -180px;
+}
+
+.findIt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.3rem;
+  background-color: rgb(243, 178, 57);
+  color: white;
+  height: 44px;
+  width: 260px;
+  font-size: 25px;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  align-self: center;
+}
+.gCGrey {
+  color: grey;
+  z-index: 1;
+}
+.gC:hover {
+  filter: hue-rotate(40deg);
+  cursor: pointer;
+}
+.saveO {
+  border-radius: 8px;
+  background: #7e8081;
+  color: white;
+  border: 0px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 150px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 95px;
+}
+
+.saveO:hover {
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.petNameBox {
+  display: flex;
+}
+.editIconPet {
+  margin-left: 13px;
+  margin-top: -10px;
+  width: 25px;
+}
+.ownerNameBox {
+  display: flex;
+}
+.editIconName {
+  margin-left: 15px;
+  margin-top: -10px;
+  width: 25px;
+}
+.box11O {
+  font-size: 25px;
+}
+
+.displayIt {
+  display: block;
+}
+.displayNone {
+  display: none;
+}
+.menuBarPO {
+  
+  width: 750px;
+  height: 70px;
+  background-color: rgba(229, 229, 231, 0.747);
+  border-radius: 19px;
+  margin-top: 40px;
+  margin-left:80px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.messagesHelpO {
+  width: 700px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-left: 16px;
+  padding-top: 11px;
+  margin-top: 0px;
+}
+.islandsAndDates{
+  display:flex
+}
+.islandsOW{
+  margin-left: -110px;
+  margin-top:20px;
+}
+.dates{
+  margin-left: 160px;
+  margin-top:-10px;
+}

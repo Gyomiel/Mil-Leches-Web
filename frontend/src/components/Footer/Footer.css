@@ -1,0 +1,20 @@
+footer {
+  background-color:rgba(96, 142, 233, 0.48);
+}
+
+.footerP {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background-color:rgba(96, 142, 233, 0.48);
+  background-size: 100%;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 14px;
+  margin-bottom: 0px;
+}

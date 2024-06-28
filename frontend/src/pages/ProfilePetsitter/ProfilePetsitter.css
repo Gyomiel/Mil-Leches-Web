@@ -1,0 +1,234 @@
+.mainContainerPage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: -40px;
+}
+
+.msg {
+  padding-top: 7px;
+  margin-right: 0px;
+  margin-left: px;
+}
+.messagesHelp {
+  width: 700px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-left: 16px;
+  margin-top: 10px;
+}
+.iconMessages {
+  width: 45px;
+  display: inline;
+}
+.messages:hover {
+  font-size: 28px;
+}
+
+.messages {
+  display: inline;
+  padding-left: 20px;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 26px;
+  font-weight: bolder;
+  margin-left: 15px;
+}
+
+.iconHelp {
+  width: 32px;
+  display: inline;
+
+}
+.help {
+  display: inline;
+  padding-left: 20px;
+  display: inline;
+  padding-left: 20px;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 26px;
+  font-weight: bolder;
+  margin-left: 15px;
+  margin-top:2px
+}
+.help:hover {
+  font-size: 28px;
+}
+.sos {
+  margin-left: 35px;
+  display:flex;
+  margin-top:5px
+}
+
+.calendarAndBookings {
+  margin-top: 50px;
+}
+
+
+
+
+
+.pastBooking2 {
+  position: relative;
+  width: 280px;
+  height: 45px;
+  border-radius: 48px;
+  background: linear-gradient(
+      0deg,
+      rgba(96, 142, 233, 0.33) 0%,
+      rgba(96, 142, 233, 0.33) 100%
+    ),
+    rgba(181, 219, 255, 0.56);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+  border: 0px;
+  font-weight: bolder;
+  font-size: 20px;
+}
+.pastBooking2:hover {
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.bookingsection {
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+}
+.calendarAndBookings {
+  display: flex;
+
+  margin-left: 20px;
+  margin-top: 80px;
+}
+.calendar {
+  height: 300px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.plus1 {
+  display: block;
+  height: 20px;
+  margin-top: 10px;
+  padding-left: 130px;
+}
+
+.plus2 {
+  display: block;
+  height: 20px;
+  margin-top: 10px;
+  padding-left: 130px;
+}
+
+.bookingsection {
+  margin-top: -40px;
+}
+
+.reviews {
+  margin-top: 0px;
+  margin-left: 60px;
+}
+
+.futureBookO {
+  font-size: 26px;
+}
+.pastBookO {
+  font-size: 26px;
+}
+.myFutureB {
+  font-size: 24px;
+  margin-top: 60px;
+  background-color:#6e97e9;
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 20px;
+  color:white;
+
+
+}
+
+.myPastB {
+   font-size: 24px;
+  margin-top: 50px;
+  background-color:#6e97e9;
+  padding: 10px;
+  border-radius: 20px;
+  color:white;
+  text-align: center;
+}
+.allright {
+  display: flex;
+  flex-direction: column;
+}
+.reviewsPic1 {
+  width: 720px;
+  margin-top: -10px;
+}
+.reviewsPic2 {
+  width: 720px;
+  margin-top: -30px;
+}
+.reviewTitle {
+  font-size: 27px;
+}
+
+.reviewsPic2:hover {
+  width: 770px;
+  margin-left: -20px;
+}
+.reviewsPic1:hover {
+  width: 770px;
+  margin-left: -20px;
+}
+.logOutIcon{
+  width: 35px;
+  margin-top:1px
+
+}
+.logOutDiv{
+  display:flex;
+  margin-left:40px;
+  margin-top:6px;
+}
+
+.logOutButton {
+  display: inline;
+  padding-left: 20px;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 26px;
+  font-weight: bolder;
+  margin-left: 15px;
+}
+.logOutButton:hover {
+  font-size: 28px;
+}
+.menuBarP {
+  
+  width: 750px;
+  height: 70px;
+  background-color: rgb(233, 233, 233);
+  border-radius: 19px;
+  margin-top: 40px;
+  margin-left:55px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}

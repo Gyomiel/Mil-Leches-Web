@@ -1,0 +1,20 @@
+#Ownerdiv{
+    position:relative;
+    display: flex;
+    
+}
+
+.imgdog{
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    
+    justify-content: center;
+    width: 43%;
+    height: 33%;
+    object-fit:cover;
+    border-radius: 20px;
+    box-shadow: 2px 4px 4px 0 rgba(20, 20, 20, 0.3);
+
+
+}

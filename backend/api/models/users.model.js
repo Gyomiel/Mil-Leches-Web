@@ -6,9 +6,11 @@ const User = connection.define(
   {
     name: {
       type: DataTypes.STRING,
+      unique: true,
     },
     email: {
       type: DataTypes.STRING,
+      unique: true,
       validate: {
         is: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
       },

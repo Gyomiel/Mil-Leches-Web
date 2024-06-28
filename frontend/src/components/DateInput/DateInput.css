@@ -1,0 +1,72 @@
+.dateDiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.DateToolStart {
+  border-radius: 48px;
+  border: 1px solid black;
+  border-color: grey;
+  background: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 280px;
+  height: 25px;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 16px;
+  font-weight: bolder;
+  font-size: 20px;
+  font-display: calc(50%);
+  color: black;
+}
+.DateToolFinish {
+  border-radius: 48px;
+  border: 1px solid black;
+  border-color: grey;
+  background: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 280px;
+  height: 25px;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 16px;
+  font-weight: bolder;
+  font-size: 20px;
+  font-display: calc(50%);
+  color: black;
+  
+}
+
+
+.dateDesign {
+  border: 0;
+  background: white;
+  font-weight: bolder;
+  font-size: 20px;
+  font-display: calc(50%);
+  color: black
+}
+
+.startDiv {
+  width: 320px;
+  height: 25px;
+  margin: 0px;
+  margin-bottom: 35px;
+}
+
+.finishDiv {
+  width: 320px;
+  height: 25px;
+  grid-area: auto;
+  margin: 0px;
+}
+
+.dates {
+  display:flex;
+  flex-direction: column;
+}
+.wholeDate{
+  display: flex;
+  flex-direction: column;
+}

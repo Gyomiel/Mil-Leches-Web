@@ -1,4 +1,5 @@
 const Pet = require("../models/pets.model");
+const User = require("../models/users.model");
 
 const getAllPets = async (request, response) => {
   try {
@@ -24,9 +25,17 @@ const getOnePet = async (request, response) => {
 
 const createPet = async (request, response) => {
   try {
+    const user = await User.findOne({
+      where: {
+        id: response.locals.user.id,
+      },
+    });
+    request.body.userId = user.id;
+    console.log(request.body);
     const pet = await Pet.create(request.body);
     return response.status(200).json(pet);
   } catch (error) {
+    console.log(error.message);
     return response.status(501).send(`Couldn't create pet.`);
   }
 };
@@ -58,6 +67,36 @@ const deletePet = async (request, response) => {
       .send(`The pet with ID ${request.params.id} couldn't be deleted.`);
   }
 };
+const getPetProfile = async (request, response) => {
+  try {
+    console.log("a");
+    const pet = await Pet.findOne({
+      where: {
+        userId: response.locals.user.id,
+      },
+    });
+    console.log(pet);
+    return response.status(200).json(pet);
+  } catch (error) {
+    return response.status(501).send("Pet not found.");
+  }
+};
+
+const updatePetProfile = async (request, response) => {
+  try {
+    console.log(response.locals.user.id);
+    const user = await Pet.findOne({
+      where: {
+        id: response.locals.pet.id,
+      },
+    });
+    await Pet.update(data);
+    await Pet.save(data);
+    return response.status(200).json(Pet);
+  } catch (error) {
+    return response.status(501).send(`Couldn't update Pet.`);
+  }
+};
 
 module.exports = {
   getAllPets,
@@ -65,4 +104,6 @@ module.exports = {
   createPet,
   updatePet,
   deletePet,
+  getPetProfile,
+  updatePetProfile,
 };

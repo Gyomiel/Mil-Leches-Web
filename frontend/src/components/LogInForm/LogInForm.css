@@ -1,0 +1,189 @@
+#centerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2rem
+}
+
+#logInForm {
+  border-radius: 48px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background-color: #f1eeee;
+  display: flex;
+  width: 500px;
+  height: 550px;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  color: #020202;
+  font-weight: 400;
+  padding: 55px 55px;
+  margin-top: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.signUpPic {
+  width: 225px;
+  margin-bottom: 0.7rem;
+}
+
+.letMeLive {
+  background-color: transparent;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.letMeLive2Li {
+  background-color: transparent;
+  display: inline-block;
+  font-size: 20px;
+  margin-left:-220px;
+  margin-top:20px;
+}
+
+.leaveMeAlone {
+  background-color: transparent;
+  display: inline-block;
+}
+
+.formP {
+  background-color: transparent;
+  display: inline-block;
+  font-size: 16px;
+  color: grey;
+}
+
+.tspp {
+  font-weight: 700;
+  color: black;
+}
+
+.login {
+  color: var(--primaryTeal);
+  
+}
+
+.loginh2 {
+  color: var(--primaryTeal);
+  font-size: 47px;
+  font-weight: bolder;
+  margin-top: -10px;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 2.1rem;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.nameInput,
+.emailInput,
+.passInput {
+  border-radius: 8px;
+  border: 1px solid #fff;
+  background: #fff;
+  width: 350px;
+  height: 25px;
+  padding: 8px 16px;
+  align-items: center;
+  margin-top: 1.5rem;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.userWholeInput,
+.passwordWholeInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  margin-left: -10px;
+  
+  
+}
+.userWholeInput{
+  margin-top:-10px
+}
+
+.userWholeInputImgLi {
+  display: inline-block;
+  margin-top: 29px;
+  width: 35px;
+  margin-right:8px;
+  margin-left:4px;
+}
+
+.lockLi{
+  width: 60px;
+  margin-left: -14px;
+  margin-top: 16px
+}
+
+.trouble {
+  background-color: transparent;
+  font-size: 14px;
+  margin-bottom: -0.5rem;
+  margin-left: 18rem;
+  margin-top: -0.1rem;
+}
+
+.troubleLink {
+  margin-top:20px;
+  color: grey;
+  font-size: 17px;
+ 
+}
+
+.logInDog {
+  width: 23%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -3.3rem;
+}
+
+.logInButton {
+  background-color: var(--primaryTeal);
+  color: white;
+  height: 50px;
+  width: 140px;
+  font-size: 25px;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  align-self: center;
+  margin-top:30px;
+  margin-bottom: 20px;
+}
+.logInButton:hover {
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.loginh4{
+  margin-top: 20px;
+  font-size: 20px;
+}
+.google {
+  width: 450px;
+  margin-top: -25px;
+  margin-left:20px
+}
+  .google:hover {
+    width: 420px;
+}
+
+  
+.or {
+  font-size: 20px;
+  color: grey;
+  margin-top:-10px;
+  font-weight: 500;
+  
+}

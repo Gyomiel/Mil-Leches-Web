@@ -17,11 +17,7 @@ const signUp = async (request, response) => {
     }
     const salt = bcrypt.genSaltSync(parseInt("10"));
     request.body.password = bcrypt.hashSync(request.body.password, salt);
-    const user = await User.create({
-      email: request.body.email,
-      password: request.body.password,
-      name: request.body.name,
-    });
+    const user = await User.create(request.body);
     const payload = { email: request.body.email };
     const token = jwt.sign(payload, "didiBorjaMarta", { expiresIn: "1h" });
     return response.status(200).json({ token });
@@ -47,7 +43,7 @@ const login = async (request, response) => {
     if (checkPass) {
       const payload = { email: request.body.email };
       const token = jwt.sign(payload, "didiBorjaMarta", { expiresIn: "1h" });
-      return response.status(200).json({ token });
+      return response.status(200).json({ token, role: user.role });
     } else {
       return response.status(401).send("Incorrect email or password.");
     }
