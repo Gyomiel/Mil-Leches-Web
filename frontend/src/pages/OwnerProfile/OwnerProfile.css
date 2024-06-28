@@ -181,7 +181,7 @@
   border: 0px;
   font-weight: bolder;
   font-size: 20px;
-  margin-top: -10px;
+  margin-top: 20px;
 }
 .pastBookingO2:hover {
   box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
@@ -192,7 +192,7 @@
   margin-left: 50px;
 }
 
-.pastBookO{
+.pastBookO {
   margin-left: 10px;
 }
 .findPetSitterContainer {
@@ -315,7 +315,6 @@
   align-items: center;
   font-size: 12px;
   margin-left: 48px;
-  
 }
 .AvgwO {
   margin-top: 0px;
@@ -328,7 +327,7 @@
   display: inline;
   margin-left: 13px;
   font-size: 25px;
-  margin-top:-10px;
+  margin-top: -10px;
 
   margin-right: 20px;
 }
@@ -358,23 +357,23 @@
   color: #666565;
   font-size: 20px;
   margin-top: 40px;
-  margin-left:140px;
+  margin-left: 140px;
 }
 
-.selectDateTextOw{
-   display: flex;
+.selectDateTextOw {
+  display: flex;
   justify-content: left;
   color: #666565;
   font-size: 20px;
   margin-top: 40px;
-  margin-left:195px;
+  margin-left: 195px;
 }
 
 .islandsO {
   margin-left: 140px;
   margin-top: -70px;
 }
-.selectDateIslandText{
+.selectDateIslandText {
   display: flex;
 }
 .gC {
@@ -452,13 +451,12 @@
   display: none;
 }
 .menuBarPO {
-  
   width: 750px;
   height: 70px;
   background-color: rgba(229, 229, 231, 0.747);
   border-radius: 19px;
   margin-top: 40px;
-  margin-left:80px;
+  margin-left: 80px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .messagesHelpO {
@@ -470,14 +468,14 @@
   padding-top: 11px;
   margin-top: 0px;
 }
-.islandsAndDates{
-  display:flex
+.islandsAndDates {
+  display: flex;
 }
-.islandsOW{
+.islandsOW {
   margin-left: -110px;
-  margin-top:20px;
+  margin-top: 20px;
 }
-.dates{
-  margin-left: 160px;
-  margin-top:-10px;
+.dates {
+  margin-left: 20px;
+  margin-top: -10px;
 }
