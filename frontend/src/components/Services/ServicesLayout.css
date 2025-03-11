@@ -1,0 +1,120 @@
+#services-boxSe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6rem;
+    margin-right: 5rem;
+    margin-top: 5rem;
+    margin-bottom: 4.3rem;
+    width: 1700px;
+    height: 830px;
+    flex-shrink: 0;
+    border-radius: 48px;
+    background: #E7E7E7;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.servHeaderO {
+    font-size: 55px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.servicesCards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.houseSitting, .boardingS, .dogWalking, .grooming {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 420px;
+    flex-shrink: 0;
+    margin-right: 20px;
+    background-color: white;
+    border-radius: 48px;
+    fill: #FFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.hSHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-top:15px;
+}
+
+.servDesc {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -15px;
+    width: 250px;
+    text-align: center;
+    font-size: 23px;
+}
+
+.appointButton {
+    background-color: var(--primaryTeal);
+    color: white;
+    height: 42px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    align-self: center;
+    margin-top: 1.25rem;
+}
+
+.imgIcon1 {
+    width: 90px;
+    margin-top:30px;
+    margin-bottom:1px;
+}
+
+.imgIcon2 {
+    width: 70px;
+    margin-top:0;
+    margin-bottom: 0px;
+}
+.imgIcon3 {
+    width: 90px;
+}
+.imgIcon4 {
+    width: 95px;
+    margin-left:-25px;
+    margin-top:-15px;
+}
+.createFreeO {
+  border-radius: 8px;
+  background: #5bc0be;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: 0;
+  display: flex;
+  width: 440px;
+  height: 80px;
+  padding: 0px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 35px;
+  font-weight: bolder;
+  margin-top: 60px;
+}
+.createFreeO:hover{
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}

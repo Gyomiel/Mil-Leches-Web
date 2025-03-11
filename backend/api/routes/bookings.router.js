@@ -6,9 +6,11 @@ const {
   updateBooking,
   deleteBooking,
   addUserToBooking,
+  
 } = require("../controllers/bookings.controller");
 
 router.get("/", getAllBookings);
+
 router.get("/:id", getOneBooking);
 router.post("/", createBooking);
 router.put("/:id", updateBooking);

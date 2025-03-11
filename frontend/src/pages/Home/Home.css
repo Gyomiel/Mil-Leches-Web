@@ -1,0 +1,125 @@
+.mainHome {
+  display: flex;
+  width: 1920px;
+  height: 700px;
+  background-color: #e7e7e7;
+}
+
+.leftHome {
+  margin-left: 100px;
+  margin-top: 60px;
+}
+
+.find {
+  font-size: 40px;
+  width: 800px;
+  font-weight: 500;
+}
+
+.createFree {
+  border-radius: 8px;
+  background: #5bc0be;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: 0;
+  display: flex;
+  width: 500px;
+  height: 101px;
+  padding: 0px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 40px;
+  font-weight: bolder;
+}
+.createFree:hover{
+  box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.wantToBe {
+  color: #608ee9;
+  font-size: 25px;
+  font-weight: bolder;
+  margin-left: 110px;
+}
+.wantToBe:hover{
+  font-size: 30px;
+  margin-left: 85px
+}
+
+.titleHome {
+  font-size: 60px;
+}
+.petsImage {
+  width: 700px;
+}
+
+.rightHome {
+  margin-left: 140px;
+  margin-top: 90px;
+}
+
+.sitAndRelax {
+  font-size: 35px;
+  font-weight: 300;
+  margin-top: -100px;
+  margin-bottom: 100px;
+  margin-left: 280px;
+}
+.servicesHome {
+  display: flex;
+  width: 1920px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.houseHome {
+  display: flex;
+}
+.boardingHome {
+  display: flex;
+}
+.walkingHome {
+  display: flex;
+}
+.hairdresserHome {
+  display: flex;
+}
+
+.iconHouseHome {
+  width: 100px;
+  margin-right: 20px;
+}
+.textHouseHome {
+  font-size: 30px;
+}
+.iconBoardingHome {
+  width: 80px;
+  margin-right: 20px;
+  margin-left: 100px;
+}
+.textBoardingHome {
+  font-size: 30px;
+}
+.iconWalkingHome {
+  width: 100px;
+  margin-right: 20px;
+  margin-left: 100px;
+}
+.textWalkingHome {
+  font-size: 30px;
+}
+.iconHairdresserHome {
+  width: 100px;
+  margin-right: 20px;
+  margin-left: 100px;
+  margin-top: -10px;
+}
+.textHairdresserHome {
+  font-size: 30px;
+}
+.servicesTitleHome {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 50px;
+}

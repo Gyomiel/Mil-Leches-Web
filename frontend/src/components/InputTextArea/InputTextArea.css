@@ -1,0 +1,11 @@
+.textArea {
+    height: 280px;
+    width: 490px;
+    border-radius: 8px;
+    border: 1px solid #FFF;
+    background: #FFF;
+    padding: 8px 16px;
+    align-items: center;
+    gap: 16px; 
+    font-size: 20px;
+}
