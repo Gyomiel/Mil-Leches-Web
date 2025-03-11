@@ -65,7 +65,6 @@ const SignUpForm = () => {
     <div id="centerForm">
       <form id="signUpForm" onSubmit={(e) => e.preventDefault()}>
         <h2 className="createFreeAccount">Create your free account now!</h2>
-        <img className="signUpPic" src={signUpPic} />
         <div className="wholeTextAreaL">
           <div className="userNameInputAreaL">
             <div className="userIconL">
@@ -116,7 +115,9 @@ const SignUpForm = () => {
               name="role"
               onClick={handleRole}
             />
-            <label className="ownerL"htmlFor="owner">I am a pet owner</label>
+            <label className="ownerL" htmlFor="owner">
+              I am a pet owner
+            </label>
           </div>
           <div className="letMeLive2">
             <input
@@ -126,7 +127,9 @@ const SignUpForm = () => {
               name="role"
               onClick={handleRole}
             />
-            <label className="petSitterL" htmlFor="petsitter">I am a pet sitter</label>
+            <label className="petSitterL" htmlFor="petsitter">
+              I am a pet sitter
+            </label>
           </div>
         </div>
         <div className="leaveMeAlone">
@@ -144,12 +147,12 @@ const SignUpForm = () => {
           </p>
         </div>
         <div className="signButtonL">
-        <button
-          className={isCompleted ? "signUpButton" : "disabledButton"}
-          onClick={handleSignUp}
-        >
-          Sign up
-        </button>
+          <button
+            className={isCompleted ? "signUpButton" : "disabledButton"}
+            onClick={handleSignUp}
+          >
+            Sign up
+          </button>
         </div>
         <h4 className="alreadyL">
           Already have an account?{" "}

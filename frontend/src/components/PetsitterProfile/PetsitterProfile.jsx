@@ -214,79 +214,8 @@ function PetsitterProfile() {
               <img className="editIcon" src={iconEdit}></img>
             </div>
           </div>
-          <h2 className="servicestext">Services I offer</h2>
-
-          <div className="services">
-            <div className="housesitting">
-              <img className="iconHouse" src={iconHouse}></img>
-              <div className="texthouseavg">
-                <h3 className="housetitle">House-sitting</h3>
-                <h5 className="Avgh">Avg. 20€ Night</h5>
-              </div>
-              <input
-                className="checkbox1"
-                type="checkbox"
-                onClick={handleHousesitting}
-              ></input>
-            </div>
-            <div className="boarding">
-              <img className="iconBoarding" src={iconBoarding}></img>
-              <div className="textboardingavg">
-                <h3 className="boardingtitle">Boarding</h3>
-                <h5 className="Avgb">Avg. 20€ Night</h5>
-              </div>
-              <input
-                className="checkbox"
-                type="checkbox"
-                onClick={handleBoarding}
-              ></input>
-            </div>
-            <div className="hairdresser">
-              <img className="iconHairdresser" src={iconHairdresser}></img>
-              <div className="texthairdresseravg">
-                <h3 className="hairdressertitle">Hairdresser</h3>
-                <h5 className="Avgh">Avg. 9€ Hour</h5>
-              </div>
-              <input
-                className="checkbox"
-                type="checkbox"
-                onClick={handleHairdresser}
-              ></input>
-              <div className="walking">
-                <img className="iconWalking" src={iconWalking}></img>
-                <div className="textwalkingavg">
-                  <h3 className="walkingtitle">Walking</h3>
-                  <h5 className="Avgw">Avg. 9€ Hour</h5>
-                </div>
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  onClick={handleWalking}
-                ></input>
-              </div>
-            </div>
-          </div>
         </section>
       </div>
-      <section className="tips">
-        <div className="tipstitle">
-          <img className="iconBulb" src={iconBulb}></img>
-          <h3 className="tipstitle">Tips to write your profile</h3>
-        </div>
-        <ul>
-          <li>
-            Upload a nice picture of you and include an animal you have sited or
-            owned previously
-          </li>
-          <li>
-            Fill out your pet care experience and show the services you offer
-          </li>
-          <li>
-            Be clear about your pet sitting preferences and size restrictions
-          </li>
-          <li>Keep your calendar and profile up to date</li>
-        </ul>
-      </section>
     </div>
   );
 }

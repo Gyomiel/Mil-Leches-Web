@@ -1,37 +1,21 @@
-#centerForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 1080px;
-}
-
 #signUpForm {
   border-radius: 48px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background-color: #f1eeee;
   display: flex;
-  width: 520px;
   flex-direction: column;
   align-items: center;
   font-size: 14px;
   color: #020202;
   font-weight: 400;
-  height: 850px;
-  padding: 55px 55px;
-  margin-top: 2.2rem;
-  margin-bottom: 2rem;
+  height: auto;
+  padding: 40px;
 }
 
 .pleaseStop {
   margin-top: 3rem;
   display: flex;
-  margin-left:0px
-}
-
-.signUpPic {
-  width: 225px;
-  margin-top: -10px;
+  margin-left: 0px;
 }
 
 .letMeLive {
@@ -42,14 +26,13 @@
 
 .letMeLive2 {
   background-color: transparent;
-  display: inline-block;
   font-size: 16px;
 }
 
 .leaveMeAlone {
   background-color: transparent;
   display: inline-block;
-  margin-top: 2rem;
+  margin-top: 16px;
 }
 
 .formP {
@@ -136,7 +119,7 @@ h4 {
 }
 .createFreeAccount {
   font-size: 35px;
-  margin-bottom: 60px;
+  margin-bottom: 8px;
   margin-top: 10px;
 }
 .userWholeInputImg {

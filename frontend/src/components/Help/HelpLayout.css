@@ -1,84 +1,80 @@
 #services-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 12.5rem;
-    margin-right: 5rem;
-    margin-top: 1rem;
-    width: 1500px;
-    height: 860px;
-    flex-shrink: 0;
-    border-radius: 48px;
-    background: #E7E7E7;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    margin-top:70px;
-    margin-bottom: 70px;
-    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 48px;
+  background: #e7e7e7;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 80vh;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .servicesCards {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap:50px;
-    margin-top:40px
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 40px;
 }
 
 .servHeader {
-    font-size: 50px;
-    margin-top: 20px;
+  font-size: 50px;
+  margin-top: 20px;
 }
 
-.findSitter, .getInTouch, .enjoyYourTime {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 350px;
-    height: 440px;
-    flex-shrink: 0;
-    background-color: white;
-    border-radius: 48px;
-    fill: #FFF;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    
+.findSitter,
+.getInTouch,
+.enjoyYourTime {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 440px;
+  flex-shrink: 0;
+  background-color: white;
+  border-radius: 48px;
+  fill: #fff;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .hSHeader {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .servDesc {
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    text-align: center;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-align: center;
 }
 
 .mlSpan {
-    color: var(--secondaryBlue);
+  color: var(--secondaryBlue);
 }
-.findO{
-    width: 60px;
+.findO {
+  width: 60px;
 }
-.chatH{
-    width: 70px;
-    margin-top: 42px
+.chatH {
+  width: 70px;
+  margin-top: 42px;
 }
-.sun{
-    width: 80px;
-    margin-top:-25px;
+.sun {
+  width: 80px;
+  margin-top: -25px;
 }
-.helpButton  {
+.helpButton {
   border-radius: 8px;
   background: #5bc0be;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -95,7 +91,7 @@
   font-weight: bolder;
   margin-top: 60px;
 }
-.helpButton :hover{
+.helpButton :hover {
   box-shadow: rgba(154, 154, 204, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }

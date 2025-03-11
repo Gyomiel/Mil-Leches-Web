@@ -16,16 +16,10 @@ import PastBoking from "../../components/PastBoking/PastBoking";
 import LogoutButton from "../../components/LogoutButton/LogoutButton";
 
 const ProfilePetsitter = () => {
-
-
-
-
-
-
   return (
     <section className="mainContainerPage">
       <PetsitterProfile className="profile" />
-      <section className="allright">
+      {/*  <section className="allright">
         <div className="menuBarP">
           <div className="messagesHelp">
             <div className="msg">
@@ -65,7 +59,7 @@ const ProfilePetsitter = () => {
           <img className="reviewsPic2" src={review2}></img>
           <ReservationList />
         </div>
-      </section>
+      </section> */}
     </section>
   );
 };

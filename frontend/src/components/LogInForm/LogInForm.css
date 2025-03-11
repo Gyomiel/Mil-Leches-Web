@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: -2rem
+  height: 85vh;
 }
 
 #logInForm {
@@ -11,16 +11,13 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background-color: #f1eeee;
   display: flex;
-  width: 500px;
-  height: 550px;
   flex-direction: column;
   align-items: center;
   font-size: 14px;
   color: #020202;
   font-weight: 400;
-  padding: 55px 55px;
+  padding: 35px;
   margin-top: 2.2rem;
-  margin-bottom: 1.2rem;
 }
 
 .signUpPic {
@@ -38,8 +35,7 @@
   background-color: transparent;
   display: inline-block;
   font-size: 20px;
-  margin-left:-220px;
-  margin-top:20px;
+  margin-top: 20px;
 }
 
 .leaveMeAlone {
@@ -61,7 +57,6 @@
 
 .login {
   color: var(--primaryTeal);
-  
 }
 
 .loginh2 {
@@ -103,25 +98,23 @@ h4 {
   justify-content: center;
   gap: 15px;
   margin-left: -10px;
-  
-  
 }
-.userWholeInput{
-  margin-top:-10px
+.userWholeInput {
+  margin-top: -10px;
 }
 
 .userWholeInputImgLi {
   display: inline-block;
   margin-top: 29px;
   width: 35px;
-  margin-right:8px;
-  margin-left:4px;
+  margin-right: 8px;
+  margin-left: 4px;
 }
 
-.lockLi{
+.lockLi {
   width: 60px;
   margin-left: -14px;
-  margin-top: 16px
+  margin-top: 16px;
 }
 
 .trouble {
@@ -133,14 +126,13 @@ h4 {
 }
 
 .troubleLink {
-  margin-top:20px;
+  margin-top: 20px;
   color: grey;
   font-size: 17px;
- 
 }
 
 .logInDog {
-  width: 23%;
+  width: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -158,7 +150,7 @@ h4 {
   border: none;
   border-radius: 50px;
   align-self: center;
-  margin-top:30px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 .logInButton:hover {
@@ -166,24 +158,22 @@ h4 {
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
-.loginh4{
+.loginh4 {
   margin-top: 20px;
   font-size: 20px;
 }
 .google {
   width: 450px;
   margin-top: -25px;
-  margin-left:20px
+  margin-left: 20px;
 }
-  .google:hover {
-    width: 420px;
+.google:hover {
+  width: 420px;
 }
 
-  
 .or {
   font-size: 20px;
   color: grey;
-  margin-top:-10px;
+  margin-top: -10px;
   font-weight: 500;
-  
 }
